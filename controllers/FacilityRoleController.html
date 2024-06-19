@@ -1,0 +1,1268 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>smoking-halim documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">smoking-halim documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content controller">
+                   <div class="content-data">
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Controllers</li>
+  <li class="breadcrumb-item" >FacilityRoleController</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/modules/facility-role/facility-role.controller.ts</code>
+        </p>
+
+            <p class="comment">
+                <h3>Prefix</h3>
+            </p>
+            <p class="comment">
+                <code>facility-roles</code>
+            </p>
+
+
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                <a href="#assignRole" >assignRole</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                <a href="#create" >create</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                <a href="#fetchRolesNames" >fetchRolesNames</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                <a href="#findAll" >findAll</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                <a href="#findOne" >findOne</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                <a href="#getUnAssignedUsers" >getUnAssignedUsers</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                <a href="#getUsersByRole" >getUsersByRole</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                <a href="#remove" >remove</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                <a href="#unassignRole" >unassignRole</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                <a href="#updateRolePermissions" >updateRolePermissions</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="assignRole"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                        <span ><b>assignRole</b></span>
+                        <a href="#assignRole"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>assignRole(user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>, assignFacilityRoleDto: <a href="../classes/AssignFacilityRoleDto.html" target="_self">AssignFacilityRoleDto</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;])<br />@Permissions([&#x27;undefined&#x27;])<br />@ApiResponse({status: 409, description: &#x27;User not found!&#x27;})<br />@ApiResponse({status: 404, description: &#x27;You can not assign roles to patient!&#x27;})<br />@Patch(&#x27;assign/&#x27;)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="64"
+                                    class="link-to-prism">src/modules/facility-role/facility-role.controller.ts:64</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>assignFacilityRoleDto</td>
+                                            <td>
+                                                            <code><a href="../classes/AssignFacilityRoleDto.html" target="_self" >AssignFacilityRoleDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="create"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                        <span ><b>create</b></span>
+                        <a href="#create"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>create(createFacilityRoleDto: <a href="../classes/CreateFacilityRoleDto.html" target="_self">CreateFacilityRoleDto</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;])<br />@Serialize(FacilityRoleResponse)<br />@ApiCreatedResponse({type: FacilityRoleResponse, description: &#x27;isActive default is true&#x27;})<br />@Post()<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="45"
+                                    class="link-to-prism">src/modules/facility-role/facility-role.controller.ts:45</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>createFacilityRoleDto</td>
+                                            <td>
+                                                            <code><a href="../classes/CreateFacilityRoleDto.html" target="_self" >CreateFacilityRoleDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchRolesNames"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                        <span ><b>fetchRolesNames</b></span>
+                        <a href="#fetchRolesNames"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fetchRolesNames()</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;])<br />@Permissions([&#x27;undefined&#x27;])<br />@ApiOkResponse({type: undefined})<br />@Get(&#x27;names-only&#x27;)<br />@UseInterceptors(CacheInterceptor, BigIntTransformerInterceptor)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="54"
+                                    class="link-to-prism">src/modules/facility-role/facility-role.controller.ts:54</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;NameAndIdResponse[]&gt;</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="findAll"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                        <span ><b>findAll</b></span>
+                        <a href="#findAll"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>findAll(fetchFaciltiyRoleDto: <a href="../classes/FetchFaciltiyRoleDto.html" target="_self">FetchFaciltiyRoleDto</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;])<br />@Permissions([&#x27;undefined&#x27;])<br />@ApiOkResponse({type: PaginationRoles})<br />@Get()<br />@UseInterceptors(HttpLanguageCacheInterceptor, BigIntTransformerInterceptor)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="37"
+                                    class="link-to-prism">src/modules/facility-role/facility-role.controller.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>fetchFaciltiyRoleDto</td>
+                                            <td>
+                                                            <code><a href="../classes/FetchFaciltiyRoleDto.html" target="_self" >FetchFaciltiyRoleDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/PaginationRoles.html" target="_self" >Promise&lt;PaginationRoles&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="findOne"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                        <span ><b>findOne</b></span>
+                        <a href="#findOne"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>findOne(language: LanguageEnum, id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;])<br />@ApiOkResponse({type: FullFacilityRoleResponse})<br />@Get(&#x27;:id&#x27;)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="100"
+                                    class="link-to-prism">src/modules/facility-role/facility-role.controller.ts:100</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>language</td>
+                                            <td>
+                                                        <code>LanguageEnum</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;FullFacilityRoleResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getUnAssignedUsers"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                        <span ><b>getUnAssignedUsers</b></span>
+                        <a href="#getUnAssignedUsers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getUnAssignedUsers()</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;])<br />@Permissions([&#x27;undefined&#x27;])<br />@ApiResponse({status: 200, type: GetUnassignedUsersResponse, isArray: true})<br />@ApiResponse({status: 404, description: &#x27;no users found!&#x27;})<br />@Get(&#x27;users/unassigned/&#x27;)<br />@UseInterceptors(HttpLanguageCacheInterceptor, BigIntTransformerInterceptor)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="83"
+                                    class="link-to-prism">src/modules/facility-role/facility-role.controller.ts:83</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getUsersByRole"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                        <span ><b>getUsersByRole</b></span>
+                        <a href="#getUsersByRole"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getUsersByRole(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;])<br />@Permissions([&#x27;undefined&#x27;])<br />@ApiResponse({status: 200, type: GetUsersByRoleResponse, isArray: true})<br />@ApiResponse({status: 404, description: &#x27;no users with that role found!&#x27;})<br />@Get(&#x27;users/:id&#x27;)<br />@UseInterceptors(HttpLanguageCacheInterceptor, BigIntTransformerInterceptor)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="93"
+                                    class="link-to-prism">src/modules/facility-role/facility-role.controller.ts:93</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="remove"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                        <span ><b>remove</b></span>
+                        <a href="#remove"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>remove(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;])<br />@Delete(&#x27;:id&#x27;)<br />@ApiOkResponse({type: FacilityRoleResponse})<br />@ApiResponse({status: 404, description: &#x27;Facility role not found!&#x27;})<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="120"
+                                    class="link-to-prism">src/modules/facility-role/facility-role.controller.ts:120</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="unassignRole"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                        <span ><b>unassignRole</b></span>
+                        <a href="#unassignRole"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>unassignRole(unassignFacilityRoleDto: <a href="../classes/UnassignFacilityRoleDto.html" target="_self">UnassignFacilityRoleDto</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;])<br />@Permissions([&#x27;undefined&#x27;])<br />@ApiResponse({status: 403, description: &#x27;you can only unassign custom roles!&#x27;})<br />@ApiResponse({status: 409, description: &#x27;User does not have that role!&#x27;})<br />@Patch(&#x27;unassign/&#x27;)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="73"
+                                    class="link-to-prism">src/modules/facility-role/facility-role.controller.ts:73</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>unassignFacilityRoleDto</td>
+                                            <td>
+                                                            <code><a href="../classes/UnassignFacilityRoleDto.html" target="_self" >UnassignFacilityRoleDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateRolePermissions"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                        <span ><b>updateRolePermissions</b></span>
+                        <a href="#updateRolePermissions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateRolePermissions(language: LanguageEnum, id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, updateFacilityRoleDto: <a href="../classes/UpdateFacilityRoleDto.html" target="_self">UpdateFacilityRoleDto</a>, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;])<br />@Patch(&#x27;:id&#x27;)<br />@ApiOkResponse({type: FullFacilityRoleResponse})<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="107"
+                                    class="link-to-prism">src/modules/facility-role/facility-role.controller.ts:107</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>language</td>
+                                            <td>
+                                                        <code>LanguageEnum</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>updateFacilityRoleDto</td>
+                                            <td>
+                                                            <code><a href="../classes/UpdateFacilityRoleDto.html" target="_self" >UpdateFacilityRoleDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;FullFacilityRoleResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Body, Controller, Delete, Get, Param, ParseIntPipe, Patch, Post, Query, UseInterceptors } from &#x27;@nestjs/common&#x27;;
+import { ApiCreatedResponse, ApiOkResponse, ApiResponse, ApiTags } from &#x27;@nestjs/swagger&#x27;;
+import { JwtAuth } from &#x27;src/common/decorators/jwt-auth.decorator&#x27;;
+import { Permissions } from &#x27;src/common/decorators/permissions.decorator&#x27;;
+import { Serialize } from &#x27;src/common/interceptors/response-serialization.interceptor&#x27;;
+import { CreateFacilityRoleDto } from &#x27;./dto/create-facility-role.dto&#x27;;
+import { FacilityRoleResponse } from &#x27;./response/created-facility-role.response&#x27;;
+import { FullFacilityRoleResponse } from &#x27;./response/full-facility-role.response&#x27;;
+import { FacilityRoleService } from &#x27;./facility-role.service&#x27;;
+import { UpdateFacilityRoleDto } from &#x27;./dto/update-role.dto&#x27;;
+import { FetchFaciltiyRoleDto } from &#x27;./dto/fetch-facility-role.dto&#x27;;
+import { PaginationRoles } from &#x27;src/common/responses/Paggination-data.response&#x27;;
+import { UserPlayloadResponse } from &#x27;src/modules/patients/response/user-playload.response&#x27;;
+import { User } from &#x27;src/common/decorators/auth.decorator&#x27;;
+import { RoleDecoratorEnum } from &#x27;src/common/enums/role-decorator.enum&#x27;;
+import { LanguageEnum, PermissionEnum } from &#x27;@prisma/client&#x27;;
+import { HeaderLanguage } from &#x27;src/common/decorators/header-language&#x27;;
+import { GetUsersByRoleResponse } from &#x27;./response/get-users-by-role.response&#x27;;
+import { AssignFacilityRoleDto } from &#x27;./dto/assign-facility-role.dto&#x27;;
+import { GetUnassignedUsersResponse } from &#x27;./response/get-unassigned-users.response&#x27;;
+import { UnassignFacilityRoleDto } from &#x27;./dto/unassign-facility-role.dto&#x27;;
+import { HttpLanguageCacheInterceptor } from &#x27;src/common/interceptors/http-language-cache.interceptor&#x27;;
+import { BigIntTransformerInterceptor } from &#x27;src/common/interceptors/bigInt-transformer.interceptor&#x27;;
+import { NameAndIdResponse } from &#x27;src/common/responses/id-and-name.response&#x27;;
+import { CacheInterceptor } from &#x27;@nestjs/cache-manager&#x27;;
+
+@ApiTags(&#x27;Facility role&#x27;)
+@Controller(&#x27;facility-roles&#x27;)
+export class FacilityRoleController {
+  constructor(private readonly facilityRoleService: FacilityRoleService) {}
+
+  @JwtAuth([RoleDecoratorEnum.SYSADMIN])
+  @Permissions([PermissionEnum.DISPLAY_ROLES])
+  @ApiOkResponse({ type: PaginationRoles })
+  @Get()
+  @UseInterceptors(HttpLanguageCacheInterceptor, BigIntTransformerInterceptor)
+  findAll(@Query() fetchFaciltiyRoleDto: FetchFaciltiyRoleDto): Promise&lt;PaginationRoles&gt; {
+    return this.facilityRoleService.SearchRoleByName(fetchFaciltiyRoleDto);
+  }
+
+  @JwtAuth([RoleDecoratorEnum.SYSADMIN])
+  @Serialize(FacilityRoleResponse)
+  @ApiCreatedResponse({ type: FacilityRoleResponse, description: &#x27;isActive default is true&#x27; })
+  @Post()
+  create(@Body() createFacilityRoleDto: CreateFacilityRoleDto) {
+    return this.facilityRoleService.create(createFacilityRoleDto);
+  }
+
+  @JwtAuth([RoleDecoratorEnum.SYSADMIN])
+  @Permissions([PermissionEnum.DISPLAY_ROLES])
+  @ApiOkResponse({ type: [NameAndIdResponse] })
+  @Get(&#x27;names-only&#x27;)
+  @UseInterceptors(CacheInterceptor, BigIntTransformerInterceptor)
+  fetchRolesNames(): Promise&lt;NameAndIdResponse[]&gt; {
+    return this.facilityRoleService.fetchRolesNames();
+  }
+
+  //assign role to worker You can not assign roles to patient
+  @JwtAuth([RoleDecoratorEnum.SYSADMIN])
+  @Permissions([PermissionEnum.ASSIGN_ROLES])
+  @ApiResponse({ status: 409, description: &#x27;User not found!&#x27; })
+  @ApiResponse({ status: 404, description: &#x27;You can not assign roles to patient!&#x27; })
+  @Patch(&#x27;assign/&#x27;)
+  assignRole(@User() user: UserPlayloadResponse, @Body() assignFacilityRoleDto: AssignFacilityRoleDto) {
+    return this.facilityRoleService.assignRole(user, assignFacilityRoleDto);
+  }
+
+  @JwtAuth([RoleDecoratorEnum.SYSADMIN])
+  @Permissions([PermissionEnum.UNASSIGN_ROLES])
+  @ApiResponse({ status: 403, description: &#x27;you can only unassign custom roles!&#x27; })
+  @ApiResponse({ status: 409, description: &#x27;User does not have that role!&#x27; })
+  @Patch(&#x27;unassign/&#x27;)
+  unassignRole(@Body() unassignFacilityRoleDto: UnassignFacilityRoleDto) {
+    return this.facilityRoleService.unassignRole(unassignFacilityRoleDto);
+  }
+
+  @JwtAuth([RoleDecoratorEnum.SYSADMIN])
+  @Permissions([PermissionEnum.ASSIGN_ROLES])
+  @ApiResponse({ status: 200, type: GetUnassignedUsersResponse, isArray: true })
+  @ApiResponse({ status: 404, description: &#x27;no users found!&#x27; })
+  @Get(&#x27;users/unassigned/&#x27;)
+  @UseInterceptors(HttpLanguageCacheInterceptor, BigIntTransformerInterceptor)
+  getUnAssignedUsers() {
+    return this.facilityRoleService.getUnAssignedUsers();
+  }
+
+  @JwtAuth([RoleDecoratorEnum.SYSADMIN])
+  @Permissions([PermissionEnum.ASSIGN_ROLES])
+  @ApiResponse({ status: 200, type: GetUsersByRoleResponse, isArray: true })
+  @ApiResponse({ status: 404, description: &#x27;no users with that role found!&#x27; })
+  @Get(&#x27;users/:id&#x27;)
+  @UseInterceptors(HttpLanguageCacheInterceptor, BigIntTransformerInterceptor)
+  getUsersByRole(@Param(&#x27;id&#x27;, ParseIntPipe) id: number) {
+    return this.facilityRoleService.getUsersByRole(id);
+  }
+
+  @JwtAuth([RoleDecoratorEnum.SYSADMIN])
+  @ApiOkResponse({ type: FullFacilityRoleResponse })
+  @Get(&#x27;:id&#x27;)
+  findOne(@HeaderLanguage() language: LanguageEnum, @Param(&#x27;id&#x27;, ParseIntPipe) id: number): Promise&lt;FullFacilityRoleResponse&gt; {
+    return this.facilityRoleService.fetchFacilityRole(language, id);
+  }
+
+  @JwtAuth([RoleDecoratorEnum.SYSADMIN])
+  @Patch(&#x27;:id&#x27;)
+  @ApiOkResponse({ type: FullFacilityRoleResponse })
+  updateRolePermissions(
+    @HeaderLanguage() language: LanguageEnum,
+    @Param(&#x27;id&#x27;, ParseIntPipe) id: number,
+    @Body() updateFacilityRoleDto: UpdateFacilityRoleDto,
+    @User() user: UserPlayloadResponse,
+  ): Promise&lt;FullFacilityRoleResponse&gt; {
+    return this.facilityRoleService.updateRole(language, id, updateFacilityRoleDto, user);
+  }
+
+  @JwtAuth([RoleDecoratorEnum.SYSADMIN])
+  @Delete(&#x27;:id&#x27;)
+  @ApiOkResponse({ type: FacilityRoleResponse })
+  @ApiResponse({ status: 404, description: &#x27;Facility role not found!&#x27; })
+  remove(@Param(&#x27;id&#x27;, ParseIntPipe) id: number, @User() user: UserPlayloadResponse) {
+    return this.facilityRoleService.removeRoleById(+id, user);
+  }
+
+  // @Serialize(FullFacilityRoleResponse)
+  // @ApiCreatedResponse({ type: FullFacilityRoleResponse, isArray: true })
+  // @Patch(&#x27;:id&#x27;)
+  // update(@Param(&#x27;id&#x27;,ParseIntPipe) id: number, @Body() updateFacilityRoleDto: UpdateFacilityRoleDto) {
+  //   return this.facilityRoleService.updateRole(id, updateFacilityRoleDto);
+  // }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'controller';
+            var COMPODOC_CURRENT_PAGE_URL = 'FacilityRoleController.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

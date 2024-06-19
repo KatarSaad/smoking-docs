@@ -1,0 +1,4341 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>smoking-halim documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">smoking-halim documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >NotificationService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/modules/notification/notification.service.ts</code>
+        </p>
+
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#emitter" >emitter</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#acceptNotification" >acceptNotification</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#bulkLaunchNotificationCron" >bulkLaunchNotificationCron</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#cancelNotificationCron" >cancelNotificationCron</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#createAdminNotification" >createAdminNotification</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#createNotification" >createNotification</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#createNotificationPackage" >createNotificationPackage</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#deleteNotification" >deleteNotification</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#deleteNotificationPackage" >deleteNotificationPackage</a>
+                            </li>
+                            <li>
+                                <a href="#emit" >emit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getListNotificationPackages" >getListNotificationPackages</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getListNotifications" >getListNotifications</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getListNotificationsAdmin" >getListNotificationsAdmin</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getListNotificationsAdminPagination" >getListNotificationsAdminPagination</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getMyNotificationsOffset" >getMyNotificationsOffset</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getNotifHistory" >getNotifHistory</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getNotificationById" >getNotificationById</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getNotificationByIdAdmin" >getNotificationByIdAdmin</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getUnreadNotifs" >getUnreadNotifs</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#launchNotificationCron" >launchNotificationCron</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#readNotification" >readNotification</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#rejectNotification" >rejectNotification</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#sendNotifsAsync" >sendNotifsAsync</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#sendPushNotif" >sendPushNotif</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#updateNotification" >updateNotification</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#getEmitter" >getEmitter</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(prismaService: <a href="../injectables/PrismaService.html" target="_self">PrismaService</a>, fileService: <a href="../injectables/FileService.html" target="_self">FileService</a>, redisService: <a href="../injectables/RedisService.html" target="_self">RedisService</a>, commonService: <a href="../injectables/CommonService.html" target="_self">CommonService</a>, notificationHubService: <a href="../injectables/NotificationHubService.html" target="_self">NotificationHubService</a>, settingService: <a href="../injectables/SettingService.html" target="_self">SettingService</a>, usersService: <a href="../injectables/UsersService.html" target="_self">UsersService</a>, notifQueue: Queue<any | any | string>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/modules/notification/notification.service.ts:32</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>prismaService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PrismaService.html" target="_self" >PrismaService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>fileService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/FileService.html" target="_self" >FileService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>redisService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/RedisService.html" target="_self" >RedisService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>commonService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CommonService.html" target="_self" >CommonService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>notificationHubService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/NotificationHubService.html" target="_self" >NotificationHubService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>settingService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SettingService.html" target="_self" >SettingService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>usersService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UsersService.html" target="_self" >UsersService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>notifQueue</td>
+                                                  
+                                                        <td>
+                                                                    <code>Queue&lt;any | any | string&gt;</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="acceptNotification"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>acceptNotification</b></span>
+                        <a href="#acceptNotification"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>acceptNotification(language: LanguageEnum, id, user?: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="959"
+                                    class="link-to-prism">src/modules/notification/notification.service.ts:959</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>language</td>
+                                            <td>
+                                                        <code>LanguageEnum</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;NotificationResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="bulkLaunchNotificationCron"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>bulkLaunchNotificationCron</b></span>
+                        <a href="#bulkLaunchNotificationCron"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>bulkLaunchNotificationCron(jobs: literal type[])</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="60"
+                                    class="link-to-prism">src/modules/notification/notification.service.ts:60</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>jobs</td>
+                                            <td>
+                                                        <code>literal type[]</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;Job[]&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cancelNotificationCron"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>cancelNotificationCron</b></span>
+                        <a href="#cancelNotificationCron"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>cancelNotificationCron(jobIdentifier: string[])</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="65"
+                                    class="link-to-prism">src/modules/notification/notification.service.ts:65</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>jobIdentifier</td>
+                                            <td>
+                                                        <code>string[]</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createAdminNotification"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>createAdminNotification</b></span>
+                        <a href="#createAdminNotification"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createAdminNotification(user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>, createNotificationDto: <a href="../classes/CreateNotificationDto.html" target="_self">CreateNotificationDto</a>, recipientId, subjectId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, settingOptionName: <a href="../interfaces/SettingOption.html" target="_self">SettingOptionNameEnum | null</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="320"
+                                    class="link-to-prism">src/modules/notification/notification.service.ts:320</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>createNotificationDto</td>
+                                            <td>
+                                                            <code><a href="../classes/CreateNotificationDto.html" target="_self" >CreateNotificationDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>recipientId</td>
+                                            <td>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>subjectId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>settingOptionName</td>
+                                            <td>
+                                                            <code><a href="../interfaces/SettingOption.html" target="_self" >SettingOptionNameEnum | null</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createNotification"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>createNotification</b></span>
+                        <a href="#createNotification"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createNotification(language: LanguageEnum, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>, createNotificationDto: <a href="../classes/CreateNotificationDto.html" target="_self">CreateNotificationDto</a>, file: Express.Multer.File)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="74"
+                                    class="link-to-prism">src/modules/notification/notification.service.ts:74</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>language</td>
+                                            <td>
+                                                        <code>LanguageEnum</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>createNotificationDto</td>
+                                            <td>
+                                                            <code><a href="../classes/CreateNotificationDto.html" target="_self" >CreateNotificationDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>file</td>
+                                            <td>
+                                                        <code>Express.Multer.File</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;NotificationResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createNotificationPackage"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>createNotificationPackage</b></span>
+                        <a href="#createNotificationPackage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createNotificationPackage(createNotificationPackageDto: <a href="../classes/CreateNotificationPackageDto.html" target="_self">CreateNotificationPackageDto</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="1618"
+                                    class="link-to-prism">src/modules/notification/notification.service.ts:1618</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>createNotificationPackageDto</td>
+                                            <td>
+                                                            <code><a href="../classes/CreateNotificationPackageDto.html" target="_self" >CreateNotificationPackageDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;NotificationPackageResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteNotification"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>deleteNotification</b></span>
+                        <a href="#deleteNotification"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deleteNotification(language: LanguageEnum, id)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="1270"
+                                    class="link-to-prism">src/modules/notification/notification.service.ts:1270</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>language</td>
+                                            <td>
+                                                        <code>LanguageEnum</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;NotificationResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteNotificationPackage"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>deleteNotificationPackage</b></span>
+                        <a href="#deleteNotificationPackage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deleteNotificationPackage(id)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="1650"
+                                    class="link-to-prism">src/modules/notification/notification.service.ts:1650</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;NotificationPackageResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="emit"></a>
+                    <span class="name">
+                        <span ><b>emit</b></span>
+                        <a href="#emit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>emit(event: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, data: T, id?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="47"
+                                    class="link-to-prism">src/modules/notification/notification.service.ts:47</a></div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Type parameters :</b>
+                            <ul class="type-parameters">
+                                    <li>T</li>
+                            </ul>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                        <code>T</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getListNotificationPackages"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getListNotificationPackages</b></span>
+                        <a href="#getListNotificationPackages"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getListNotificationPackages()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="1678"
+                                    class="link-to-prism">src/modules/notification/notification.service.ts:1678</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;NotificationPackageResponse[]&gt;</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getListNotifications"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getListNotifications</b></span>
+                        <a href="#getListNotifications"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getListNotifications(language: LanguageEnum, user: <a href="../interfaces/Response.html" target="_self">UserPlayloadResponse | literal type</a>, where: Prisma.NotificationWhereInput, paginationDto: <a href="../classes/SearchWithCursorPaginationDto.html" target="_self">SearchWithCursorPaginationDto</a>, isPatient?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="398"
+                                    class="link-to-prism">src/modules/notification/notification.service.ts:398</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>language</td>
+                                            <td>
+                                                        <code>LanguageEnum</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Response.html" target="_self" >UserPlayloadResponse | literal type</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>where</td>
+                                            <td>
+                                                        <code>Prisma.NotificationWhereInput</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>paginationDto</td>
+                                            <td>
+                                                            <code><a href="../classes/SearchWithCursorPaginationDto.html" target="_self" >SearchWithCursorPaginationDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>isPatient</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;PaginationCursorNotificationsResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getListNotificationsAdmin"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getListNotificationsAdmin</b></span>
+                        <a href="#getListNotificationsAdmin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getListNotificationsAdmin(where: Prisma.NotificationWhereInput)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="661"
+                                    class="link-to-prism">src/modules/notification/notification.service.ts:661</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>where</td>
+                                            <td>
+                                                        <code>Prisma.NotificationWhereInput</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;NotificationResponseAdmin[]&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getListNotificationsAdminPagination"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getListNotificationsAdminPagination</b></span>
+                        <a href="#getListNotificationsAdminPagination"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getListNotificationsAdminPagination(where: Prisma.NotificationWhereInput, paginationDto: <a href="../classes/GetNotificationsDto.html" target="_self">GetNotificationsDto</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="591"
+                                    class="link-to-prism">src/modules/notification/notification.service.ts:591</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>where</td>
+                                            <td>
+                                                        <code>Prisma.NotificationWhereInput</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>paginationDto</td>
+                                            <td>
+                                                            <code><a href="../classes/GetNotificationsDto.html" target="_self" >GetNotificationsDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;PaginationNotificationsAdmin&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getMyNotificationsOffset"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getMyNotificationsOffset</b></span>
+                        <a href="#getMyNotificationsOffset"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getMyNotificationsOffset(language: LanguageEnum, user: <a href="../interfaces/Response.html" target="_self">UserPlayloadResponse | literal type</a>, where: Prisma.NotificationWhereInput, getNotificationsDto: <a href="../classes/GetNotificationsDto.html" target="_self">GetNotificationsDto</a>, isPatient?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="498"
+                                    class="link-to-prism">src/modules/notification/notification.service.ts:498</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>language</td>
+                                            <td>
+                                                        <code>LanguageEnum</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Response.html" target="_self" >UserPlayloadResponse | literal type</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>where</td>
+                                            <td>
+                                                        <code>Prisma.NotificationWhereInput</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>getNotificationsDto</td>
+                                            <td>
+                                                            <code><a href="../classes/GetNotificationsDto.html" target="_self" >GetNotificationsDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>isPatient</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/PaginationNotifications.html" target="_self" >Promise&lt;PaginationNotifications&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getNotifHistory"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getNotifHistory</b></span>
+                        <a href="#getNotifHistory"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getNotifHistory(language: LanguageEnum, id)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="1424"
+                                    class="link-to-prism">src/modules/notification/notification.service.ts:1424</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>language</td>
+                                            <td>
+                                                        <code>LanguageEnum</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;NotificationHistoryResponse[]&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getNotificationById"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getNotificationById</b></span>
+                        <a href="#getNotificationById"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getNotificationById(language: LanguageEnum, id)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="1280"
+                                    class="link-to-prism">src/modules/notification/notification.service.ts:1280</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>language</td>
+                                            <td>
+                                                        <code>LanguageEnum</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;NotificationResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getNotificationByIdAdmin"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getNotificationByIdAdmin</b></span>
+                        <a href="#getNotificationByIdAdmin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getNotificationByIdAdmin(id)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="1342"
+                                    class="link-to-prism">src/modules/notification/notification.service.ts:1342</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;NotificationResponseAdmin&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getUnreadNotifs"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getUnreadNotifs</b></span>
+                        <a href="#getUnreadNotifs"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getUnreadNotifs(user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="1564"
+                                    class="link-to-prism">src/modules/notification/notification.service.ts:1564</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;number&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="launchNotificationCron"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>launchNotificationCron</b></span>
+                        <a href="#launchNotificationCron"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>launchNotificationCron(jobName: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, data: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, options: JobsOptions)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="55"
+                                    class="link-to-prism">src/modules/notification/notification.service.ts:55</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>jobName</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>options</td>
+                                            <td>
+                                                        <code>JobsOptions</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;string&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="readNotification"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>readNotification</b></span>
+                        <a href="#readNotification"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>readNotification(id, user: <a href="../interfaces/Response.html" target="_self">UserPlayloadResponse | literal type</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="1510"
+                                    class="link-to-prism">src/modules/notification/notification.service.ts:1510</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../interfaces/Response.html" target="_self" >UserPlayloadResponse | literal type</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="rejectNotification"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>rejectNotification</b></span>
+                        <a href="#rejectNotification"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>rejectNotification(language: LanguageEnum, id, user?: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="1148"
+                                    class="link-to-prism">src/modules/notification/notification.service.ts:1148</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>language</td>
+                                            <td>
+                                                        <code>LanguageEnum</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;NotificationResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sendNotifsAsync"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>sendNotifsAsync</b></span>
+                        <a href="#sendNotifsAsync"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>sendNotifsAsync(users: literal type[], notification: <a href="../classes/NotificationResponse.html" target="_self">NotificationResponse</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="1403"
+                                    class="link-to-prism">src/modules/notification/notification.service.ts:1403</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>users</td>
+                                            <td>
+                                                        <code>literal type[]</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>notification</td>
+                                            <td>
+                                                            <code><a href="../classes/NotificationResponse.html" target="_self" >NotificationResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sendPushNotif"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>sendPushNotif</b></span>
+                        <a href="#sendPushNotif"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>sendPushNotif(users: literal type[], settingOptionName: <a href="../interfaces/SettingOption.html" target="_self">SettingOptionNameEnum</a>, pushNotificationMesage?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="1708"
+                                    class="link-to-prism">src/modules/notification/notification.service.ts:1708</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>users</td>
+                                            <td>
+                                                        <code>literal type[]</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>settingOptionName</td>
+                                            <td>
+                                                            <code><a href="../interfaces/SettingOption.html" target="_self" >SettingOptionNameEnum</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>pushNotificationMesage</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateNotification"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>updateNotification</b></span>
+                        <a href="#updateNotification"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateNotification(language: LanguageEnum, updateNotificationDto: <a href="../classes/UpdateNotificationDto.html" target="_self">UpdateNotificationDto</a>, id, file: Express.Multer.File, status?: NotificationStatusEnum, user?: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="720"
+                                    class="link-to-prism">src/modules/notification/notification.service.ts:720</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>language</td>
+                                            <td>
+                                                        <code>LanguageEnum</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>updateNotificationDto</td>
+                                            <td>
+                                                            <code><a href="../classes/UpdateNotificationDto.html" target="_self" >UpdateNotificationDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>file</td>
+                                            <td>
+                                                        <code>Express.Multer.File</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>status</td>
+                                            <td>
+                                                        <code>NotificationStatusEnum</code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;NotificationResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="emitter"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>emitter</b></span>
+                        <a href="#emitter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/NotificationEventType.html" target="_self" >Subject&lt;NotificationEventType&gt;</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Subject()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/modules/notification/notification.service.ts:32</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-accessors">
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getEmitter"></a>
+                        <span class="name"><b>getEmitter</b><a href="#getEmitter"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>getEmitter()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/modules/notification/notification.service.ts:51</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+</section>
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Inject, Injectable, NotFoundException, forwardRef } from &#x27;@nestjs/common&#x27;;
+import { LanguageEnum, NotificationStatusEnum, Prisma, SettingOptionNameEnum } from &#x27;@prisma/client&#x27;;
+import { Subject } from &#x27;rxjs&#x27;;
+import { PrismaService } from &#x27;src/common/services/prisma.service&#x27;;
+import { UserPlayloadResponse } from &#x27;../patients/response/user-playload.response&#x27;;
+import { CreateNotificationDto } from &#x27;./dto/create-notification.dto&#x27;;
+import { FileService } from &#x27;src/common/services/file.service&#x27;;
+import { NotificationResponse, NotificationResponseAdmin } from &#x27;./response/notification.response&#x27;;
+import { UpdateNotificationDto } from &#x27;./dto/update-notification.dto&#x27;;
+import { MultiLanguageException } from &#x27;src/common/exception-filters/multi-language.exception&#x27;;
+import { LanguageErrorEnum } from &#x27;src/common/enums/language-error.enum&#x27;;
+import { RedisService } from &#x27;src/common/services/redis.service&#x27;;
+import { InjectQueue } from &#x27;@nestjs/bullmq&#x27;;
+import { QueueEnum } from &#x27;src/common/enums/queues.enum&#x27;;
+import { Job, JobsOptions, Queue } from &#x27;bullmq&#x27;;
+import { CommonService } from &#x27;src/common/services/common.service&#x27;;
+import { NotificationHubService } from &#x27;./notification-hub.service&#x27;;
+import { RoleEnum } from &#x27;src/common/enums/role.enum&#x27;;
+import { NotificationHistoryResponse } from &#x27;./response/notification-history.response&#x27;;
+import { PaginationNotifications, PaginationNotificationsAdmin } from &#x27;src/common/responses/Paggination-data.response&#x27;;
+import { GetNotificationsDto } from &#x27;./dto/notification-pagination.dto&#x27;;
+import { CreateNotificationPackageDto } from &#x27;./dto/create-notification-package.dto&#x27;;
+import { NotificationPackageResponse } from &#x27;./response/notification-package.response&#x27;;
+import { NotificationEventType } from &#x27;src/modules/notification/types/notification-event.type&#x27;;
+import { SettingService } from &#x27;src/modules/settings/settings.service&#x27;;
+import { PaginationCursorNotificationsResponse } from &#x27;src/common/responses/paggination-cursor.response&#x27;;
+import { SearchWithCursorPaginationDto } from &#x27;src/common/dto/search-with-cursor-pagination.dto&#x27;;
+import { UsersService } from &#x27;src/modules/users/users.service&#x27;;
+
+@Injectable()
+export class NotificationService {
+  private emitter: Subject&lt;NotificationEventType&gt; &#x3D; new Subject();
+
+  constructor(
+    private prismaService: PrismaService,
+    private fileService: FileService,
+    private redisService: RedisService,
+    private commonService: CommonService,
+    private notificationHubService: NotificationHubService,
+    private settingService: SettingService,
+    @Inject(forwardRef(() &#x3D;&gt; UsersService))
+    private usersService: UsersService,
+    @InjectQueue(QueueEnum.NOTIFICATION_QUEUE)
+    private notifQueue: Queue&lt;any, any, string&gt;,
+  ) {}
+
+  emit&lt;T&gt;(event: string, data: T, id?: string) {
+    this.emitter.next({ event, data, id });
+  }
+
+  get getEmitter(): Subject&lt;NotificationEventType&gt; {
+    return this.emitter;
+  }
+
+  async launchNotificationCron(jobName: string, data: any, options: JobsOptions): Promise&lt;string&gt; {
+    const job &#x3D; await this.notifQueue.add(jobName, data, options);
+    return job.id;
+  }
+
+  async bulkLaunchNotificationCron(jobs: { name: string; data: any; options: JobsOptions }[]): Promise&lt;Job[]&gt; {
+    const createdJobs &#x3D; await this.notifQueue.addBulk(jobs);
+    return createdJobs;
+  }
+
+  async cancelNotificationCron(jobIdentifier: string[]) {
+    const jobs &#x3D; await this.notifQueue.getJobs();
+    jobs.forEach((job) &#x3D;&gt; {
+      if (job.data.identifier &amp;&amp; jobIdentifier.includes(job.data.identifier)) {
+        job.remove();
+      }
+    });
+  }
+
+  async createNotification(
+    language: LanguageEnum,
+    user: UserPlayloadResponse,
+    createNotificationDto: CreateNotificationDto,
+    file: Express.Multer.File,
+  ): Promise&lt;NotificationResponse&gt; {
+    try {
+      let imageLink &#x3D; null;
+      const createAdminNotificationDto: CreateNotificationDto &#x3D; {
+        messageAr: &#x27;مراجعة الإشعارات الجديدة&#x27;,
+        messageEn: &#x27;New notification review&#x27;,
+        titleAr: &#x27;مراجعة الإشعارات الجديدة&#x27;,
+        titleEn: &#x27;New notification review&#x27;,
+        deliveryDate: new Date(),
+        notificationType: &#x27;Notification&#x27;,
+        isCritical: false,
+      };
+
+      const superAdminId &#x3D; await this.usersService.fetchSuperadminId();
+
+      if (file) imageLink &#x3D; await this.fileService.uploadImage(file);
+      const data &#x3D; {
+        sender: {
+          connect: {
+            id: user.id,
+          },
+        },
+        imageLink: imageLink,
+        isCritical: createNotificationDto.isCritical,
+        deliveryDate: createNotificationDto.deliveryDate,
+        notificationType: createNotificationDto.notificationType,
+        notificationTranslation: {
+          create: [
+            {
+              title: createNotificationDto.titleEn,
+              body: createNotificationDto.messageEn,
+              language: {
+                connect: {
+                  code: LanguageEnum.ENGLISH,
+                },
+              },
+            },
+            {
+              title: createNotificationDto.titleAr,
+              body: createNotificationDto.messageAr,
+              language: {
+                connect: {
+                  code: LanguageEnum.ARABIC,
+                },
+              },
+            },
+          ],
+        },
+        targetGroupIds: {
+          connect: createNotificationDto.targetGroupIds,
+        },
+      };
+      if (createNotificationDto.notificationPackageId) {
+        data[&#x27;NotificationPackage&#x27;] &#x3D; {
+          connect: {
+            id: createNotificationDto.notificationPackageId,
+          },
+        };
+        data[&#x27;daysAfterQuitting&#x27;] &#x3D; createNotificationDto.daysAfterQuitting;
+      }
+      const notification &#x3D; await this.prismaService.notification.create({
+        data,
+        select: {
+          id: true,
+          sender: {
+            select: {
+              id: true,
+            },
+          },
+          imageLink: true,
+          isCritical: true,
+          deliveryDate: true,
+          notificationType: true,
+          status: true,
+          notificationTranslation: {
+            where: {
+              language: {
+                code: language,
+              },
+            },
+            select: {
+              title: true,
+              body: true,
+            },
+          },
+          targetGroupIds: {
+            select: {
+              id: true,
+              name: true,
+            },
+          },
+          recipientId: true,
+          notificationPackageId: true,
+          daysAfterQuitting: true,
+        },
+      });
+      if (!notification.notificationType.includes(&#x27;automated&#x27;)) {
+        const admins &#x3D; await this.prismaService.admin.findFirst({
+          where: {
+            role: {
+              name: RoleEnum.SUPERADMIN,
+            },
+          },
+          select: {
+            userId: true,
+            id: true,
+          },
+        });
+        this.prismaService.notification
+          .create({
+            data: {
+              senderId: user.id,
+              imageLink: imageLink,
+              isCritical: notification.isCritical,
+              deliveryDate: notification.deliveryDate,
+              notificationType: notification.notificationType,
+              status: &#x27;UPDATED&#x27;,
+              subjectId: notification.id,
+              recipientId: admins.userId,
+              notificationTranslation: {
+                create: [
+                  {
+                    title: &#x27;a notification has been created&#x27;,
+                    body: &#x27;a notification has been created&#x27;,
+                    language: {
+                      connect: {
+                        code: LanguageEnum.ENGLISH,
+                      },
+                    },
+                  },
+                  {
+                    title: &#x27;تم تحديث إشعار&#x27;,
+                    body: &#x27;تم تحديث إشعار&#x27;,
+                    language: {
+                      connect: {
+                        code: LanguageEnum.ARABIC,
+                      },
+                    },
+                  },
+                ],
+              },
+            },
+            select: {
+              id: true,
+              sender: {
+                select: {
+                  id: true,
+                },
+              },
+              subjectId: true,
+              imageLink: true,
+              isCritical: true,
+              deliveryDate: true,
+              notificationType: true,
+              status: true,
+              recipientId: true,
+              notificationTranslation: {
+                where: {
+                  language: {
+                    code: language,
+                  },
+                },
+                select: {
+                  title: true,
+                  body: true,
+                  language: {
+                    select: {
+                      code: true,
+                    },
+                  },
+                },
+              },
+            },
+          })
+          .then(async (notif) &#x3D;&gt; {
+            await this.prismaService.notificationSeen.create({
+              data: {
+                notificationId: notif.id,
+              },
+              select: {
+                id: true,
+              },
+            });
+            this.sendNotifsAsync([{ id: admins.userId }], {
+              id: notif.id,
+              body: notif.notificationTranslation[0].body,
+              title: notif.notificationTranslation[0].title,
+              deliveryDate: notif.deliveryDate,
+              targetGroupFilters: [],
+              imageLink: notif.imageLink,
+              isCritical: notif.isCritical,
+              senderId: notif.sender.id,
+              notificationType: &#x27;Created&#x27;,
+              status: notification.status,
+              recipientId: notification.recipientId,
+              subjectId: notification.id,
+            });
+          });
+
+        await this.prismaService.notificationProcessHistory.create({
+          data: {
+            adminId: user.adminId,
+            notificationId: notification.id,
+            type: &#x27;SUBMITTED&#x27;,
+            issuedAt: new Date(),
+          },
+        });
+      }
+      await this.prismaService.notificationSeen.create({
+        data: {
+          notificationId: notification.id,
+        },
+        // select: {
+        //   id: true,
+        // },
+      });
+
+      this.createAdminNotification(user, createAdminNotificationDto, BigInt(superAdminId), Number(notification.id), SettingOptionNameEnum.NEW_NOTIFICATION_REVIEW_ALERT);
+
+      return {
+        id: notification.id,
+        body: notification.notificationTranslation[0].body,
+        title: notification.notificationTranslation[0].title,
+        deliveryDate: notification.deliveryDate,
+        targetGroupFilters: notification.targetGroupIds,
+        imageLink: notification.imageLink,
+        isCritical: notification.isCritical,
+        senderId: notification.sender.id,
+        notificationType: notification.notificationType,
+        status: notification.status,
+        recipientId: notification.recipientId,
+        notificationPackageId: notification.notificationPackageId,
+        daysAfterQuitting: notification.daysAfterQuitting,
+      };
+    } catch (error) {
+      console.error(error);
+      throw new MultiLanguageException(LanguageErrorEnum.ERROR_CREATING_NOTIFICATION);
+    }
+  }
+
+  //this notification doesnt need approving since its going to be sent to the admin
+  async createAdminNotification(
+    user: UserPlayloadResponse,
+    createNotificationDto: CreateNotificationDto,
+    recipientId: bigint,
+    subjectId: number,
+    settingOptionName: SettingOptionNameEnum | null,
+  ): Promise&lt;boolean&gt; {
+    const { deliveryDate, isCritical, messageAr, messageEn, notificationType, titleAr, titleEn } &#x3D; createNotificationDto;
+    const senderId &#x3D; user.id;
+
+    //if notif has settings in the application
+    if (settingOptionName) {
+      const isPushNotifEnabled &#x3D; await this.settingService.getSettingOptionOfUserByName(recipientId, settingOptionName);
+      if (!isPushNotifEnabled &amp;&amp; !isPushNotifEnabled?.isOn) return false;
+    }
+
+    const notification &#x3D; await this.prismaService.notification.create({
+      data: {
+        recipientId,
+        senderId,
+        notificationTranslation: {
+          create: [
+            {
+              language: {
+                connect: {
+                  code: LanguageEnum.ENGLISH,
+                },
+              },
+              body: messageEn,
+              title: titleEn,
+            },
+            {
+              language: {
+                connect: {
+                  code: LanguageEnum.ARABIC,
+                },
+              },
+              body: messageAr,
+              title: titleAr,
+            },
+          ],
+        },
+        deliveryDate,
+        notificationType,
+        isCritical,
+        subjectId,
+      },
+      select: { id: true },
+    });
+
+    await this.prismaService.notificationSeen.create({
+      data: {
+        notificationId: notification.id,
+      },
+      select: {
+        id: true,
+      },
+    });
+
+    //real time
+    this.sendNotifsAsync([{ id: recipientId }], {
+      id: notification.id,
+      body: messageEn,
+      title: titleEn,
+      deliveryDate,
+      targetGroupFilters: [],
+      imageLink: null,
+      isCritical: true,
+      senderId: BigInt(senderId),
+      notificationType,
+      status: NotificationStatusEnum.SENT,
+      recipientId: recipientId,
+      subjectId: BigInt(subjectId),
+    });
+
+    return true;
+  }
+
+  async getListNotifications(
+    language: LanguageEnum,
+    user: UserPlayloadResponse | { id: number },
+    where: Prisma.NotificationWhereInput,
+    paginationDto: SearchWithCursorPaginationDto,
+    isPatient?: boolean,
+  ): Promise&lt;PaginationCursorNotificationsResponse&gt; {
+    const { oldCursorId, sizePerPage } &#x3D; paginationDto;
+    const [notifications, paginationData] &#x3D; await this.prismaService
+      .extendPagination()
+      .notification.paginate({
+        where,
+        select: {
+          id: true,
+          sender: {
+            select: {
+              id: true,
+              personalInformation: {
+                select: {
+                  firstName: true,
+                  lastName: true,
+                },
+              },
+            },
+          },
+          imageLink: true,
+          isCritical: true,
+          deliveryDate: true,
+          notificationType: true,
+          status: true,
+          notificationTranslation: {
+            where: {
+              language: {
+                code: language,
+              },
+            },
+            select: {
+              title: true,
+              body: true,
+            },
+          },
+          targetGroupIds: {
+            select: {
+              id: true,
+              name: true,
+            },
+          },
+          recipientId: true,
+          subjectId: true,
+          NotificationSeen: {
+            include: {
+              seenBy: true,
+            },
+          },
+          daysAfterQuitting: true,
+        },
+        orderBy: {
+          createdAt: &#x27;desc&#x27;,
+        },
+      })
+      .withCursor({
+        limit: sizePerPage,
+        after: oldCursorId ? &#x60;${oldCursorId}&#x60; : null,
+        getCursor({ id }) {
+          return id.toString();
+        },
+      });
+
+    const { hasNextPage, hasPreviousPage, endCursor, startCursor } &#x3D; paginationData;
+
+    return {
+      data: notifications.map((notification) &#x3D;&gt; {
+        let isRead &#x3D; false;
+        if (notification.NotificationSeen) isRead &#x3D; !!notification.NotificationSeen.seenBy.find((u) &#x3D;&gt; Number(u.id) &#x3D;&#x3D; user.id);
+        if (isPatient) this.readNotification(notification.id, user);
+        return {
+          id: notification.id,
+          body: notification.notificationTranslation[0].body,
+          title: notification.notificationTranslation[0].title,
+          deliveryDate: notification.deliveryDate,
+          targetGroupFilters: notification.targetGroupIds,
+          imageLink: notification.imageLink,
+          isCritical: notification.isCritical,
+          senderId: notification.sender.id,
+          notificationType: notification.notificationType,
+          status: notification.status,
+          recipientId: notification.recipientId,
+          subjectId: notification.subjectId,
+          seen: isRead,
+          senderFullName: &#x60;${notification.sender.personalInformation.firstName} ${notification.sender.personalInformation.lastName}&#x60;,
+          daysAfterQuitting: notification.daysAfterQuitting,
+        };
+      }),
+      hasNextPage,
+      hasPreviousPage,
+      endCursor: Number(endCursor),
+      startCursor: Number(startCursor),
+    };
+  }
+
+  async getMyNotificationsOffset(
+    language: LanguageEnum,
+    user: UserPlayloadResponse | { id: number },
+    where: Prisma.NotificationWhereInput,
+    getNotificationsDto: GetNotificationsDto,
+    isPatient?: boolean,
+  ): Promise&lt;PaginationNotifications&gt; {
+    const { currentPage, sizePerPage } &#x3D; getNotificationsDto;
+    const [notifications, paginationData] &#x3D; await this.prismaService
+      .extendPagination()
+      .notification.paginate({
+        where,
+        select: {
+          id: true,
+          sender: {
+            select: {
+              id: true,
+              personalInformation: {
+                select: {
+                  firstName: true,
+                  lastName: true,
+                },
+              },
+            },
+          },
+          imageLink: true,
+          isCritical: true,
+          deliveryDate: true,
+          notificationType: true,
+          status: true,
+          notificationTranslation: {
+            where: {
+              language: {
+                code: language,
+              },
+            },
+            select: {
+              title: true,
+              body: true,
+            },
+          },
+          targetGroupIds: {
+            select: {
+              id: true,
+              name: true,
+            },
+          },
+          recipientId: true,
+          subjectId: true,
+          NotificationSeen: {
+            include: {
+              seenBy: true,
+            },
+          },
+          daysAfterQuitting: true,
+        },
+        orderBy: {
+          createdAt: &#x27;desc&#x27;,
+        },
+      })
+      .withPages({
+        includePageCount: true,
+        page: currentPage,
+        limit: sizePerPage,
+      });
+
+    return {
+      data: notifications.map((notification) &#x3D;&gt; {
+        let isRead &#x3D; false;
+        if (notification.NotificationSeen) isRead &#x3D; !!notification.NotificationSeen.seenBy.find((u) &#x3D;&gt; Number(u.id) &#x3D;&#x3D; user.id);
+        if (isPatient) this.readNotification(notification.id, user);
+        return {
+          id: notification.id,
+          body: notification.notificationTranslation[0].body,
+          title: notification.notificationTranslation[0].title,
+          deliveryDate: notification.deliveryDate,
+          targetGroupFilters: notification.targetGroupIds,
+          imageLink: notification.imageLink,
+          isCritical: notification.isCritical,
+          senderId: notification.sender.id,
+          notificationType: notification.notificationType,
+          status: notification.status,
+          recipientId: notification.recipientId,
+          subjectId: notification.subjectId,
+          seen: isRead,
+          senderFullName: &#x60;${notification.sender.personalInformation.firstName} ${notification.sender.personalInformation.lastName}&#x60;,
+          daysAfterQuitting: notification.daysAfterQuitting,
+        };
+      }),
+      totalItems: paginationData.totalCount,
+    };
+  }
+
+  async getListNotificationsAdminPagination(where: Prisma.NotificationWhereInput, paginationDto: GetNotificationsDto): Promise&lt;PaginationNotificationsAdmin&gt; {
+    const { currentPage, sizePerPage } &#x3D; paginationDto;
+    const [notifications, pagiantionData] &#x3D; await this.prismaService
+      .extendPagination()
+      .notification.paginate({
+        where,
+        select: {
+          id: true,
+          sender: {
+            select: {
+              id: true,
+              personalInformation: {
+                select: {
+                  firstName: true,
+                  lastName: true,
+                },
+              },
+            },
+          },
+          imageLink: true,
+          isCritical: true,
+          deliveryDate: true,
+          notificationType: true,
+          status: true,
+          notificationTranslation: {
+            select: {
+              title: true,
+              body: true,
+              language: true,
+            },
+          },
+          targetGroupIds: {
+            select: {
+              id: true,
+              name: true,
+            },
+          },
+          recipientId: true,
+          subjectId: true,
+          daysAfterQuitting: true,
+        },
+        orderBy: { createdAt: &#x27;desc&#x27; },
+      })
+      .withPages({
+        includePageCount: true,
+        page: currentPage,
+        limit: sizePerPage,
+      });
+
+    const mutedNotifications &#x3D; notifications.map((notification) &#x3D;&gt; ({
+      id: notification.id,
+      bodyAr: notification.notificationTranslation.find((t) &#x3D;&gt; t.language.code &#x3D;&#x3D;&#x3D; LanguageEnum.ARABIC).body,
+      titleAr: notification.notificationTranslation.find((t) &#x3D;&gt; t.language.code &#x3D;&#x3D;&#x3D; LanguageEnum.ARABIC).title,
+      titleEn: notification.notificationTranslation.find((t) &#x3D;&gt; t.language.code &#x3D;&#x3D;&#x3D; LanguageEnum.ENGLISH).title,
+      bodyEn: notification.notificationTranslation.find((t) &#x3D;&gt; t.language.code &#x3D;&#x3D;&#x3D; LanguageEnum.ENGLISH).body,
+      deliveryDate: notification.deliveryDate,
+      targetGroupFilters: notification.targetGroupIds,
+      imageLink: notification.imageLink,
+      isCritical: notification.isCritical,
+      senderId: notification.sender.id,
+      notificationType: notification.notificationType,
+      status: notification.status,
+      recipientId: notification.recipientId,
+      subjectId: notification.subjectId,
+      daysAfterQutting: notification.daysAfterQuitting,
+    }));
+
+    return { data: mutedNotifications, totalItems: pagiantionData.totalCount };
+  }
+
+  async getListNotificationsAdmin(where: Prisma.NotificationWhereInput): Promise&lt;NotificationResponseAdmin[]&gt; {
+    const notifications &#x3D; await this.prismaService.notification.findMany({
+      where,
+      select: {
+        id: true,
+        sender: {
+          select: {
+            id: true,
+            personalInformation: {
+              select: {
+                firstName: true,
+                lastName: true,
+              },
+            },
+          },
+        },
+        imageLink: true,
+        isCritical: true,
+        deliveryDate: true,
+        notificationType: true,
+        status: true,
+        notificationTranslation: {
+          select: {
+            title: true,
+            body: true,
+            language: true,
+          },
+        },
+        targetGroupIds: {
+          select: {
+            id: true,
+            name: true,
+          },
+        },
+        recipientId: true,
+        subjectId: true,
+        daysAfterQuitting: true,
+      },
+    });
+
+    return notifications.map((notification) &#x3D;&gt; ({
+      id: notification.id,
+      bodyAr: notification.notificationTranslation.find((t) &#x3D;&gt; t.language.code &#x3D;&#x3D;&#x3D; LanguageEnum.ARABIC).body,
+      titleAr: notification.notificationTranslation.find((t) &#x3D;&gt; t.language.code &#x3D;&#x3D;&#x3D; LanguageEnum.ARABIC).title,
+      titleEn: notification.notificationTranslation.find((t) &#x3D;&gt; t.language.code &#x3D;&#x3D;&#x3D; LanguageEnum.ENGLISH).title,
+      bodyEn: notification.notificationTranslation.find((t) &#x3D;&gt; t.language.code &#x3D;&#x3D;&#x3D; LanguageEnum.ENGLISH).body,
+      deliveryDate: notification.deliveryDate,
+      targetGroupFilters: notification.targetGroupIds,
+      imageLink: notification.imageLink,
+      isCritical: notification.isCritical,
+      senderId: notification.sender.id,
+      notificationType: notification.notificationType,
+      status: notification.status,
+      recipientId: notification.recipientId,
+      subjectId: notification.subjectId,
+      daysAfterQuitting: notification.daysAfterQuitting,
+    }));
+  }
+
+  async updateNotification(
+    language: LanguageEnum,
+    updateNotificationDto: UpdateNotificationDto,
+    id: bigint,
+    file: Express.Multer.File,
+    status?: NotificationStatusEnum,
+    user?: UserPlayloadResponse,
+  ): Promise&lt;NotificationResponse&gt; {
+    const { titleAr, titleEn, messageAr, messageEn, targetGroupIds, deliveryDate, isCritical, notificationType } &#x3D; updateNotificationDto;
+    let imageLink &#x3D; null;
+    const createNotificationDto: CreateNotificationDto &#x3D; {
+      messageAr: &#x27;تنبيه مراجعة الإشعارات&#x27;,
+      messageEn: &#x27;Notification review alert&#x27;,
+      titleAr: &#x27;تنبيه مراجعة الإشعارات&#x27;,
+      titleEn: &#x27;Notification review alert&#x27;,
+      deliveryDate: new Date(),
+      notificationType: &#x27;Notification&#x27;,
+      isCritical: false,
+    };
+
+    const notification &#x3D; await this.getNotificationById(language, id);
+
+    if (!notification) throw new MultiLanguageException(LanguageErrorEnum.NOTIFICATION_DOESNT_EXIST);
+    try {
+      if (file) {
+        notification.imageLink &amp;&amp; this.fileService.deleteFile(notification.imageLink);
+        imageLink &#x3D; await this.fileService.uploadImage(file);
+      }
+
+      const updatedNotif &#x3D; await this.prismaService.notification.update({
+        where: {
+          id: notification.id,
+        },
+        data: {
+          deliveryDate: deliveryDate || notification.deliveryDate,
+          isCritical: isCritical || notification.isCritical,
+          notificationType: notificationType || notification.notificationType,
+          imageLink: imageLink || notification.imageLink,
+          status: status || &#x27;PENDING&#x27;,
+          targetGroupIds: {
+            set: targetGroupIds,
+          },
+          notificationTranslation: {
+            updateMany: [
+              {
+                data: {
+                  title: titleEn,
+                  body: messageEn,
+                },
+                where: {
+                  notificationId: id,
+                  languageId: 1,
+                },
+              },
+              {
+                data: {
+                  title: titleAr,
+                  body: messageAr,
+                },
+                where: {
+                  notificationId: id,
+                  languageId: 2,
+                },
+              },
+            ],
+          },
+        },
+        select: {
+          id: true,
+          sender: {
+            select: {
+              id: true,
+            },
+          },
+          imageLink: true,
+          isCritical: true,
+          deliveryDate: true,
+          notificationType: true,
+          status: true,
+          notificationTranslation: {
+            where: {
+              language: {
+                code: language,
+              },
+            },
+            select: {
+              title: true,
+              body: true,
+              language: {
+                select: {
+                  code: true,
+                },
+              },
+            },
+          },
+          targetGroupIds: {
+            select: {
+              id: true,
+              name: true,
+            },
+          },
+          recipientId: true,
+        },
+      });
+      if (!notification.notificationType.includes(&#x27;automated&#x27;)) {
+        const admins &#x3D; await this.prismaService.admin.findFirst({
+          where: {
+            role: {
+              name: RoleEnum.SUPERADMIN,
+            },
+          },
+          select: {
+            userId: true,
+          },
+        });
+        if (!status) {
+          this.prismaService.notification
+            .create({
+              data: {
+                senderId: updatedNotif.sender.id,
+                imageLink: imageLink,
+                isCritical: updatedNotif.isCritical,
+                deliveryDate: updatedNotif.deliveryDate,
+                notificationType: updatedNotif.notificationType,
+                status: &#x27;UPDATED&#x27;,
+                subjectId: updatedNotif.id,
+                recipientId: admins.userId,
+                notificationTranslation: {
+                  create: [
+                    {
+                      title: &#x27;a notification has been updated&#x27;,
+                      body: &#x27;a notification has been updated&#x27;,
+                      language: {
+                        connect: {
+                          code: LanguageEnum.ENGLISH,
+                        },
+                      },
+                    },
+                    {
+                      title: &#x27;تم تحديث إشعار&#x27;,
+                      body: &#x27;تم تحديث إشعار&#x27;,
+                      language: {
+                        connect: {
+                          code: LanguageEnum.ARABIC,
+                        },
+                      },
+                    },
+                  ],
+                },
+              },
+              select: {
+                id: true,
+                sender: {
+                  select: {
+                    id: true,
+                  },
+                },
+                subjectId: true,
+                imageLink: true,
+                isCritical: true,
+                deliveryDate: true,
+                notificationType: true,
+                status: true,
+                recipientId: true,
+                notificationTranslation: {
+                  where: {
+                    language: {
+                      code: language,
+                    },
+                  },
+                  select: {
+                    title: true,
+                    body: true,
+                    language: {
+                      select: {
+                        code: true,
+                      },
+                    },
+                  },
+                },
+              },
+            })
+            .then(async (notif) &#x3D;&gt; {
+              await this.prismaService.notificationSeen.create({
+                data: {
+                  notificationId: notif.id,
+                },
+                select: {
+                  id: true,
+                },
+              });
+              this.sendNotifsAsync([{ id: admins.userId }], {
+                id: notif.id,
+                body: notif.notificationTranslation[0].body,
+                title: notif.notificationTranslation[0].title,
+                deliveryDate: notif.deliveryDate,
+                targetGroupFilters: [],
+                imageLink: notif.imageLink,
+                isCritical: notif.isCritical,
+                senderId: notif.sender.id,
+                notificationType: &#x27;Updated&#x27;,
+                status: notif.status,
+                recipientId: notif.recipientId,
+                subjectId: notif.subjectId,
+              });
+            });
+          await this.prismaService.notificationProcessHistory.create({
+            data: {
+              adminId: user.healthSpecialistId,
+              notificationId: notification.id,
+              type: &#x27;UPDATED&#x27;,
+              issuedAt: new Date(),
+            },
+          });
+        }
+      }
+
+      const superAdminId &#x3D; await this.usersService.fetchSuperadminId();
+      this.createAdminNotification(user, createNotificationDto, BigInt(superAdminId), Number(id), SettingOptionNameEnum.NOTIFICATION_UPDATE_ALERT);
+
+      return {
+        id: updatedNotif.id,
+        body: updatedNotif.notificationTranslation[0].body,
+        title: updatedNotif.notificationTranslation[0].title,
+        deliveryDate: updatedNotif.deliveryDate,
+        targetGroupFilters: updatedNotif.targetGroupIds,
+        imageLink: updatedNotif.imageLink,
+        isCritical: updatedNotif.isCritical,
+        senderId: updatedNotif.sender.id,
+        notificationType: updatedNotif.notificationType,
+        status: updatedNotif.status,
+        recipientId: updatedNotif.recipientId,
+      };
+    } catch (error) {
+      console.error(error);
+      throw new MultiLanguageException(LanguageErrorEnum.ERROR_UPDATING_NOTIFICATION);
+    }
+  }
+
+  async acceptNotification(language: LanguageEnum, id: bigint, user?: UserPlayloadResponse): Promise&lt;NotificationResponse&gt; {
+    const notification &#x3D; await this.getNotificationById(language, id);
+
+    if (!notification) throw new MultiLanguageException(LanguageErrorEnum.NOTIFICATION_DOESNT_EXIST);
+    let newStatus &#x3D; null;
+    const senderAdminProfile &#x3D; await this.prismaService.admin.findFirst({
+      where: {
+        userId: notification.senderId,
+      },
+      select: {
+        id: true,
+      },
+    });
+    await this.prismaService.notificationProcessHistory.create({
+      data: {
+        adminId: user.adminId,
+        notificationId: notification.id,
+        type: &#x27;ACCEPTED&#x27;,
+        issuedAt: new Date(),
+      },
+    });
+    //if deliveryDate is &lt;&#x3D; than now deliver it
+    if (new Date(notification.deliveryDate) &lt;&#x3D; new Date()) {
+      newStatus &#x3D; NotificationStatusEnum.SENT;
+      //get patients by grp
+      const patients &#x3D; await this.prismaService.user.findMany({
+        where: {
+          patient: {
+            groups: {
+              some: {
+                id: { in: notification.targetGroupFilters.map((item) &#x3D;&gt; item.id) },
+              },
+            },
+            // groupId: {
+            //   in: notification.targetGroupFilters.map((item) &#x3D;&gt; item.id),
+            // },
+          },
+        },
+        select: {
+          id: true,
+        },
+      });
+      this.sendNotifsAsync(patients, notification);
+
+      await this.prismaService.notificationProcessHistory.create({
+        data: {
+          adminId: senderAdminProfile.id,
+          notificationId: notification.id,
+          type: &#x27;SENT&#x27;,
+          issuedAt: new Date(),
+        },
+      });
+    } else {
+      const createNotificationDto: CreateNotificationDto &#x3D; {
+        messageAr: &#x27;تمت الموافقة على إشعار الجدول الزمني&#x27;,
+        messageEn: &#x27;Schedule notification approved&#x27;,
+        titleAr: &#x27;تمت الموافقة على إشعار الجدول الزمني&#x27;,
+        titleEn: &#x27;Schedule notification approved&#x27;,
+        deliveryDate: new Date(),
+        notificationType: &#x27;Notification&#x27;,
+        isCritical: false,
+      };
+
+      //if deliveryDate is &gt; than now schedule it
+      newStatus &#x3D; NotificationStatusEnum.SCHEDULED;
+      const timeDiff &#x3D; this.commonService.remainingTime(new Date(notification.deliveryDate));
+      await this.notifQueue.add(
+        &#x27;scheduleNotification&#x27;,
+        {
+          id: Number(notification.id),
+          identifier: &#x60;scheduleNotification:${notification.id}&#x60;,
+        },
+        {
+          //delay until the scheduled date
+          delay: timeDiff,
+        },
+      );
+      await this.prismaService.notificationProcessHistory.create({
+        data: {
+          adminId: senderAdminProfile.id,
+          notificationId: notification.id,
+          type: &#x27;SCHEDULED&#x27;,
+          issuedAt: new Date(),
+        },
+      });
+
+      this.createAdminNotification(user, createNotificationDto, BigInt(notification.senderId), Number(id), SettingOptionNameEnum.SCHEDULED_NOTIFICATION_APPROVAL);
+    }
+
+    this.prismaService.notification
+      .create({
+        data: {
+          senderId: user.id,
+          imageLink: notification.imageLink,
+          isCritical: notification.isCritical,
+          deliveryDate: notification.deliveryDate,
+          notificationType: notification.notificationType,
+          status: &#x27;ACCEPTED&#x27;,
+          subjectId: notification.id,
+          recipientId: notification.senderId,
+          notificationTranslation: {
+            create: [
+              {
+                title: &#x27;a notification has been accepted&#x27;,
+                body: &#x27;a notification has been accepted&#x27;,
+                language: {
+                  connect: {
+                    code: LanguageEnum.ENGLISH,
+                  },
+                },
+              },
+              {
+                title: &#x27;تم قبول إشعار&#x27;,
+                body: &#x27;تم قبول إشعار&#x27;,
+                language: {
+                  connect: {
+                    code: LanguageEnum.ARABIC,
+                  },
+                },
+              },
+            ],
+          },
+        },
+        select: {
+          id: true,
+          sender: {
+            select: {
+              id: true,
+              personalInformation: {
+                select: {
+                  firstName: true,
+                  lastName: true,
+                },
+              },
+            },
+          },
+          subjectId: true,
+          imageLink: true,
+          isCritical: true,
+          deliveryDate: true,
+          notificationType: true,
+          status: true,
+          recipientId: true,
+          notificationTranslation: {
+            where: {
+              language: {
+                code: language,
+              },
+            },
+            select: {
+              title: true,
+              body: true,
+              language: {
+                select: {
+                  code: true,
+                },
+              },
+            },
+          },
+        },
+      })
+      .then(async (notif) &#x3D;&gt; {
+        await this.prismaService.notificationSeen.create({
+          data: {
+            notificationId: notif.id,
+          },
+          select: {
+            id: true,
+          },
+        });
+        this.sendNotifsAsync([{ id: BigInt(notification.senderId) }], {
+          id: notif.id,
+          body: notif.notificationTranslation[0].body,
+          title: notif.notificationTranslation[0].title,
+          deliveryDate: notif.deliveryDate,
+          targetGroupFilters: [],
+          imageLink: notif.imageLink,
+          isCritical: notif.isCritical,
+          senderId: notif.sender.id,
+          notificationType: &#x27;Approved&#x27;,
+          status: notif.status,
+          recipientId: notif.recipientId,
+          subjectId: notif.subjectId,
+        });
+      });
+
+    return await this.updateNotification(language, {}, id, null, newStatus);
+  }
+
+  async rejectNotification(language: LanguageEnum, id: bigint, user?: UserPlayloadResponse): Promise&lt;NotificationResponse&gt; {
+    const notification &#x3D; await this.getNotificationById(language, id);
+    if (!notification) throw new MultiLanguageException(LanguageErrorEnum.NOTIFICATION_DOESNT_EXIST);
+
+    const isNotificationScheduled &#x3D; new Date(notification.deliveryDate) &gt; new Date();
+
+    if (isNotificationScheduled) {
+      const createScheduledNotificationDto: CreateNotificationDto &#x3D; {
+        messageAr: &#x27;تم رفض إشعار الجدول الزمني&#x27;,
+        messageEn: &#x27;Schedule notification rejected&#x27;,
+        titleAr: &#x27;تم رفض إشعار الجدول الزمني&#x27;,
+        titleEn: &#x27;Schedule notification rejected&#x27;,
+        deliveryDate: new Date(),
+        notificationType: &#x27;Ticket&#x27;,
+        isCritical: false,
+      };
+
+      this.createAdminNotification(user, createScheduledNotificationDto, notification.senderId, Number(id), SettingOptionNameEnum.SCHEDULED_NOTIFICATION_REJECTION);
+    } else {
+      this.prismaService.notification
+        .create({
+          data: {
+            senderId: user.id,
+            imageLink: notification.imageLink,
+            isCritical: notification.isCritical,
+            deliveryDate: notification.deliveryDate,
+            notificationType: notification.notificationType,
+            status: &#x27;REJECTED&#x27;,
+            subjectId: notification.id,
+            recipientId: notification.senderId,
+            notificationTranslation: {
+              create: [
+                {
+                  title: &#x27;a notification has been rejected&#x27;,
+                  body: &#x27;a notification has been rejected&#x27;,
+                  language: {
+                    connect: {
+                      code: LanguageEnum.ENGLISH,
+                    },
+                  },
+                },
+                {
+                  title: &#x27;تم رفض إشعار&#x27;,
+                  body: &#x27;تم رفض إشعار&#x27;,
+                  language: {
+                    connect: {
+                      code: LanguageEnum.ARABIC,
+                    },
+                  },
+                },
+              ],
+            },
+          },
+          select: {
+            id: true,
+            sender: {
+              select: {
+                id: true,
+              },
+            },
+            subjectId: true,
+            imageLink: true,
+            isCritical: true,
+            deliveryDate: true,
+            notificationType: true,
+            status: true,
+            recipientId: true,
+            notificationTranslation: {
+              where: {
+                language: {
+                  code: language,
+                },
+              },
+              select: {
+                title: true,
+                body: true,
+                language: {
+                  select: {
+                    code: true,
+                  },
+                },
+              },
+            },
+          },
+        })
+        .then(async (notif) &#x3D;&gt; {
+          await this.prismaService.notificationSeen.create({
+            data: {
+              notificationId: notif.id,
+            },
+            select: {
+              id: true,
+            },
+          });
+          this.sendNotifsAsync([{ id: BigInt(notification.senderId) }], {
+            id: notif.id,
+            body: notif.notificationTranslation[0].body,
+            title: notif.notificationTranslation[0].title,
+            deliveryDate: notif.deliveryDate,
+            targetGroupFilters: [],
+            imageLink: notif.imageLink,
+            isCritical: notif.isCritical,
+            senderId: notif.sender.id,
+            notificationType: &#x27;Rejected&#x27;,
+            status: notif.status,
+            recipientId: notif.recipientId,
+            subjectId: notif.subjectId,
+          });
+        });
+    }
+
+    await this.prismaService.notificationProcessHistory.create({
+      data: {
+        adminId: user.adminId,
+        notificationId: notification.id,
+        type: &#x27;REJECTED&#x27;,
+        issuedAt: new Date(),
+      },
+    });
+    return await this.updateNotification(language, {}, id, null, NotificationStatusEnum.REJECTED);
+  }
+
+  async deleteNotification(language: LanguageEnum, id: bigint): Promise&lt;NotificationResponse&gt; {
+    const notification &#x3D; await this.getNotificationById(language, id);
+    if (!notification) throw new MultiLanguageException(LanguageErrorEnum.NOTIFICATION_DOESNT_EXIST);
+    await this.prismaService.notification.deleteMany({
+      where: { OR: [{ id }, { subjectId: id }] },
+    });
+    if (notification.imageLink) this.fileService.deleteFile(notification.imageLink);
+    return notification;
+  }
+
+  async getNotificationById(language: LanguageEnum, id: bigint): Promise&lt;NotificationResponse&gt; {
+    const notification &#x3D; await this.prismaService.notification.findUnique({
+      where: {
+        id,
+      },
+      select: {
+        id: true,
+        sender: {
+          select: {
+            id: true,
+            personalInformation: {
+              select: {
+                firstName: true,
+                lastName: true,
+              },
+            },
+          },
+        },
+        imageLink: true,
+        isCritical: true,
+        deliveryDate: true,
+        notificationType: true,
+        status: true,
+        notificationTranslation: {
+          where: {
+            language: {
+              code: language,
+            },
+          },
+          select: {
+            title: true,
+            body: true,
+          },
+        },
+        targetGroupIds: {
+          select: {
+            id: true,
+            name: true,
+          },
+        },
+        recipientId: true,
+        daysAfterQuitting: true,
+      },
+    });
+
+    return {
+      id: notification.id,
+      body: notification.notificationTranslation[0].body,
+      title: notification.notificationTranslation[0].title,
+      deliveryDate: notification.deliveryDate,
+      targetGroupFilters: notification.targetGroupIds,
+      imageLink: notification.imageLink,
+      isCritical: notification.isCritical,
+      senderId: notification.sender.id,
+      notificationType: notification.notificationType,
+      status: notification.status,
+      recipientId: notification.recipientId,
+      senderFullName: &#x60;${notification.sender.personalInformation.firstName} ${notification.sender.personalInformation.lastName}&#x60;,
+      daysAfterQuitting: notification.daysAfterQuitting,
+    };
+  }
+
+  async getNotificationByIdAdmin(id: bigint): Promise&lt;NotificationResponseAdmin&gt; {
+    const notification &#x3D; await this.prismaService.notification.findUnique({
+      where: {
+        id,
+      },
+      select: {
+        id: true,
+        sender: {
+          select: {
+            id: true,
+            personalInformation: {
+              select: {
+                firstName: true,
+                lastName: true,
+              },
+            },
+          },
+        },
+        imageLink: true,
+        isCritical: true,
+        deliveryDate: true,
+        notificationType: true,
+        status: true,
+        notificationTranslation: {
+          select: {
+            title: true,
+            body: true,
+            language: true,
+          },
+        },
+        targetGroupIds: {
+          select: {
+            id: true,
+            name: true,
+          },
+        },
+        recipientId: true,
+        subjectId: true,
+        daysAfterQuitting: true,
+      },
+    });
+    if (!notification) throw new NotFoundException(&#x27;notification not found&#x27;);
+    return {
+      id: notification.id,
+      bodyAr: notification.notificationTranslation.find((t) &#x3D;&gt; t.language.code &#x3D;&#x3D;&#x3D; LanguageEnum.ARABIC).body,
+      titleAr: notification.notificationTranslation.find((t) &#x3D;&gt; t.language.code &#x3D;&#x3D;&#x3D; LanguageEnum.ARABIC).title,
+      titleEn: notification.notificationTranslation.find((t) &#x3D;&gt; t.language.code &#x3D;&#x3D;&#x3D; LanguageEnum.ENGLISH).title,
+      bodyEn: notification.notificationTranslation.find((t) &#x3D;&gt; t.language.code &#x3D;&#x3D;&#x3D; LanguageEnum.ENGLISH).body,
+      deliveryDate: notification.deliveryDate,
+      targetGroupFilters: notification.targetGroupIds,
+      imageLink: notification.imageLink,
+      isCritical: notification.isCritical,
+      senderId: notification.sender.id,
+      notificationType: notification.notificationType,
+      status: notification.status,
+      recipientId: notification.recipientId,
+      subjectId: notification.subjectId,
+      daysAfterQuitting: notification.daysAfterQuitting,
+    };
+  }
+
+  async sendNotifsAsync(users: { id: bigint }[], notification: NotificationResponse) {
+    for (const user of users) {
+      const clientId &#x3D; (await this.redisService.getKey(&#x60;userId:${user.id}&#x60;)) as string;
+      const deviceInstallations &#x3D; await this.notificationHubService.getListDeviceInstallation({ id: Number(user.id) });
+      this.notificationHubService.sendPushNotification(deviceInstallations);
+      this.emit(
+        &#x27;notification&#x27;,
+        {
+          ...notification,
+          targetGroupFilters: notification.targetGroupFilters.map((tg) &#x3D;&gt; ({ ...tg, id: Number(tg.id) })),
+          subjectId: Number(notification.subjectId),
+          senderId: Number(notification.senderId),
+          recipientId: Number(notification.recipientId),
+          id: Number(notification.id),
+        },
+        clientId,
+      );
+    }
+    return true;
+  }
+
+  async getNotifHistory(language: LanguageEnum, id: bigint): Promise&lt;NotificationHistoryResponse[]&gt; {
+    const history &#x3D; await this.prismaService.notificationProcessHistory.findMany({
+      where: {
+        notificationId: id,
+      },
+      select: {
+        issuedAt: true,
+        type: true,
+        createdAt: true,
+        admin: {
+          select: {
+            department: true,
+            role: {
+              select: {
+                id: true,
+                name: true,
+                restriction: true,
+                isActive: true,
+                //! see why we can&#x27;t add scopes
+              },
+            },
+            user: {
+              select: {
+                id: true,
+                personalInformation: {
+                  select: {
+                    firstName: true,
+                    lastName: true,
+                  },
+                },
+              },
+            },
+          },
+        },
+        notification: {
+          select: {
+            id: true,
+            senderId: true,
+            notificationTranslation: {
+              where: {
+                language: {
+                  code: language,
+                },
+              },
+              select: {
+                title: true,
+                body: true,
+              },
+            },
+            targetGroupIds: {
+              select: {
+                id: true,
+                name: true,
+              },
+            },
+            imageLink: true,
+            isCritical: true,
+            deliveryDate: true,
+            notificationType: true,
+            status: true,
+            recipientId: true,
+          },
+        },
+      },
+    });
+    return history.map((h) &#x3D;&gt; ({
+      admin: h.admin,
+      issuedAt: h.issuedAt,
+      createdAt: h.createdAt,
+      type: h.type,
+      notification: {
+        id: h.notification.id,
+        body: h.notification.notificationTranslation[0].body,
+        title: h.notification.notificationTranslation[0].title,
+        deliveryDate: h.notification.deliveryDate,
+        targetGroupFilters: h.notification.targetGroupIds,
+        imageLink: h.notification.imageLink,
+        isCritical: h.notification.isCritical,
+        senderId: h.notification.senderId,
+        notificationType: h.notification.notificationType,
+        status: h.notification.status,
+        recipientId: h.notification.recipientId,
+      },
+    }));
+  }
+
+  async readNotification(id, user: UserPlayloadResponse | { id: number }): Promise&lt;boolean&gt; {
+    const notificationSeen &#x3D; await this.prismaService.notificationSeen.findUnique({
+      where: {
+        notificationId: id,
+      },
+      include: {
+        notification: {
+          include: {
+            targetGroupIds: true,
+          },
+        },
+      },
+    });
+    if (notificationSeen &amp;&amp; !notificationSeen.notification.recipientId) {
+      const targetGrps &#x3D; await this.prismaService.group.findMany({
+        where: {
+          id: {
+            in: notificationSeen.notification.targetGroupIds.map((tg) &#x3D;&gt; tg.id),
+          },
+        },
+        select: {
+          patients: {
+            select: {
+              userId: true,
+            },
+          },
+        },
+      });
+      const targetPatients &#x3D; [];
+      targetGrps.forEach((grp) &#x3D;&gt; {
+        targetPatients.push(...grp.patients.map((p) &#x3D;&gt; p.userId));
+      });
+      if (!targetPatients.includes(BigInt(user.id))) {
+        return false;
+      }
+    } else if (!(notificationSeen &amp;&amp; notificationSeen.notification.recipientId &#x3D;&#x3D; BigInt(user.id))) {
+      return false;
+    }
+    await this.prismaService.notificationSeen.update({
+      where: {
+        notificationId: id,
+      },
+      data: {
+        seenBy: {
+          connect: {
+            id: user.id,
+          },
+        },
+      },
+    });
+
+    return true;
+  }
+
+  async getUnreadNotifs(user: UserPlayloadResponse): Promise&lt;number&gt; {
+    let where: Prisma.NotificationWhereInput &#x3D; {
+      recipientId: user.id,
+    };
+    if (user.isPatient) {
+      const patient &#x3D; await this.prismaService.user.findUnique({
+        where: {
+          id: user.id,
+        },
+        select: {
+          patient: {
+            select: {
+              groups: { select: { id: true } },
+            },
+          },
+        },
+      });
+      if (patient.patient.groups.length &#x3D;&#x3D;&#x3D; 0) return 0;
+      where &#x3D; {
+        status: NotificationStatusEnum.SENT,
+        targetGroupIds: {
+          some: {
+            id: {
+              in: patient.patient.groups.map((group) &#x3D;&gt; group.id),
+            },
+          },
+        },
+      };
+    }
+    const notifs &#x3D; await this.prismaService.notification.findMany({
+      where,
+      select: {
+        id: true,
+        targetGroupIds: {
+          select: {
+            id: true,
+            name: true,
+          },
+        },
+        recipientId: true,
+        NotificationSeen: {
+          include: {
+            seenBy: true,
+          },
+        },
+      },
+    });
+
+    return notifs.filter((notification) &#x3D;&gt; {
+      if (notification.NotificationSeen) return !notification.NotificationSeen.seenBy.find((u) &#x3D;&gt; Number(u.id) &#x3D;&#x3D; user.id);
+      return true;
+    }).length;
+  }
+
+  async createNotificationPackage(createNotificationPackageDto: CreateNotificationPackageDto): Promise&lt;NotificationPackageResponse&gt; {
+    const notificationPackage &#x3D; await this.prismaService.notificationPackage.create({
+      data: {
+        targetGroup: {
+          connect: {
+            id: createNotificationPackageDto.targetGroupId,
+          },
+        },
+      },
+      select: {
+        id: true,
+        notifications: {
+          select: {
+            id: true,
+          },
+        },
+        targetGroup: {
+          select: {
+            id: true,
+            name: true,
+          },
+        },
+      },
+    });
+    return {
+      id: notificationPackage.id,
+      name: notificationPackage.targetGroup ? notificationPackage.targetGroup.name : &#x27;DEFAULT&#x27;,
+      notifications: notificationPackage.notifications.map((n) &#x3D;&gt; n.id),
+      targetGroupId: notificationPackage.targetGroup ? notificationPackage.targetGroup.id : null,
+    };
+  }
+
+  async deleteNotificationPackage(id: bigint): Promise&lt;NotificationPackageResponse&gt; {
+    const notificationPackage &#x3D; await this.prismaService.notificationPackage.delete({
+      where: {
+        id,
+      },
+      select: {
+        id: true,
+        notifications: {
+          select: {
+            id: true,
+          },
+        },
+        targetGroup: {
+          select: {
+            id: true,
+            name: true,
+          },
+        },
+      },
+    });
+    return {
+      id: notificationPackage.id,
+      name: notificationPackage.targetGroup ? notificationPackage.targetGroup.name : &#x27;DEFAULT&#x27;,
+      notifications: notificationPackage.notifications.map((n) &#x3D;&gt; n.id),
+      targetGroupId: notificationPackage.targetGroup ? notificationPackage.targetGroup.id : null,
+    };
+  }
+
+  async getListNotificationPackages(): Promise&lt;NotificationPackageResponse[]&gt; {
+    const notificationPackages &#x3D; await this.prismaService.notificationPackage.findMany({
+      where: {},
+      select: {
+        id: true,
+        notifications: {
+          select: {
+            id: true,
+          },
+        },
+        targetGroup: {
+          select: {
+            id: true,
+            name: true,
+          },
+        },
+      },
+      orderBy: {
+        id: &#x27;desc&#x27;,
+      },
+    });
+
+    return notificationPackages.map((notificationPackage) &#x3D;&gt; ({
+      id: notificationPackage.id,
+      name: notificationPackage.targetGroup ? notificationPackage.targetGroup.name : &#x27;DEFAULT&#x27;,
+      notifications: notificationPackage.notifications.map((n) &#x3D;&gt; n.id),
+      targetGroupId: notificationPackage.targetGroup ? notificationPackage.targetGroup.id : null,
+    }));
+  }
+
+  async sendPushNotif(users: { id: bigint }[], settingOptionName: SettingOptionNameEnum, pushNotificationMesage?: string): Promise&lt;boolean&gt; {
+    for (const user of users) {
+      const userId &#x3D; Number(user.id);
+
+      const isPushNotifEnabled &#x3D; await this.settingService.getSettingOptionOfUserByName(userId, settingOptionName);
+
+      if (!isPushNotifEnabled &amp;&amp; !isPushNotifEnabled.isOn) continue;
+
+      const deviceInstallations &#x3D; await this.notificationHubService.getListDeviceInstallation({ id: userId });
+
+      this.notificationHubService.sendPushNotification(deviceInstallations, pushNotificationMesage);
+    }
+    return true;
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'NotificationService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

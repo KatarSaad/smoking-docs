@@ -1,0 +1,1579 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>smoking-halim documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">smoking-halim documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content controller">
+                   <div class="content-data">
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Controllers</li>
+  <li class="breadcrumb-item" >PatientController</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/modules/patients/patient.controller.ts</code>
+        </p>
+
+            <p class="comment">
+                <h3>Prefix</h3>
+            </p>
+            <p class="comment">
+                <code>patients</code>
+            </p>
+
+
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#deleteAccount" >deleteAccount</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#fetchNotBlockedPatientsNames" >fetchNotBlockedPatientsNames</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#fetchPatient" >fetchPatient</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#fetchPatientDetails" >fetchPatientDetails</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#fetchPatients" >fetchPatients</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#fetchPatientsNamesOnly" >fetchPatientsNamesOnly</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#fetchPatientsNamesOnlyNotInGroup" >fetchPatientsNamesOnlyNotInGroup</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#fetchPatientsNamesOnlyWithoutPrivateChat" >fetchPatientsNamesOnlyWithoutPrivateChat</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#patientProfile" >patientProfile</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#updatePatient" >updatePatient</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#updatePatientProfile" >updatePatientProfile</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#updatePatientUsername" >updatePatientUsername</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteAccount"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>deleteAccount</b></span>
+                        <a href="#deleteAccount"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deleteAccount(user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;])<br />@ApiOkResponse({type: PatientNameQidResponse})<br />@Delete(&#x27;/my-account&#x27;)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="61"
+                                    class="link-to-prism">src/modules/patients/patient.controller.ts:61</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;PatientNameQidResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchNotBlockedPatientsNames"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>fetchNotBlockedPatientsNames</b></span>
+                        <a href="#fetchNotBlockedPatientsNames"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fetchNotBlockedPatientsNames(facilities: number[], searchWithCursorPaginationDto: <a href="../classes/SearchWithCursorPaginationDto.html" target="_self">SearchWithCursorPaginationDto</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth()<br />@ApiOkResponse({type: PaginationCursorNotBlockedPatientsResponse})<br />@Get(&#x27;names-only/not-blocked&#x27;)<br />@UseInterceptors(HttpLanguageCacheInterceptor, BigIntTransformerInterceptor)<br />@CacheTTL(undefined)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="129"
+                                    class="link-to-prism">src/modules/patients/patient.controller.ts:129</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>facilities</td>
+                                            <td>
+                                                        <code>number[]</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>searchWithCursorPaginationDto</td>
+                                            <td>
+                                                            <code><a href="../classes/SearchWithCursorPaginationDto.html" target="_self" >SearchWithCursorPaginationDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;PaginationCursorNotBlockedPatientsResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchPatient"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>fetchPatient</b></span>
+                        <a href="#fetchPatient"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fetchPatient(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;])<br />@Permissions([&#x27;undefined&#x27;])<br />@ApiOkResponse({type: ShowPatientProfileResponse})<br />@Get(&#x27;/:id&#x27;)<br />@UseInterceptors(HttpTokenCacheInterceptor, BigIntTransformerInterceptor)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="92"
+                                    class="link-to-prism">src/modules/patients/patient.controller.ts:92</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;ShowPatientProfileResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchPatientDetails"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>fetchPatientDetails</b></span>
+                        <a href="#fetchPatientDetails"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fetchPatientDetails(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, language: LanguageEnum)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;])<br />@Permissions([&#x27;undefined&#x27;])<br />@ApiOkResponse({type: FetchPatientDetailsResponse})<br />@Get(&#x27;/details/:id&#x27;)<br />@Serialize(FetchPatientDetailsResponse)<br />@UseInterceptors(HttpLanguageCacheInterceptor, BigIntTransformerInterceptor)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="142"
+                                    class="link-to-prism">src/modules/patients/patient.controller.ts:142</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>language</td>
+                                            <td>
+                                                        <code>LanguageEnum</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;FetchPatientDetailsResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchPatients"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>fetchPatients</b></span>
+                        <a href="#fetchPatients"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fetchPatients(facilities: number[], showPatientFilter: <a href="../classes/ShowPatientFilter.html" target="_self">ShowPatientFilter</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;])<br />@Permissions([&#x27;undefined&#x27;])<br />@ApiOkResponse({type: PaginationPatients})<br />@Get(&#x27;&#x27;)<br />@UseInterceptors(HttpTokenCacheInterceptor, BigIntTransformerInterceptor)<br />@CacheTTL(undefined)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="44"
+                                    class="link-to-prism">src/modules/patients/patient.controller.ts:44</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>facilities</td>
+                                            <td>
+                                                        <code>number[]</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>showPatientFilter</td>
+                                            <td>
+                                                            <code><a href="../classes/ShowPatientFilter.html" target="_self" >ShowPatientFilter</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/PaginationPatients.html" target="_self" >Promise&lt;PaginationPatients&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchPatientsNamesOnly"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>fetchPatientsNamesOnly</b></span>
+                        <a href="#fetchPatientsNamesOnly"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fetchPatientsNamesOnly(facilities: number[])</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;])<br />@Permissions([&#x27;undefined&#x27;])<br />@ApiOkResponse({type: undefined})<br />@Get(&#x27;names-only&#x27;)<br />@UseInterceptors(HttpLanguageCacheInterceptor, BigIntTransformerInterceptor)<br />@CacheTTL(undefined)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="54"
+                                    class="link-to-prism">src/modules/patients/patient.controller.ts:54</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>facilities</td>
+                                            <td>
+                                                        <code>number[]</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;PatientNameOnlyResponse[]&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchPatientsNamesOnlyNotInGroup"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>fetchPatientsNamesOnlyNotInGroup</b></span>
+                        <a href="#fetchPatientsNamesOnlyNotInGroup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fetchPatientsNamesOnlyNotInGroup(facilities: number[], searchName: <a href="../classes/PatientOnlyNamesSearchDto.html" target="_self">PatientOnlyNamesSearchDto</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;])<br />@Permissions([&#x27;undefined&#x27;])<br />@ApiOkResponse({type: undefined})<br />@Get(&#x27;names-only/no-group-chat&#x27;)<br />@UseInterceptors(HttpLanguageCacheInterceptor, BigIntTransformerInterceptor)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="111"
+                                    class="link-to-prism">src/modules/patients/patient.controller.ts:111</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>facilities</td>
+                                            <td>
+                                                        <code>number[]</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>searchName</td>
+                                            <td>
+                                                            <code><a href="../classes/PatientOnlyNamesSearchDto.html" target="_self" >PatientOnlyNamesSearchDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;PatientNameQidResponse[]&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchPatientsNamesOnlyWithoutPrivateChat"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>fetchPatientsNamesOnlyWithoutPrivateChat</b></span>
+                        <a href="#fetchPatientsNamesOnlyWithoutPrivateChat"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fetchPatientsNamesOnlyWithoutPrivateChat(facilities: number[], searchName: <a href="../classes/PatientOnlyNamesSearchDto.html" target="_self">PatientOnlyNamesSearchDto</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;])<br />@Permissions([&#x27;undefined&#x27;])<br />@ApiOkResponse({type: undefined})<br />@Get(&#x27;names-only/no-private-chat&#x27;)<br />@UseInterceptors(HttpLanguageCacheInterceptor, BigIntTransformerInterceptor)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="120"
+                                    class="link-to-prism">src/modules/patients/patient.controller.ts:120</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>facilities</td>
+                                            <td>
+                                                        <code>number[]</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>searchName</td>
+                                            <td>
+                                                            <code><a href="../classes/PatientOnlyNamesSearchDto.html" target="_self" >PatientOnlyNamesSearchDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;PatientNameQidResponse[]&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="patientProfile"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>patientProfile</b></span>
+                        <a href="#patientProfile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>patientProfile(user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>, language: LanguageEnum)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;])<br />@ApiOkResponse({type: PatientProfileResponse})<br />@Get(&#x27;/profile&#x27;)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="68"
+                                    class="link-to-prism">src/modules/patients/patient.controller.ts:68</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>language</td>
+                                            <td>
+                                                        <code>LanguageEnum</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;PatientProfileResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updatePatient"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>updatePatient</b></span>
+                        <a href="#updatePatient"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updatePatient(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, updatePatientDto: <a href="../classes/UpdatePatientDto.html" target="_self">UpdatePatientDto</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;])<br />@Permissions([&#x27;undefined&#x27;])<br />@ApiOkResponse({type: UpdatePatientResponse})<br />@Patch(&#x27;/:id&#x27;)<br />@ApiResponse({status: 404, description: &#x27;User not found!|Facility does not exist!|Support doctor does not exist!&#x27;})<br />@ApiResponse({status: 409, description: &#x27;This support doctor does not work in this facility!&#x27;})<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="102"
+                                    class="link-to-prism">src/modules/patients/patient.controller.ts:102</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>updatePatientDto</td>
+                                            <td>
+                                                            <code><a href="../classes/UpdatePatientDto.html" target="_self" >UpdatePatientDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;UpdatePatientResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updatePatientProfile"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>updatePatientProfile</b></span>
+                        <a href="#updatePatientProfile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updatePatientProfile(user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>, updateProfileDto: <a href="../classes/UpdateProfileDto.html" target="_self">UpdateProfileDto</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;])<br />@ApiOkResponse({type: PatientProfileResponse})<br />@Patch(&#x27;/profile&#x27;)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="76"
+                                    class="link-to-prism">src/modules/patients/patient.controller.ts:76</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>updateProfileDto</td>
+                                            <td>
+                                                            <code><a href="../classes/UpdateProfileDto.html" target="_self" >UpdateProfileDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updatePatientUsername"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>updatePatientUsername</b></span>
+                        <a href="#updatePatientUsername"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updatePatientUsername(updateUsernameDto: <a href="../classes/UpdateUsernameDto.html" target="_self">UpdateUsernameDto</a>, userPlayloadResponse: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;])<br />@ApiOkResponse({type: UpdatePatientUsername})<br />@Put(&#x27;/username&#x27;)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="83"
+                                    class="link-to-prism">src/modules/patients/patient.controller.ts:83</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>updateUsernameDto</td>
+                                            <td>
+                                                            <code><a href="../classes/UpdateUsernameDto.html" target="_self" >UpdateUsernameDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>userPlayloadResponse</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#User" target="_self" >Promise&lt;UpdatePatientUsername&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Controller, Delete, Get, Patch, Query, Body, Put, Param, ParseIntPipe, UseInterceptors } from &#x27;@nestjs/common&#x27;;
+import { PatientService } from &#x27;./patient.service&#x27;;
+import { ApiOkResponse, ApiResponse, ApiTags } from &#x27;@nestjs/swagger&#x27;;
+import { JwtAuth } from &#x27;src/common/decorators/jwt-auth.decorator&#x27;;
+import { User } from &#x27;src/common/decorators/auth.decorator&#x27;;
+import { PatientProfileResponse } from &#x27;./response/patient-pofile.response&#x27;;
+import { Serialize } from &#x27;src/common/interceptors/response-serialization.interceptor&#x27;;
+import { Permissions } from &#x27;src/common/decorators/permissions.decorator&#x27;;
+import { ShowPatientFilter } from &#x27;./dto/show-patient-filter.dto&#x27;;
+import { ShowPatientProfileResponse } from &#x27;./response/show-patient-profile.response&#x27;;
+import { UpdatePatientDto } from &#x27;./dto/update-patient.dto&#x27;;
+import { UpdatePatientResponse } from &#x27;./response/update-patient.response&#x27;;
+import { PaginationPatients } from &#x27;src/common/responses/Paggination-data.response&#x27;;
+import { UserPlayloadResponse } from &#x27;./response/user-playload.response&#x27;;
+import { UpdateUsernameDto } from &#x27;./dto/update-username.dto&#x27;;
+import { UpdateProfileDto } from &#x27;./dto/update-profile.dto&#x27;;
+import { FetchPatientDetailsResponse } from &#x27;src/modules/patients/response/fetch-patient-details.response&#x27;;
+import { RoleDecoratorEnum } from &#x27;src/common/enums/role-decorator.enum&#x27;;
+import { LanguageEnum, PermissionEnum } from &#x27;@prisma/client&#x27;;
+import { HeaderLanguage } from &#x27;src/common/decorators/header-language&#x27;;
+import { Facilities } from &#x27;src/common/decorators/facilities.decorator&#x27;;
+import { CacheTTL } from &#x27;@nestjs/cache-manager&#x27;;
+import { HttpTokenCacheInterceptor } from &#x27;src/common/interceptors/http-token-cache.interceptor&#x27;;
+import { HttpLanguageCacheInterceptor } from &#x27;src/common/interceptors/http-language-cache.interceptor&#x27;;
+import { BigIntTransformerInterceptor } from &#x27;src/common/interceptors/bigInt-transformer.interceptor&#x27;;
+import { PatientNameOnlyResponse } from &#x27;src/modules/patients/response/patient-name-only.response&#x27;;
+import { PatientOnlyNamesSearchDto } from &#x27;src/modules/patients/dto/patient-only-names-search.dto&#x27;;
+import { UpdatePatientUsername } from &#x27;src/modules/patients/response/update-patient-username.response&#x27;;
+import { SearchWithCursorPaginationDto } from &#x27;src/common/dto/search-with-cursor-pagination.dto&#x27;;
+import { PaginationCursorNotBlockedPatientsResponse } from &#x27;src/common/responses/paggination-cursor.response&#x27;;
+import { PatientNameQidResponse } from &#x27;src/modules/patients/response/patient-name-qid.response&#x27;;
+
+@ApiTags(&#x27;patients&#x27;)
+@Controller(&#x27;patients&#x27;)
+export class PatientController {
+  constructor(private patientService: PatientService) {}
+
+  @JwtAuth([RoleDecoratorEnum.SYSADMIN])
+  @Permissions([PermissionEnum.DISPLAY_PATIENTS])
+  @ApiOkResponse({ type: PaginationPatients })
+  @Get(&#x27;&#x27;)
+  @UseInterceptors(HttpTokenCacheInterceptor, BigIntTransformerInterceptor)
+  @CacheTTL(Number(process.env.REDIS_LONG_TTL))
+  async fetchPatients(@Facilities() facilities: number[], @Query() showPatientFilter: ShowPatientFilter): Promise&lt;PaginationPatients&gt; {
+    return await this.patientService.fetchPatients(facilities, showPatientFilter);
+  }
+
+  @JwtAuth([RoleDecoratorEnum.SYSADMIN])
+  @Permissions([PermissionEnum.DISPLAY_PATIENTS])
+  @ApiOkResponse({ type: [PatientNameOnlyResponse] })
+  @Get(&#x27;names-only&#x27;)
+  @UseInterceptors(HttpLanguageCacheInterceptor, BigIntTransformerInterceptor)
+  @CacheTTL(Number(process.env.REDIS_LONG_TTL))
+  async fetchPatientsNamesOnly(@Facilities() facilities: number[]): Promise&lt;PatientNameOnlyResponse[]&gt; {
+    return await this.patientService.fetchPatientsNamesOnly(facilities);
+  }
+
+  @JwtAuth([RoleDecoratorEnum.USER])
+  @ApiOkResponse({ type: PatientNameQidResponse })
+  @Delete(&#x27;/my-account&#x27;)
+  async deleteAccount(@User() user: UserPlayloadResponse): Promise&lt;PatientNameQidResponse&gt; {
+    return await this.patientService.deleteAccount(user);
+  }
+
+  @JwtAuth([RoleDecoratorEnum.USER])
+  @ApiOkResponse({ type: PatientProfileResponse })
+  @Get(&#x27;/profile&#x27;)
+  async patientProfile(@User() user: UserPlayloadResponse, @HeaderLanguage() language: LanguageEnum): Promise&lt;PatientProfileResponse&gt; {
+    console.log(language);
+    return await this.patientService.patientProfile(user, language);
+  }
+
+  @JwtAuth([RoleDecoratorEnum.USER])
+  @ApiOkResponse({ type: PatientProfileResponse })
+  @Patch(&#x27;/profile&#x27;)
+  async updatePatientProfile(@User() user: UserPlayloadResponse, @Body() updateProfileDto: UpdateProfileDto): Promise&lt;boolean&gt; {
+    return await this.patientService.updatePatientProfile(user, updateProfileDto);
+  }
+
+  @JwtAuth([RoleDecoratorEnum.USER])
+  @ApiOkResponse({ type: UpdatePatientUsername })
+  @Put(&#x27;/username&#x27;)
+  async updatePatientUsername(@Body() updateUsernameDto: UpdateUsernameDto, @User() userPlayloadResponse: UserPlayloadResponse): Promise&lt;UpdatePatientUsername&gt; {
+    return await this.patientService.updatePatientUsername(updateUsernameDto, userPlayloadResponse);
+  }
+
+  @JwtAuth([RoleDecoratorEnum.SYSADMIN])
+  @Permissions([PermissionEnum.DISPLAY_PATIENTS])
+  @ApiOkResponse({ type: ShowPatientProfileResponse })
+  @Get(&#x27;/:id&#x27;)
+  @UseInterceptors(HttpTokenCacheInterceptor, BigIntTransformerInterceptor)
+  async fetchPatient(@Param(&#x27;id&#x27;, ParseIntPipe) id: number): Promise&lt;ShowPatientProfileResponse&gt; {
+    return await this.patientService.fetchPatient(id);
+  }
+
+  @JwtAuth([RoleDecoratorEnum.SYSADMIN])
+  @Permissions([PermissionEnum.UPDATE_PATIENTS])
+  @ApiOkResponse({ type: UpdatePatientResponse })
+  @Patch(&#x27;/:id&#x27;)
+  @ApiResponse({ status: 404, description: &#x27;User not found!|Facility does not exist!|Support doctor does not exist!&#x27; })
+  @ApiResponse({ status: 409, description: &#x27;This support doctor does not work in this facility!&#x27; })
+  async updatePatient(@Param(&#x27;id&#x27;, ParseIntPipe) id: number, @Body() updatePatientDto: UpdatePatientDto): Promise&lt;UpdatePatientResponse&gt; {
+    return await this.patientService.updatePatient(id, updatePatientDto);
+  }
+
+  @JwtAuth([RoleDecoratorEnum.SYSADMIN])
+  @Permissions([PermissionEnum.DISPLAY_PATIENTS])
+  @ApiOkResponse({ type: [PatientNameQidResponse] })
+  @Get(&#x27;names-only/no-group-chat&#x27;)
+  @UseInterceptors(HttpLanguageCacheInterceptor, BigIntTransformerInterceptor)
+  async fetchPatientsNamesOnlyNotInGroup(@Facilities() facilities: number[], @Query() searchName: PatientOnlyNamesSearchDto): Promise&lt;PatientNameQidResponse[]&gt; {
+    return await this.patientService.fetchPatientsNamesOnlyNotInGroup(facilities, searchName);
+  }
+
+  @JwtAuth([RoleDecoratorEnum.SYSADMIN])
+  @Permissions([PermissionEnum.DISPLAY_PATIENTS])
+  @ApiOkResponse({ type: [PatientNameQidResponse] })
+  @Get(&#x27;names-only/no-private-chat&#x27;)
+  @UseInterceptors(HttpLanguageCacheInterceptor, BigIntTransformerInterceptor)
+  async fetchPatientsNamesOnlyWithoutPrivateChat(@Facilities() facilities: number[], @Query() searchName: PatientOnlyNamesSearchDto): Promise&lt;PatientNameQidResponse[]&gt; {
+    return await this.patientService.fetchPatientsNamesOnlyWithoutPrivateChat(facilities, searchName);
+  }
+
+  @JwtAuth()
+  @ApiOkResponse({ type: PaginationCursorNotBlockedPatientsResponse })
+  @Get(&#x27;names-only/not-blocked&#x27;)
+  @UseInterceptors(HttpLanguageCacheInterceptor, BigIntTransformerInterceptor)
+  @CacheTTL(Number(process.env.REDIS_TTL))
+  async fetchNotBlockedPatientsNames(
+    @Facilities() facilities: number[],
+    @Query() searchWithCursorPaginationDto: SearchWithCursorPaginationDto,
+  ): Promise&lt;PaginationCursorNotBlockedPatientsResponse&gt; {
+    return await this.patientService.fetchNotBlockedPatientsNames(facilities, searchWithCursorPaginationDto);
+  }
+
+  @JwtAuth([RoleDecoratorEnum.SYSADMIN])
+  @Permissions([PermissionEnum.DISPLAY_PATIENTS])
+  @ApiOkResponse({ type: FetchPatientDetailsResponse })
+  @Get(&#x27;/details/:id&#x27;)
+  @Serialize(FetchPatientDetailsResponse)
+  @UseInterceptors(HttpLanguageCacheInterceptor, BigIntTransformerInterceptor)
+  async fetchPatientDetails(@Param(&#x27;id&#x27;, ParseIntPipe) id: number, @HeaderLanguage() language: LanguageEnum): Promise&lt;FetchPatientDetailsResponse&gt; {
+    return await this.patientService.fetchPatientDetails(id, language);
+  }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'controller';
+            var COMPODOC_CURRENT_PAGE_URL = 'PatientController.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

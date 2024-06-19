@@ -1,0 +1,2129 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>smoking-halim documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">smoking-halim documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content miscellaneous-variables">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Miscellaneous</li>
+  <li class="breadcrumb-item">Variables</li>
+</ol>
+
+<section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <ul class="index-list">
+                        <li>
+                            <a href="#allergySelect" title="src/modules/allergies/const/allergy.const.ts" ><b>allergySelect</b>&nbsp;&nbsp;&nbsp;(src/.../allergy.const.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#allergyStep" title="src/modules/assessments/const/assessment.const.ts" ><b>allergyStep</b>&nbsp;&nbsp;&nbsp;(src/.../assessment.const.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#assessmentInfoSchema" title="src/modules/assessments/swagger-schemas/assessment-info.scheam.ts" ><b>assessmentInfoSchema</b>&nbsp;&nbsp;&nbsp;(src/.../assessment-info.scheam.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#automatedNotification" title="prisma/seed.ts" ><b>automatedNotification</b>&nbsp;&nbsp;&nbsp;(prisma/.../seed.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#cleanUpEmptyFaqsTranslation" title="src/modules/faqs/response/faq-with-category.response.ts" ><b>cleanUpEmptyFaqsTranslation</b>&nbsp;&nbsp;&nbsp;(src/.../faq-with-category.response.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#cravingSelect" title="src/modules/cravings/const/craving-select.ts" ><b>cravingSelect</b>&nbsp;&nbsp;&nbsp;(src/.../craving-select.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#days" title="prisma/seed.ts" ><b>days</b>&nbsp;&nbsp;&nbsp;(prisma/.../seed.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#diarySchema" title="src/modules/diaries/swagger-schemas/diary.scheam.ts" ><b>diarySchema</b>&nbsp;&nbsp;&nbsp;(src/.../diary.scheam.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Facilities" title="src/common/decorators/facilities.decorator.ts" ><b>Facilities</b>&nbsp;&nbsp;&nbsp;(src/.../facilities.decorator.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#fagerstromStep" title="src/modules/assessments/const/assessment.const.ts" ><b>fagerstromStep</b>&nbsp;&nbsp;&nbsp;(src/.../assessment.const.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getFacility" title="src/modules/users/response/users.response.ts" ><b>getFacility</b>&nbsp;&nbsp;&nbsp;(src/.../users.response.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getFirstArticle" title="src/common/responses/id-and-name-languages.response.ts" ><b>getFirstArticle</b>&nbsp;&nbsp;&nbsp;(src/.../id-and-name-languages.response.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getFirstArticle" title="src/modules/articles/response/article.response.ts" ><b>getFirstArticle</b>&nbsp;&nbsp;&nbsp;(src/.../article.response.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getFirstArticle" title="src/modules/diaries/response/name-and-id-languages-diary-article.response.ts" ><b>getFirstArticle</b>&nbsp;&nbsp;&nbsp;(src/.../name-and-id-languages-diary-article.response.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getFirstArticleLabel" title="src/modules/articles-labels/response/fetch-article-label.response.ts" ><b>getFirstArticleLabel</b>&nbsp;&nbsp;&nbsp;(src/.../fetch-article-label.response.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getFirstFacilityGroup" title="src/modules/facility-role/response/created-facility-role.response.ts" ><b>getFirstFacilityGroup</b>&nbsp;&nbsp;&nbsp;(src/.../created-facility-role.response.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getFirstFacilityGroup" title="src/modules/users/response/fetch-admin-by-id.response.ts" ><b>getFirstFacilityGroup</b>&nbsp;&nbsp;&nbsp;(src/.../fetch-admin-by-id.response.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getFirstFaq" title="src/modules/faqs/response/faq.response.ts" ><b>getFirstFaq</b>&nbsp;&nbsp;&nbsp;(src/.../faq.response.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getFirstFaqCategory" title="src/modules/faq-categories/response/fetch-faq-category.response.ts" ><b>getFirstFaqCategory</b>&nbsp;&nbsp;&nbsp;(src/.../fetch-faq-category.response.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getFirstFaqCategory" title="src/modules/faqs/response/faq-with-category.response.ts" ><b>getFirstFaqCategory</b>&nbsp;&nbsp;&nbsp;(src/.../faq-with-category.response.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getFirstNrt" title="src/modules/nrts-detail/response/nrt-detail.response.ts" ><b>getFirstNrt</b>&nbsp;&nbsp;&nbsp;(src/.../nrt-detail.response.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getPermission" title="src/modules/permissions/response/fetch-permissions.response.ts" ><b>getPermission</b>&nbsp;&nbsp;&nbsp;(src/.../fetch-permissions.response.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getRoleId" title="src/modules/patients/response/user-playload.response.ts" ><b>getRoleId</b>&nbsp;&nbsp;&nbsp;(src/.../user-playload.response.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getUserType" title="src/modules/users/response/users.response.ts" ><b>getUserType</b>&nbsp;&nbsp;&nbsp;(src/.../users.response.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#groupRiskFactors" title="src/common/consts/risk-factor.const.ts" ><b>groupRiskFactors</b>&nbsp;&nbsp;&nbsp;(src/.../risk-factor.const.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#groupRiskFactorSelect" title="src/common/consts/risk-factor.const.ts" ><b>groupRiskFactorSelect</b>&nbsp;&nbsp;&nbsp;(src/.../risk-factor.const.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#habitInfoStep" title="src/modules/assessments/const/assessment.const.ts" ><b>habitInfoStep</b>&nbsp;&nbsp;&nbsp;(src/.../assessment.const.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#HeaderLanguage" title="src/common/decorators/header-language.ts" ><b>HeaderLanguage</b>&nbsp;&nbsp;&nbsp;(src/.../header-language.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#moodSelect" title="src/modules/moods/const/mood-select.ts" ><b>moodSelect</b>&nbsp;&nbsp;&nbsp;(src/.../mood-select.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#motivationSelect" title="src/modules/motivations/const/motivation-select.ts" ><b>motivationSelect</b>&nbsp;&nbsp;&nbsp;(src/.../motivation-select.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#motivationStep" title="src/modules/assessments/const/assessment.const.ts" ><b>motivationStep</b>&nbsp;&nbsp;&nbsp;(src/.../assessment.const.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#patchSelect" title="src/modules/patches/const/patch-select.ts" ><b>patchSelect</b>&nbsp;&nbsp;&nbsp;(src/.../patch-select.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#patientFirstName" title="prisma/seed.ts" ><b>patientFirstName</b>&nbsp;&nbsp;&nbsp;(prisma/.../seed.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#patientLastName" title="prisma/seed.ts" ><b>patientLastName</b>&nbsp;&nbsp;&nbsp;(prisma/.../seed.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#patientQid" title="prisma/seed.ts" ><b>patientQid</b>&nbsp;&nbsp;&nbsp;(prisma/.../seed.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#patientUsername" title="prisma/seed.ts" ><b>patientUsername</b>&nbsp;&nbsp;&nbsp;(prisma/.../seed.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Permissions" title="src/common/decorators/permissions.decorator.ts" ><b>Permissions</b>&nbsp;&nbsp;&nbsp;(src/.../permissions.decorator.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#personalInfoStep" title="src/modules/assessments/const/assessment.const.ts" ><b>personalInfoStep</b>&nbsp;&nbsp;&nbsp;(src/.../assessment.const.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#preparednessNotifications" title="prisma/seed.ts" ><b>preparednessNotifications</b>&nbsp;&nbsp;&nbsp;(prisma/.../seed.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#preparednessNotificationString" title="prisma/seed.ts" ><b>preparednessNotificationString</b>&nbsp;&nbsp;&nbsp;(prisma/.../seed.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#prisma" title="prisma/seed.ts" ><b>prisma</b>&nbsp;&nbsp;&nbsp;(prisma/.../seed.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#relapseSelect" title="src/modules/relapses/const/relapse-select.ts" ><b>relapseSelect</b>&nbsp;&nbsp;&nbsp;(src/.../relapse-select.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#returnAdminType" title="src/modules/users/response/fetch-admin-by-id.response.ts" ><b>returnAdminType</b>&nbsp;&nbsp;&nbsp;(src/.../fetch-admin-by-id.response.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#riskFactorSelect" title="src/modules/risk-factors/const/risk-factor-select.ts" ><b>riskFactorSelect</b>&nbsp;&nbsp;&nbsp;(src/.../risk-factor-select.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#riskFactorStep" title="src/modules/assessments/const/assessment.const.ts" ><b>riskFactorStep</b>&nbsp;&nbsp;&nbsp;(src/.../assessment.const.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#RoleGuard" title="src/common/guards/roles.guard.ts" ><b>RoleGuard</b>&nbsp;&nbsp;&nbsp;(src/.../roles.guard.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#Roles" title="src/common/decorators/roles.decorator.ts" ><b>Roles</b>&nbsp;&nbsp;&nbsp;(src/.../roles.decorator.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ROLES_KEY" title="src/common/decorators/roles.decorator.ts" ><b>ROLES_KEY</b>&nbsp;&nbsp;&nbsp;(src/.../roles.decorator.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SettingsData" title="src/common/consts/settings-data.ts" ><b>SettingsData</b>&nbsp;&nbsp;&nbsp;(src/.../settings-data.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#smokingTriggerSelect" title="src/modules/smoking-triggers/const/smoking-trigger-select.ts" ><b>smokingTriggerSelect</b>&nbsp;&nbsp;&nbsp;(src/.../smoking-trigger-select.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#smokingTriggerStep" title="src/modules/assessments/const/assessment.const.ts" ><b>smokingTriggerStep</b>&nbsp;&nbsp;&nbsp;(src/.../assessment.const.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#symptomSelect" title="src/modules/symptoms/const/symptom-select.ts" ><b>symptomSelect</b>&nbsp;&nbsp;&nbsp;(src/.../symptom-select.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#tobaccoSelect" title="src/modules/tobaccos/const/tobacco.const.ts" ><b>tobaccoSelect</b>&nbsp;&nbsp;&nbsp;(src/.../tobacco.const.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#tobaccoStep" title="src/modules/assessments/const/assessment.const.ts" ><b>tobaccoStep</b>&nbsp;&nbsp;&nbsp;(src/.../assessment.const.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#User" title="src/common/decorators/auth.decorator.ts" ><b>User</b>&nbsp;&nbsp;&nbsp;(src/.../auth.decorator.ts)</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    <h3>src/modules/allergies/const/allergy.const.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="allergySelect"></a>
+                    <span class="name">
+                        <span ><b>allergySelect</b></span>
+                        <a href="#allergySelect"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Prisma.AllergySelect</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  id: true,
+  bupropion: true,
+  nicotine: true,
+  nicotineTransdermalPatch: true,
+  other: true,
+  otherMedication: true,
+  varenicline: true,
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/modules/assessments/const/assessment.const.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="allergyStep"></a>
+                    <span class="name">
+                        <span ><b>allergyStep</b></span>
+                        <a href="#allergyStep"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>5</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fagerstromStep"></a>
+                    <span class="name">
+                        <span ><b>fagerstromStep</b></span>
+                        <a href="#fagerstromStep"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>7</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="habitInfoStep"></a>
+                    <span class="name">
+                        <span ><b>habitInfoStep</b></span>
+                        <a href="#habitInfoStep"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>2</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="motivationStep"></a>
+                    <span class="name">
+                        <span ><b>motivationStep</b></span>
+                        <a href="#motivationStep"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>8</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="personalInfoStep"></a>
+                    <span class="name">
+                        <span ><b>personalInfoStep</b></span>
+                        <a href="#personalInfoStep"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>1</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="riskFactorStep"></a>
+                    <span class="name">
+                        <span ><b>riskFactorStep</b></span>
+                        <a href="#riskFactorStep"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>4</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="smokingTriggerStep"></a>
+                    <span class="name">
+                        <span ><b>smokingTriggerStep</b></span>
+                        <a href="#smokingTriggerStep"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>6</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="tobaccoStep"></a>
+                    <span class="name">
+                        <span ><b>tobaccoStep</b></span>
+                        <a href="#tobaccoStep"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>3</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/modules/assessments/swagger-schemas/assessment-info.scheam.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="assessmentInfoSchema"></a>
+                    <span class="name">
+                        <span ><b>assessmentInfoSchema</b></span>
+                        <a href="#assessmentInfoSchema"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  type: &#x27;array&#x27;,
+  items: {
+    oneOf: [{ $ref: getSchemaPath(SuccessResponse) }, { $ref: getSchemaPath(AssessmentInfoResponse) }],
+  },
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>prisma/seed.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="automatedNotification"></a>
+                    <span class="name">
+                        <span ><b>automatedNotification</b></span>
+                        <a href="#automatedNotification"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>preparednessNotifications.map((t) &#x3D;&gt; ({
+  notificationTranslation: {
+    create: [
+      {
+        title: &#x27;automatedPreparedness&#x27;,
+        body: t,
+        language: {
+          connect: {
+            code: LanguageEnum.ENGLISH,
+          },
+        },
+      },
+      {
+        title: &#x27;automatedPreparedness&#x27;,
+        body: t,
+        language: {
+          connect: {
+            code: LanguageEnum.ARABIC,
+          },
+        },
+      },
+    ],
+  },
+  notificationType: &#x27;automatedPreparedness&#x27;,
+}))</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="days"></a>
+                    <span class="name">
+                        <span ><b>days</b></span>
+                        <a href="#days"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+  {
+    name: DaysEnum.SUNDAY,
+  },
+  {
+    name: DaysEnum.MONDAY,
+  },
+  {
+    name: DaysEnum.TUESDAY,
+  },
+  {
+    name: DaysEnum.WEDNESDAY,
+  },
+  {
+    name: DaysEnum.THURSDAY,
+  },
+  {
+    name: DaysEnum.FRIDAY,
+  },
+  {
+    name: DaysEnum.SATURDAY,
+  },
+]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="patientFirstName"></a>
+                    <span class="name">
+                        <span ><b>patientFirstName</b></span>
+                        <a href="#patientFirstName"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;اسلام&#x27;</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="patientLastName"></a>
+                    <span class="name">
+                        <span ><b>patientLastName</b></span>
+                        <a href="#patientLastName"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;الشمالي&#x27;</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="patientQid"></a>
+                    <span class="name">
+                        <span ><b>patientQid</b></span>
+                        <a href="#patientQid"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;00000000000&#x27;</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="patientUsername"></a>
+                    <span class="name">
+                        <span ><b>patientUsername</b></span>
+                        <a href="#patientUsername"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x60;${patientFirstName}_${patientLastName}&#x60;</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="preparednessNotifications"></a>
+                    <span class="name">
+                        <span ><b>preparednessNotifications</b></span>
+                        <a href="#preparednessNotifications"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>preparednessNotificationString.filter((_, index) &#x3D;&gt; index % 2 &#x3D;&#x3D; 0)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="preparednessNotificationString"></a>
+                    <span class="name">
+                        <span ><b>preparednessNotificationString</b></span>
+                        <a href="#preparednessNotificationString"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x60;Welcome to the Tobacco Cessation Program!
+It seems you are not starting today. We’ll be sending automatic notifications and tips to help prepare in the days leading up to quitting smoking. ;Assalamu alaikum, welcome to the start of a healthier life!
+To help you prepare for the next 6 days, [quit date] (in days) we&#x27;ll be sending you information to prepare for the big day. ;Learn about the benefits of quitting smoking. Knowing the health improvements and financial savings will motivate you during the challenging times of the quitting process. For more information, explore the preparedness article under the General Information of your Smoking Cessation Journey Plan. ;Hey! Do you know the benefits of quitting smoking?  Explore articles under General Information to learn about health improvements and more!
+;Gradually delay your first cigarette in the morning by adding some minutes each day. Pause and consider if you truly need to smoke before lighting a cigarette.
+For more information, explore this preparedness link article (link) under the General Information of your Smoking Cessation Journey Plan. ;For more information, explore this preparedness link (link) article under the General Information of your Smoking Cessation Journey Plan. ;Engage in simple relaxation techniques. Before lighting up, take three deep breaths and allow a minute to pass.
+For more information, explore the preparedness article under the General Information of your Smoking Cessation Journey Plan. ;Lets try something new, try relaxing with breathing techniques. Before smoking, take 3 deep breaths and give your body a minute to relax
+For more information, explore the preparedness article under the General Information of your Smoking Cessation Journey Plan. ;Remove cigarettes, lighters, and ashtrays from your home, car, and work area. Discarding these items can reduce the temptation to smoke.
+For more information, explore the preparedness article under the General Information of your Smoking Cessation Journey Plan. ;Try removing [if one selection of tobacco, or if multiple &#x3D; smoking products], lighters and ashtrays from your home, car, and work area. 
+Discarding these items can reduce the temptation to smoke. For more information, explore the preparedness article under the General Information of your Smoking Cessation Journey Plan. ;Select a Quit Date: Set a specific date to stop smoking. Doing so can help you mentally prepare for the transition.
+For more information, explore the preparedness article under the General Information of your Smoking Cessation Journey Plan.&#x60;.split(&#x27;;&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="prisma"></a>
+                    <span class="name">
+                        <span ><b>prisma</b></span>
+                        <a href="#prisma"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new PrismaClient()</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/modules/faqs/response/faq-with-category.response.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cleanUpEmptyFaqsTranslation"></a>
+                    <span class="name">
+                        <span ><b>cleanUpEmptyFaqsTranslation</b></span>
+                        <a href="#cleanUpEmptyFaqsTranslation"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(obj: FaqWithCategoryResponse): FaqMutatedResponse[] &#x3D;&gt; {
+  //this is to avoid fetching faq with just the id when we dont find result on the translation table
+  const result &#x3D; obj.faqs.map((item: FaqResponse) &#x3D;&gt; {
+    if (item?.faqsTranslation[0]?.answer || item?.faqsTranslation[0]?.question) return { id: item.id, faq: item.faqsTranslation[0] };
+    return null;
+  });
+
+  return result.filter((item) &#x3D;&gt; item); //filter out null values
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFirstFaqCategory"></a>
+                    <span class="name">
+                        <span ><b>getFirstFaqCategory</b></span>
+                        <a href="#getFirstFaqCategory"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(obj: FetchFaqCategoryResponse): FaqCategoryTranslationResponse &#x3D;&gt; {
+  return obj.faqCategoriesTranslation[0];
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/modules/cravings/const/craving-select.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cravingSelect"></a>
+                    <span class="name">
+                        <span ><b>cravingSelect</b></span>
+                        <a href="#cravingSelect"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Prisma.CravingSelect</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  id: true,
+  cravingDate: true,
+  cravingLevel: true,
+  stressFactorOptions: {
+    select: {
+      stressFactor: true,
+    },
+  },
+  distractionOptions: {
+    select: {
+      distraction: true,
+    },
+  },
+  latitude: true,
+  longitude: true,
+  location: true,
+  createdAt: true,
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/modules/diaries/swagger-schemas/diary.scheam.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="diarySchema"></a>
+                    <span class="name">
+                        <span ><b>diarySchema</b></span>
+                        <a href="#diarySchema"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  type: &#x27;array&#x27;,
+  items: {
+    oneOf: [
+      { $ref: getSchemaPath(SymptomResponse) },
+      { $ref: getSchemaPath(MoodResponse) },
+      { $ref: getSchemaPath(CravingResponse) },
+      { $ref: getSchemaPath(ChewingGumResponse) },
+      { $ref: getSchemaPath(PatchResponse) },
+      { $ref: getSchemaPath(DiaryArticleResponse) },
+      { $ref: getSchemaPath(RelapseResponse) },
+      { $ref: getSchemaPath(UserChallengeDairyResponse) },
+      { $ref: getSchemaPath(AchievementDairyResponse) },
+    ],
+  },
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/common/decorators/facilities.decorator.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Facilities"></a>
+                    <span class="name">
+                        <span ><b>Facilities</b></span>
+                        <a href="#Facilities"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createParamDecorator((_: unknown, ctx: ExecutionContext): number[] &#x3D;&gt; {
+  const { facilities } &#x3D; ctx.switchToHttp().getRequest();
+  return facilities;
+})</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/modules/users/response/users.response.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFacility"></a>
+                    <span class="name">
+                        <span ><b>getFacility</b></span>
+                        <a href="#getFacility"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(obj: any): FacilityForNameResponse &#x3D;&gt; {
+  if (getUserType(obj) &#x3D;&#x3D;&#x3D; UserType.PATIENT) return obj.patient?.facility;
+  if (getUserType(obj) &#x3D;&#x3D;&#x3D; UserType.HS) return obj.admin.healthSpecialist?.facility;
+  //TODO discuss the admin facility logic in the future
+  // const facilities &#x3D; obj.admin?.adminFacilities;
+  // if (!facilities || facilities?.length &#x3D;&#x3D;&#x3D; 0) return null;
+  // return facilities[0];
+  return null;
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getUserType"></a>
+                    <span class="name">
+                        <span ><b>getUserType</b></span>
+                        <a href="#getUserType"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(obj: any): UserType &#x3D;&gt; {
+  if (obj.patient) return UserType.PATIENT;
+  if (obj.admin.healthSpecialist) return UserType.HS;
+  return UserType.ADMIN;
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/common/responses/id-and-name-languages.response.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFirstArticle"></a>
+                    <span class="name">
+                        <span ><b>getFirstArticle</b></span>
+                        <a href="#getFirstArticle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(obj: NameAndIdLanguagesResponse): NameAndIdTranslationResponse &#x3D;&gt; {
+  return obj.articlesTranslation[0];
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/modules/articles/response/article.response.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFirstArticle"></a>
+                    <span class="name">
+                        <span ><b>getFirstArticle</b></span>
+                        <a href="#getFirstArticle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(obj: ArticleResponse): ArticleTranslationResponse &#x3D;&gt; {
+  return obj?.articlesTranslation[0];
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/modules/diaries/response/name-and-id-languages-diary-article.response.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFirstArticle"></a>
+                    <span class="name">
+                        <span ><b>getFirstArticle</b></span>
+                        <a href="#getFirstArticle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(obj: DiaryArticleResponse): NameAndIdTranslationResponse &#x3D;&gt; {
+  return obj.articlesTranslation[0];
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/modules/articles-labels/response/fetch-article-label.response.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFirstArticleLabel"></a>
+                    <span class="name">
+                        <span ><b>getFirstArticleLabel</b></span>
+                        <a href="#getFirstArticleLabel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(obj: FetchArticleLabelResponse): ArticleLabelTranslationResponse &#x3D;&gt; {
+  return obj.articleLabelsTranslation[0];
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/modules/facility-role/response/created-facility-role.response.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFirstFacilityGroup"></a>
+                    <span class="name">
+                        <span ><b>getFirstFacilityGroup</b></span>
+                        <a href="#getFirstFacilityGroup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(obj: FacilityRoleResponse): NameAndIdResponse &#x3D;&gt; {
+  return obj.facilityGroups[0];
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/modules/users/response/fetch-admin-by-id.response.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFirstFacilityGroup"></a>
+                    <span class="name">
+                        <span ><b>getFirstFacilityGroup</b></span>
+                        <a href="#getFirstFacilityGroup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(obj: AdminResponse): NameAndIdResponse &#x3D;&gt; {
+  return obj.adminFacilityGroups[0];
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="returnAdminType"></a>
+                    <span class="name">
+                        <span ><b>returnAdminType</b></span>
+                        <a href="#returnAdminType"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(obj: FetchAdminByIdResponse): AdminType &#x3D;&gt; {
+  if (!obj.admin.role) return null;
+  if (obj.admin.role.restriction &#x3D;&#x3D;&#x3D; RoleRestrictionEnum.SYSTEM_ADMIN) return AdminType.SYSADMIN;
+  if (obj.admin.role.restriction &#x3D;&#x3D;&#x3D; RoleRestrictionEnum.CUSTOM) return AdminType.FACILITY_ADMIN;
+  else return null;
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/modules/faqs/response/faq.response.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFirstFaq"></a>
+                    <span class="name">
+                        <span ><b>getFirstFaq</b></span>
+                        <a href="#getFirstFaq"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(obj: FaqResponse): FaqTranslationResponse &#x3D;&gt; {
+  return obj.faqsTranslation[0];
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/modules/faq-categories/response/fetch-faq-category.response.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFirstFaqCategory"></a>
+                    <span class="name">
+                        <span ><b>getFirstFaqCategory</b></span>
+                        <a href="#getFirstFaqCategory"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(obj: FetchFaqCategoryResponse): FaqCategoryTranslationResponse &#x3D;&gt; {
+  return obj.faqCategoriesTranslation[0];
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/modules/nrts-detail/response/nrt-detail.response.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFirstNrt"></a>
+                    <span class="name">
+                        <span ><b>getFirstNrt</b></span>
+                        <a href="#getFirstNrt"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(obj: NrtDetailResponse): NrtDetailsTranslationResponse &#x3D;&gt; {
+  if (obj.nrt) return obj.nrt; //if response already serialized
+  return obj?.nrtDetailsTranslation[0];
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/modules/permissions/response/fetch-permissions.response.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPermission"></a>
+                    <span class="name">
+                        <span ><b>getPermission</b></span>
+                        <a href="#getPermission"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(obj: FetchPermissionResponse): FetchPermissionTranslationResponse &#x3D;&gt; {
+  if (obj?.permission) return obj.permission; //in case we have double serialization
+  return obj?.permissionsTranslation[0];
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/modules/patients/response/user-playload.response.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getRoleId"></a>
+                    <span class="name">
+                        <span ><b>getRoleId</b></span>
+                        <a href="#getRoleId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>({ obj }) &#x3D;&gt; obj.admin?.roleId || obj.healthSpecialist?.roleId</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/common/consts/risk-factor.const.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="groupRiskFactors"></a>
+                    <span class="name">
+                        <span ><b>groupRiskFactors</b></span>
+                        <a href="#groupRiskFactors"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+  {
+    cardiovascular: true,
+  },
+  { copd: true },
+  { diabetes: true },
+  { pregnant: true },
+]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="groupRiskFactorSelect"></a>
+                    <span class="name">
+                        <span ><b>groupRiskFactorSelect</b></span>
+                        <a href="#groupRiskFactorSelect"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#GroupRiskFactorType" target="_self" >GroupRiskFactorType</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  cardiovascular: true,
+  copd: true,
+  diabetes: true,
+  pregnant: true,
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/common/decorators/header-language.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="HeaderLanguage"></a>
+                    <span class="name">
+                        <span ><b>HeaderLanguage</b></span>
+                        <a href="#HeaderLanguage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createParamDecorator((_, ctx: ExecutionContext): LanguageEnum &#x3D;&gt; {
+  const req &#x3D; ctx.switchToHttp().getRequest();
+  const { headers } &#x3D; req;
+
+  if (headers[&#x27;accept-language&#x27;] &#x3D;&#x3D;&#x3D; HeaderLanguageEnum.AR) return LanguageEnum.ARABIC;
+  return LanguageEnum.ENGLISH;
+})</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/modules/moods/const/mood-select.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="moodSelect"></a>
+                    <span class="name">
+                        <span ><b>moodSelect</b></span>
+                        <a href="#moodSelect"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Prisma.MoodSelect</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  id: true,
+  mood: true,
+  createdAt: true,
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/modules/motivations/const/motivation-select.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="motivationSelect"></a>
+                    <span class="name">
+                        <span ><b>motivationSelect</b></span>
+                        <a href="#motivationSelect"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Prisma.MotivationSelect</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  id: true,
+  baby: true,
+  clean: true,
+  control: true,
+  doctor: true,
+  environment: true,
+  family: true,
+  future: true,
+  goodExample: true,
+  health: true,
+  money: true,
+  ownReason: true,
+  pets: true,
+  placesToSmoke: true,
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/modules/patches/const/patch-select.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="patchSelect"></a>
+                    <span class="name">
+                        <span ><b>patchSelect</b></span>
+                        <a href="#patchSelect"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Prisma.PatchSelect</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  id: true,
+  startDate: true,
+  endDate: true,
+  strength: true,
+  patchLocation: true,
+  cravingLevel: true,
+  effectiveness: true,
+  symptom: true,
+  createdAt: true,
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/common/decorators/permissions.decorator.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Permissions"></a>
+                    <span class="name">
+                        <span ><b>Permissions</b></span>
+                        <a href="#Permissions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(permissions: PermissionEnum[]) &#x3D;&gt; SetMetadata(&#x27;permissions&#x27;, permissions)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/modules/relapses/const/relapse-select.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="relapseSelect"></a>
+                    <span class="name">
+                        <span ><b>relapseSelect</b></span>
+                        <a href="#relapseSelect"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Prisma.RelapseSelect</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  id: true,
+  cigarettesNumber: true,
+  date: true,
+  createdAt: true,
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/modules/risk-factors/const/risk-factor-select.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="riskFactorSelect"></a>
+                    <span class="name">
+                        <span ><b>riskFactorSelect</b></span>
+                        <a href="#riskFactorSelect"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Prisma.RiskFactorSelect</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  id: true,
+  cardiovascular: true,
+  copd: true,
+  diabetes: true,
+  gestationalDiabetes: true,
+  pregnant: true,
+  type1: true,
+  type2: true,
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/common/guards/roles.guard.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="RoleGuard"></a>
+                    <span class="name">
+                        <span ><b>RoleGuard</b></span>
+                        <a href="#RoleGuard"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(roles?: RoleDecoratorEnum[]) &#x3D;&gt; {
+  class RoleGuardMixin implements CanActivate {
+    canActivate(context: ExecutionContext) {
+      if (roles &amp;&amp; readFileSync.length) {
+        const request &#x3D; context.switchToHttp().getRequest();
+        const user &#x3D; request.user;
+
+        if (!roles.some((role) &#x3D;&gt; getUserRole(user).includes(role))) throw new MultiLanguageException(LanguageErrorEnum.FORBIDDEN_RESOURCES);
+      }
+
+      return true;
+    }
+  }
+
+  const guard &#x3D; mixin(RoleGuardMixin);
+  return guard;
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/common/decorators/roles.decorator.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="Roles"></a>
+                    <span class="name">
+                        <span ><b>Roles</b></span>
+                        <a href="#Roles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(...roles: RoleEnum[]) &#x3D;&gt; SetMetadata(ROLES_KEY, roles)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ROLES_KEY"></a>
+                    <span class="name">
+                        <span ><b>ROLES_KEY</b></span>
+                        <a href="#ROLES_KEY"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;roles&#x27;</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/common/consts/settings-data.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SettingsData"></a>
+                    <span class="name">
+                        <span ><b>SettingsData</b></span>
+                        <a href="#SettingsData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/SettingsDataType.html" target="_self" >SettingsDataType</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  // For USER setting
+  user: {
+    type: SettingRoleEnum.USER,
+    options: [
+      {
+        name: SettingOptionNameEnum.ALL_MESSAGES_IN_PRIVATE_CHAT,
+        type: SettingTypeEnum.TOGGLE,
+        section: SettingSectionEnum.CHAT_NOTIFICATION,
+      },
+      {
+        name: SettingOptionNameEnum.MENTION_IN_PRIVATE_GROUP,
+        type: SettingTypeEnum.TOGGLE,
+        section: SettingSectionEnum.CHAT_NOTIFICATION,
+      },
+      {
+        name: SettingOptionNameEnum.MENTION_IN_COMMUNITY_CHAT,
+        type: SettingTypeEnum.TOGGLE,
+        section: SettingSectionEnum.CHAT_NOTIFICATION,
+      },
+      {
+        name: SettingOptionNameEnum.ACHIEVEMENT_ENLOCK_NOTIFICATION,
+        type: SettingTypeEnum.TOGGLE,
+        section: SettingSectionEnum.PROGRESS_NOTIFICATION,
+      },
+      {
+        name: SettingOptionNameEnum.HEALTH_IMPROVEMENT_NOTIFICATION,
+        type: SettingTypeEnum.TOGGLE,
+        section: SettingSectionEnum.PROGRESS_NOTIFICATION,
+      },
+      // Add other options for USER here
+    ],
+  },
+  // For SYSADMIN setting
+  admin: {
+    type: SettingRoleEnum.SYSADMIN,
+    options: [
+      {
+        name: SettingOptionNameEnum.NEW_NOTIFICATION_REVIEW_ALERT,
+        type: SettingTypeEnum.TOGGLE,
+        section: SettingSectionEnum.NOTIFICATION_MANAGEMENT,
+      },
+      {
+        name: SettingOptionNameEnum.NOTIFICATION_UPDATE_ALERT,
+        type: SettingTypeEnum.TOGGLE,
+        section: SettingSectionEnum.NOTIFICATION_MANAGEMENT,
+      },
+      {
+        name: SettingOptionNameEnum.NEW_ARTICLE_REVIEW_NOTIFICATION,
+        type: SettingTypeEnum.TOGGLE,
+        section: SettingSectionEnum.ARTICLE_MANAGEMENT,
+      },
+      {
+        name: SettingOptionNameEnum.ARTICLE_UPDATED_NOTIFICATION,
+        type: SettingTypeEnum.TOGGLE,
+        section: SettingSectionEnum.ARTICLE_MANAGEMENT,
+      },
+      {
+        name: SettingOptionNameEnum.NEW_TICKET_NOTIFICATION,
+        type: SettingTypeEnum.TOGGLE,
+        section: SettingSectionEnum.TICKET_MANAGEMENT,
+      },
+      {
+        name: SettingOptionNameEnum.TICKET_ASSIGNMENT_NOTIFICATION,
+        type: SettingTypeEnum.TOGGLE,
+        section: SettingSectionEnum.TICKET_MANAGEMENT,
+      },
+      {
+        name: SettingOptionNameEnum.TICKET_PRIORITY_UPDATE,
+        type: SettingTypeEnum.TOGGLE,
+        section: SettingSectionEnum.TICKET_MANAGEMENT,
+      },
+      {
+        name: SettingOptionNameEnum.ARTICLLE_APPROVAL,
+        type: SettingTypeEnum.TOGGLE,
+        section: SettingSectionEnum.CONTENT_APPROVAL,
+      },
+      {
+        name: SettingOptionNameEnum.ARTICLE_REJECTION,
+        type: SettingTypeEnum.TOGGLE,
+        section: SettingSectionEnum.CONTENT_APPROVAL,
+      },
+      // Add other options for SYSADMIN here
+    ],
+  },
+  // For HEALTHSPECIALIST setting
+  healthSpecialist: {
+    type: SettingRoleEnum.HEALTH_SPECIALIST,
+    options: [
+      {
+        name: SettingOptionNameEnum.ALL_MESSAGES_IN_PRIVATE_CHAT,
+        type: SettingTypeEnum.TOGGLE,
+        section: SettingSectionEnum.CHAT_NOTIFICATION,
+      },
+      {
+        name: SettingOptionNameEnum.MENTION_IN_PRIVATE_GROUP,
+        type: SettingTypeEnum.TOGGLE,
+        section: SettingSectionEnum.CHAT_NOTIFICATION,
+      },
+      {
+        name: SettingOptionNameEnum.MENTION_IN_COMMUNITY_CHAT,
+        type: SettingTypeEnum.TOGGLE,
+        section: SettingSectionEnum.CHAT_NOTIFICATION,
+      },
+      {
+        name: SettingOptionNameEnum.SCHEDULED_NOTIFICATION_APPROVAL,
+        type: SettingTypeEnum.TOGGLE,
+        section: SettingSectionEnum.NOTIFICATION_APPROVAL,
+      },
+      {
+        name: SettingOptionNameEnum.SCHEDULED_NOTIFICATION_REJECTION,
+        type: SettingTypeEnum.TOGGLE,
+        section: SettingSectionEnum.NOTIFICATION_APPROVAL,
+      },
+      // Add other options for HEALTHSPECIALIST here
+    ],
+  },
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/modules/smoking-triggers/const/smoking-trigger-select.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="smokingTriggerSelect"></a>
+                    <span class="name">
+                        <span ><b>smokingTriggerSelect</b></span>
+                        <a href="#smokingTriggerSelect"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Prisma.SmokingTriggerSelect</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  id: true,
+  offeredCigarette: true,
+  socialEvent: true,
+  aroundSmokers: true,
+  seeingSmoking: true,
+  smellingSmoking: true,
+  onPhone: true,
+  downTime: true,
+  coffee: true,
+  meal: true,
+  seeingSmokingOnTv: true,
+  waitingForRide: true,
+  walking: true,
+  watchingTv: true,
+  working: true,
+  feelingIrritable: true,
+  feelingRestless: true,
+  feelingCraving: true,
+  unconcentrated: true,
+  wakingUp: true,
+  anxious: true,
+  bored: true,
+  frustrated: true,
+  happy: true,
+  lonely: true,
+  sad: true,
+  stressed: true,
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/modules/symptoms/const/symptom-select.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="symptomSelect"></a>
+                    <span class="name">
+                        <span ><b>symptomSelect</b></span>
+                        <a href="#symptomSelect"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Prisma.SymptomSelect</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  id: true,
+  comment: true,
+  other: true,
+  symptomOptions: {
+    select: {
+      symptom: true,
+    },
+  },
+  createdAt: true,
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/modules/tobaccos/const/tobacco.const.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="tobaccoSelect"></a>
+                    <span class="name">
+                        <span ><b>tobaccoSelect</b></span>
+                        <a href="#tobaccoSelect"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Prisma.TobaccoSelect</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  id: true,
+  cigarettesNumber: true,
+  cigarettesBrand: true,
+  cigarsNumber: true,
+  cigarsBrand: true,
+  eCigarettesNumber: true,
+  eCigarettesBrand: true,
+  shishaDaysAWeek: true,
+  shishaNumberPerDay: true,
+  shishaLong: true,
+  pipesDaysAWeek: true,
+  pipesMinADay: true,
+  snusKind: true,
+  snusNicotine: true,
+  dipKind: true,
+  dipNicotine: true,
+  other: true,
+  chewingNumber: true,
+  chewingBrand: true,
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/common/decorators/auth.decorator.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="User"></a>
+                    <span class="name">
+                        <span ><b>User</b></span>
+                        <a href="#User"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createParamDecorator((data: string, ctx: ExecutionContext): UserPlayloadResponse &#x3D;&gt; {
+  const { user } &#x3D; ctx.switchToHttp().getRequest();
+  return data ? user[data] : user;
+})</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-variables';
+            var COMPODOC_CURRENT_PAGE_URL = 'variables.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

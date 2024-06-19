@@ -1,0 +1,1789 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>smoking-halim documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">smoking-halim documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content controller">
+                   <div class="content-data">
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Controllers</li>
+  <li class="breadcrumb-item" >AssessmentsController</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/modules/assessments/assessments.controller.ts</code>
+        </p>
+
+            <p class="comment">
+                <h3>Prefix</h3>
+            </p>
+            <p class="comment">
+                <code>assessments</code>
+            </p>
+
+
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#addAssessment" >addAssessment</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#fetchAssessment" >fetchAssessment</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#fetchAssessments" >fetchAssessments</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#fetchCurrentAssessmentDetail" >fetchCurrentAssessmentDetail</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#updateAllergy" >updateAllergy</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#updateFagerstromReport" >updateFagerstromReport</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#updateFagerstromScore" >updateFagerstromScore</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#updateHabit" >updateHabit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#updateMotivation" >updateMotivation</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#updatePersonalInformation" >updatePersonalInformation</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#updateRiskFactor" >updateRiskFactor</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#updateSmokingTrigger" >updateSmokingTrigger</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#updateTobacco" >updateTobacco</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addAssessment"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>addAssessment</b></span>
+                        <a href="#addAssessment"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addAssessment(assessmentName: <a href="../classes/AddAssessmentDto.html" target="_self">AddAssessmentDto</a>, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;])<br />@ApiCreatedResponse({type: FetchAssessmentResponse})<br />@Post()<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="40"
+                                    class="link-to-prism">src/modules/assessments/assessments.controller.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>assessmentName</td>
+                                            <td>
+                                                            <code><a href="../classes/AddAssessmentDto.html" target="_self" >AddAssessmentDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;FetchAssessmentResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchAssessment"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>fetchAssessment</b></span>
+                        <a href="#fetchAssessment"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fetchAssessment(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;])<br />@ApiOkResponse({type: FetchAssessmentResponse})<br />@Get(&#x27;:id&#x27;)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="63"
+                                    class="link-to-prism">src/modules/assessments/assessments.controller.ts:63</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;FetchAssessmentResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchAssessments"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>fetchAssessments</b></span>
+                        <a href="#fetchAssessments"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fetchAssessments(user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;])<br />@ApiOkResponse({type: FetchAllAssessmentResponse, isArray: true})<br />@Get(&#x27;/all&#x27;)<br />@Serialize(FetchAllAssessmentResponse)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="48"
+                                    class="link-to-prism">src/modules/assessments/assessments.controller.ts:48</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;FetchAllAssessmentResponse[]&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchCurrentAssessmentDetail"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>fetchCurrentAssessmentDetail</b></span>
+                        <a href="#fetchCurrentAssessmentDetail"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fetchCurrentAssessmentDetail(user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;])<br />@ApiOkResponse({type: CurrentAssessmentResponse})<br />@Get(&#x27;current-assessment&#x27;)<br />@UseInterceptors(HttpTokenCacheInterceptor, BigIntTransformerInterceptor)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="56"
+                                    class="link-to-prism">src/modules/assessments/assessments.controller.ts:56</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;CurrentAssessmentResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateAllergy"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>updateAllergy</b></span>
+                        <a href="#updateAllergy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateAllergy(addAllergyAssessmentDto: <a href="../classes/AddAllergyAssessmentDto.html" target="_self">AddAllergyAssessmentDto</a>, id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;])<br />@ApiOkResponse({type: AllergyResponse})<br />@Put(&#x27;:id/allergies&#x27;)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="105"
+                                    class="link-to-prism">src/modules/assessments/assessments.controller.ts:105</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>addAllergyAssessmentDto</td>
+                                            <td>
+                                                            <code><a href="../classes/AddAllergyAssessmentDto.html" target="_self" >AddAllergyAssessmentDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;AllergyResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateFagerstromReport"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>updateFagerstromReport</b></span>
+                        <a href="#updateFagerstromReport"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateFagerstromReport(IdsDto: <a href="../classes/IdDto.html" target="_self">IdDto[]</a>, id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;])<br />@ApiOkResponse({type: Boolean})<br />@ApiResponse({status: 404, description: &#x27;User assessment not found!&#x27;})<br />@ApiBody({type: IdDto, isArray: true})<br />@Put(&#x27;:id/fagerstroms&#x27;)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="118"
+                                    class="link-to-prism">src/modules/assessments/assessments.controller.ts:118</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>IdsDto</td>
+                                            <td>
+                                                            <code><a href="../classes/IdDto.html" target="_self" >IdDto[]</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateFagerstromScore"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>updateFagerstromScore</b></span>
+                        <a href="#updateFagerstromScore"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateFagerstromScore(updateScoreDto: <a href="../classes/UpdateScoreDto.html" target="_self">UpdateScoreDto</a>, id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;])<br />@ApiOkResponse({type: Boolean})<br />@ApiResponse({status: 404, description: &#x27;User assessment not found!&#x27;})<br />@Put(&#x27;:id/fagerstrom-score&#x27;)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="126"
+                                    class="link-to-prism">src/modules/assessments/assessments.controller.ts:126</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>updateScoreDto</td>
+                                            <td>
+                                                            <code><a href="../classes/UpdateScoreDto.html" target="_self" >UpdateScoreDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;number&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateHabit"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>updateHabit</b></span>
+                        <a href="#updateHabit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateHabit(createHabitInfoAssessmentDto: <a href="../classes/CreateHabitInfoAssessmentDto.html" target="_self">CreateHabitInfoAssessmentDto</a>, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>, id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;])<br />@ApiOkResponse({type: HabitInformationResponse})<br />@ApiResponse({status: 404, description: &#x27;User assessment not found!&#x27;})<br />@Put(&#x27;:id/habit-informations&#x27;)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="83"
+                                    class="link-to-prism">src/modules/assessments/assessments.controller.ts:83</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>createHabitInfoAssessmentDto</td>
+                                            <td>
+                                                            <code><a href="../classes/CreateHabitInfoAssessmentDto.html" target="_self" >CreateHabitInfoAssessmentDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;HabitInformationResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateMotivation"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>updateMotivation</b></span>
+                        <a href="#updateMotivation"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateMotivation(updateMotivationAssessmentDto: <a href="../classes/UpdateMotivationAssessmentDto.html" target="_self">UpdateMotivationAssessmentDto</a>, id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;])<br />@ApiOkResponse({type: MotivationResponse})<br />@Put(&#x27;:id/motivations&#x27;)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="155"
+                                    class="link-to-prism">src/modules/assessments/assessments.controller.ts:155</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>updateMotivationAssessmentDto</td>
+                                            <td>
+                                                            <code><a href="../classes/UpdateMotivationAssessmentDto.html" target="_self" >UpdateMotivationAssessmentDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;MotivationResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updatePersonalInformation"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>updatePersonalInformation</b></span>
+                        <a href="#updatePersonalInformation"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updatePersonalInformation(createPersonalInfoAssessmentDto: <a href="../classes/CreatePersonalInfoAssessmentDto.html" target="_self">CreatePersonalInfoAssessmentDto</a>, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>, id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;])<br />@ApiOkResponse({type: PersonalInformationResponse})<br />@ApiResponse({status: 404, description: &#x27;User assessment not found!&#x27;})<br />@Put(&#x27;:id/personal-informations&#x27;)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="71"
+                                    class="link-to-prism">src/modules/assessments/assessments.controller.ts:71</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>createPersonalInfoAssessmentDto</td>
+                                            <td>
+                                                            <code><a href="../classes/CreatePersonalInfoAssessmentDto.html" target="_self" >CreatePersonalInfoAssessmentDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;PersonalInformationResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateRiskFactor"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>updateRiskFactor</b></span>
+                        <a href="#updateRiskFactor"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateRiskFactor(updateRiskFactorAssessmentDto: <a href="../classes/UpdateRiskFactorAssessmentDto.html" target="_self">UpdateRiskFactorAssessmentDto</a>, id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;])<br />@ApiOkResponse({type: RiskFactorResponse})<br />@Put(&#x27;:id/risk-factors&#x27;)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="133"
+                                    class="link-to-prism">src/modules/assessments/assessments.controller.ts:133</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>updateRiskFactorAssessmentDto</td>
+                                            <td>
+                                                            <code><a href="../classes/UpdateRiskFactorAssessmentDto.html" target="_self" >UpdateRiskFactorAssessmentDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;RiskFactorResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateSmokingTrigger"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>updateSmokingTrigger</b></span>
+                        <a href="#updateSmokingTrigger"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateSmokingTrigger(updateSmokingTriggerAssessmentDto: <a href="../classes/UpdateSmokingTriggerAssessmentDto.html" target="_self">UpdateSmokingTriggerAssessmentDto</a>, id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;])<br />@ApiOkResponse({type: SmokingTriggerResponse})<br />@Put(&#x27;:id/smoking-triggers&#x27;)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="144"
+                                    class="link-to-prism">src/modules/assessments/assessments.controller.ts:144</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>updateSmokingTriggerAssessmentDto</td>
+                                            <td>
+                                                            <code><a href="../classes/UpdateSmokingTriggerAssessmentDto.html" target="_self" >UpdateSmokingTriggerAssessmentDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;SmokingTriggerResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateTobacco"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>updateTobacco</b></span>
+                        <a href="#updateTobacco"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateTobacco(addTobaccoAssessmentDto: <a href="../classes/AddTobaccoAssessmentDto.html" target="_self">AddTobaccoAssessmentDto</a>, id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;])<br />@ApiOkResponse({type: TobaccoResponse})<br />@Put(&#x27;:id/tobaccos&#x27;)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="94"
+                                    class="link-to-prism">src/modules/assessments/assessments.controller.ts:94</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>addTobaccoAssessmentDto</td>
+                                            <td>
+                                                            <code><a href="../classes/AddTobaccoAssessmentDto.html" target="_self" >AddTobaccoAssessmentDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;TobaccoResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Body, Controller, Get, Param, ParseIntPipe, Post, Put, UseInterceptors } from &#x27;@nestjs/common&#x27;;
+import { ApiBody, ApiCreatedResponse, ApiOkResponse, ApiResponse, ApiTags } from &#x27;@nestjs/swagger&#x27;;
+import { User } from &#x27;src/common/decorators/auth.decorator&#x27;;
+import { JwtAuth } from &#x27;src/common/decorators/jwt-auth.decorator&#x27;;
+import { IdDto } from &#x27;src/common/dto/id.dto&#x27;;
+import { Serialize } from &#x27;src/common/interceptors/response-serialization.interceptor&#x27;;
+import { UserPlayloadResponse } from &#x27;src/modules/patients/response/user-playload.response&#x27;;
+import { AssessmentsService } from &#x27;./assessments.service&#x27;;
+import { AddAssessmentDto } from &#x27;./dto/add-assessment.dto&#x27;;
+import { FetchAssessmentResponse } from &#x27;./resposnes/fetch-assessment.response&#x27;;
+import { RoleDecoratorEnum } from &#x27;src/common/enums/role-decorator.enum&#x27;;
+import { FetchAllAssessmentResponse } from &#x27;src/modules/assessments/resposnes/fetch-all-assessment.response&#x27;;
+import { HabitInformationResponse } from &#x27;../onboarding/response/habit-info.response&#x27;;
+import { CurrentAssessmentResponse } from &#x27;src/modules/assessments/resposnes/current-assessment.response&#x27;;
+import { HttpTokenCacheInterceptor } from &#x27;src/common/interceptors/http-token-cache.interceptor&#x27;;
+import { BigIntTransformerInterceptor } from &#x27;src/common/interceptors/bigInt-transformer.interceptor&#x27;;
+import { TobaccoResponse } from &#x27;src/modules/tobaccos/response/tobacco.response&#x27;;
+import { AllergyResponse } from &#x27;src/modules/allergies/response/allergy.response&#x27;;
+import { MotivationResponse } from &#x27;src/modules/motivations/response/motivation.response&#x27;;
+import { RiskFactorResponse } from &#x27;src/modules/risk-factors/response/risk-factor.response&#x27;;
+import { SmokingTriggerResponse } from &#x27;src/modules/smoking-triggers/response/smoking-trigger.response&#x27;;
+import { PersonalInformationResponse } from &#x27;src/modules/onboarding/response/personal-info.response&#x27;;
+import { CreatePersonalInfoAssessmentDto } from &#x27;src/modules/assessments/dto/create-personal-info-assessment.dto&#x27;;
+import { CreateHabitInfoAssessmentDto } from &#x27;src/modules/assessments/dto/create-habit-info-assessment.dto&#x27;;
+import { AddTobaccoAssessmentDto } from &#x27;src/modules/assessments/dto/add-tobacco-assessment.dto&#x27;;
+import { AddAllergyAssessmentDto } from &#x27;src/modules/assessments/dto/add-allergy-assessment.dto&#x27;;
+import { UpdateRiskFactorAssessmentDto } from &#x27;src/modules/assessments/dto/update-risk-factor-assessment.dto&#x27;;
+import { UpdateSmokingTriggerAssessmentDto } from &#x27;src/modules/assessments/dto/update-smoking-trigger-assessment.dto&#x27;;
+import { UpdateMotivationAssessmentDto } from &#x27;src/modules/assessments/dto/update-motivation-assessment.dto&#x27;;
+import { UpdateScoreDto } from &#x27;src/modules/assessments/dto/update-score.dto&#x27;;
+
+@ApiTags(&#x27;Assessments&#x27;)
+@Controller(&#x27;assessments&#x27;)
+export class AssessmentsController {
+  constructor(private assessmentService: AssessmentsService) {}
+
+  @JwtAuth([RoleDecoratorEnum.USER])
+  @ApiCreatedResponse({ type: FetchAssessmentResponse })
+  @Post()
+  async addAssessment(@Body() assessmentName: AddAssessmentDto, @User() user: UserPlayloadResponse): Promise&lt;FetchAssessmentResponse&gt; {
+    return await this.assessmentService.addAssessment(assessmentName, user);
+  }
+
+  @JwtAuth([RoleDecoratorEnum.USER])
+  @ApiOkResponse({ type: FetchAllAssessmentResponse, isArray: true })
+  @Get(&#x27;/all&#x27;)
+  @Serialize(FetchAllAssessmentResponse)
+  async fetchAssessments(@User() user: UserPlayloadResponse): Promise&lt;FetchAllAssessmentResponse[]&gt; {
+    return await this.assessmentService.fetchAssessments(user);
+  }
+
+  @JwtAuth([RoleDecoratorEnum.USER])
+  @ApiOkResponse({ type: CurrentAssessmentResponse })
+  @Get(&#x27;current-assessment&#x27;)
+  @UseInterceptors(HttpTokenCacheInterceptor, BigIntTransformerInterceptor)
+  async fetchCurrentAssessmentDetail(@User() user: UserPlayloadResponse): Promise&lt;CurrentAssessmentResponse&gt; {
+    return await this.assessmentService.fetchCurrentAssessmentDetail(user);
+  }
+
+  @JwtAuth([RoleDecoratorEnum.USER])
+  @ApiOkResponse({ type: FetchAssessmentResponse })
+  @Get(&#x27;:id&#x27;)
+  async fetchAssessment(@Param(&#x27;id&#x27;, ParseIntPipe) id: number, @User() user: UserPlayloadResponse): Promise&lt;FetchAssessmentResponse&gt; {
+    return await this.assessmentService.fetchAssessment(id, user);
+  }
+
+  @JwtAuth([RoleDecoratorEnum.USER])
+  @ApiOkResponse({ type: PersonalInformationResponse })
+  @ApiResponse({ status: 404, description: &#x27;User assessment not found!&#x27; })
+  @Put(&#x27;:id/personal-informations&#x27;)
+  async updatePersonalInformation(
+    @Body() createPersonalInfoAssessmentDto: CreatePersonalInfoAssessmentDto,
+    @User() user: UserPlayloadResponse,
+    @Param(&#x27;id&#x27;, ParseIntPipe) id: number,
+  ): Promise&lt;PersonalInformationResponse&gt; {
+    return await this.assessmentService.updatePersonalInformation(createPersonalInfoAssessmentDto, id, user);
+  }
+
+  @JwtAuth([RoleDecoratorEnum.USER])
+  @ApiOkResponse({ type: HabitInformationResponse })
+  @ApiResponse({ status: 404, description: &#x27;User assessment not found!&#x27; })
+  @Put(&#x27;:id/habit-informations&#x27;)
+  async updateHabit(
+    @Body() createHabitInfoAssessmentDto: CreateHabitInfoAssessmentDto,
+    @User() user: UserPlayloadResponse,
+    @Param(&#x27;id&#x27;, ParseIntPipe) id: number,
+  ): Promise&lt;HabitInformationResponse&gt; {
+    return await this.assessmentService.updateHabit(createHabitInfoAssessmentDto, id, user);
+  }
+
+  @JwtAuth([RoleDecoratorEnum.USER])
+  @ApiOkResponse({ type: TobaccoResponse })
+  @Put(&#x27;:id/tobaccos&#x27;)
+  async updateTobacco(
+    @Body() addTobaccoAssessmentDto: AddTobaccoAssessmentDto,
+    @Param(&#x27;id&#x27;, ParseIntPipe) id: number,
+    @User() user: UserPlayloadResponse,
+  ): Promise&lt;TobaccoResponse&gt; {
+    return await this.assessmentService.updateTobacco(addTobaccoAssessmentDto, id, user);
+  }
+
+  @JwtAuth([RoleDecoratorEnum.USER])
+  @ApiOkResponse({ type: AllergyResponse })
+  @Put(&#x27;:id/allergies&#x27;)
+  async updateAllergy(
+    @Body() addAllergyAssessmentDto: AddAllergyAssessmentDto,
+    @Param(&#x27;id&#x27;, ParseIntPipe) id: number,
+    @User() user: UserPlayloadResponse,
+  ): Promise&lt;AllergyResponse&gt; {
+    return await this.assessmentService.updateAllergy(addAllergyAssessmentDto, id, user);
+  }
+
+  @JwtAuth([RoleDecoratorEnum.USER])
+  @ApiOkResponse({ type: Boolean })
+  @ApiResponse({ status: 404, description: &#x27;User assessment not found!&#x27; })
+  @ApiBody({ type: IdDto, isArray: true })
+  @Put(&#x27;:id/fagerstroms&#x27;)
+  async updateFagerstromReport(@Body() IdsDto: IdDto[], @Param(&#x27;id&#x27;, ParseIntPipe) id: number, @User() user: UserPlayloadResponse): Promise&lt;boolean&gt; {
+    return await this.assessmentService.updateFagerstromReport(IdsDto, id, user);
+  }
+
+  @JwtAuth([RoleDecoratorEnum.USER])
+  @ApiOkResponse({ type: Boolean })
+  @ApiResponse({ status: 404, description: &#x27;User assessment not found!&#x27; })
+  @Put(&#x27;:id/fagerstrom-score&#x27;)
+  async updateFagerstromScore(@Body() updateScoreDto: UpdateScoreDto, @Param(&#x27;id&#x27;, ParseIntPipe) id: number, @User() user: UserPlayloadResponse): Promise&lt;number&gt; {
+    return await this.assessmentService.updateFagerstromScore(updateScoreDto, user, id);
+  }
+
+  @JwtAuth([RoleDecoratorEnum.USER])
+  @ApiOkResponse({ type: RiskFactorResponse })
+  @Put(&#x27;:id/risk-factors&#x27;)
+  async updateRiskFactor(
+    @Body() updateRiskFactorAssessmentDto: UpdateRiskFactorAssessmentDto,
+    @Param(&#x27;id&#x27;, ParseIntPipe) id: number,
+    @User() user: UserPlayloadResponse,
+  ): Promise&lt;RiskFactorResponse&gt; {
+    return await this.assessmentService.updateRiskFactors(updateRiskFactorAssessmentDto, id, user);
+  }
+
+  @JwtAuth([RoleDecoratorEnum.USER])
+  @ApiOkResponse({ type: SmokingTriggerResponse })
+  @Put(&#x27;:id/smoking-triggers&#x27;)
+  async updateSmokingTrigger(
+    @Body() updateSmokingTriggerAssessmentDto: UpdateSmokingTriggerAssessmentDto,
+    @Param(&#x27;id&#x27;, ParseIntPipe) id: number,
+    @User() user: UserPlayloadResponse,
+  ): Promise&lt;SmokingTriggerResponse&gt; {
+    return await this.assessmentService.updateSmokingTrigger(updateSmokingTriggerAssessmentDto, id, user);
+  }
+
+  @JwtAuth([RoleDecoratorEnum.USER])
+  @ApiOkResponse({ type: MotivationResponse })
+  @Put(&#x27;:id/motivations&#x27;)
+  async updateMotivation(
+    @Body() updateMotivationAssessmentDto: UpdateMotivationAssessmentDto,
+    @Param(&#x27;id&#x27;, ParseIntPipe) id: number,
+    @User() user: UserPlayloadResponse,
+  ): Promise&lt;MotivationResponse&gt; {
+    return await this.assessmentService.updateMotivations(updateMotivationAssessmentDto, id, user);
+  }
+}
+//
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'controller';
+            var COMPODOC_CURRENT_PAGE_URL = 'AssessmentsController.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

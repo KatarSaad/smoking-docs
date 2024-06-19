@@ -1,0 +1,3350 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>smoking-halim documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">smoking-halim documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >AssessmentsService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/modules/assessments/assessments.service.ts</code>
+        </p>
+
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#addAssessment" >addAssessment</a>
+                            </li>
+                            <li>
+                                <a href="#assesmentDetail" >assesmentDetail</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#assessmentLastRestDate" >assessmentLastRestDate</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#fetchAssessment" >fetchAssessment</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#fetchAssessments" >fetchAssessments</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#fetchCurrentAssessment" >fetchCurrentAssessment</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#fetchCurrentAssessmentDetail" >fetchCurrentAssessmentDetail</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#fetchLastPatientAssessment" >fetchLastPatientAssessment</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#fetchStep" >fetchStep</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#fetchUserAssessmentsByUserId" >fetchUserAssessmentsByUserId</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#findAssessmentUser" >findAssessmentUser</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getAssessmentSection" >getAssessmentSection</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#isAssessmentByIdExists" >isAssessmentByIdExists</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#isAssessmentOwner" >isAssessmentOwner</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#resetAssessments" >resetAssessments</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#updateAllergy" >updateAllergy</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#updateAssessmentAsDone" >updateAssessmentAsDone</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#updateFagerstromReport" >updateFagerstromReport</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#updateFagerstromScore" >updateFagerstromScore</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#updateHabit" >updateHabit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#updateMotivations" >updateMotivations</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#updatePersonalInformation" >updatePersonalInformation</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#updateRiskFactors" >updateRiskFactors</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#updateSmokingTrigger" >updateSmokingTrigger</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#updateStep" >updateStep</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#updateTobacco" >updateTobacco</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#upsertAssessment" >upsertAssessment</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(prismaService: <a href="../injectables/PrismaService.html" target="_self">PrismaService</a>, onboardingService: <a href="../injectables/OnboardingService.html" target="_self">OnboardingService</a>, motivationService: <a href="../injectables/MotivationService.html" target="_self">MotivationService</a>, commonService: <a href="../injectables/CommonService.html" target="_self">CommonService</a>, fagerstromService: <a href="../injectables/FagerstromService.html" target="_self">FagerstromService</a>, groupsService: <a href="../injectables/GroupsService.html" target="_self">GroupsService</a>, riskFactorsService: <a href="../injectables/RiskFactorsService.html" target="_self">RiskFactorsService</a>, smokingTriggersService: <a href="../injectables/SmokingTriggersService.html" target="_self">SmokingTriggersService</a>, tobaccosService: <a href="../injectables/TobaccosService.html" target="_self">TobaccosService</a>, allergiesService: <a href="../injectables/AllergiesService.html" target="_self">AllergiesService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/modules/assessments/assessments.service.ts:57</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>prismaService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PrismaService.html" target="_self" >PrismaService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>onboardingService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/OnboardingService.html" target="_self" >OnboardingService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>motivationService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/MotivationService.html" target="_self" >MotivationService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>commonService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CommonService.html" target="_self" >CommonService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>fagerstromService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/FagerstromService.html" target="_self" >FagerstromService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>groupsService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/GroupsService.html" target="_self" >GroupsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>riskFactorsService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/RiskFactorsService.html" target="_self" >RiskFactorsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>smokingTriggersService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SmokingTriggersService.html" target="_self" >SmokingTriggersService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>tobaccosService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/TobaccosService.html" target="_self" >TobaccosService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>allergiesService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AllergiesService.html" target="_self" >AllergiesService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addAssessment"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>addAssessment</b></span>
+                        <a href="#addAssessment"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addAssessment(assessmentDto: <a href="../classes/AddAssessmentDto.html" target="_self">AddAssessmentDto</a>, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="71"
+                                    class="link-to-prism">src/modules/assessments/assessments.service.ts:71</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>assessmentDto</td>
+                                            <td>
+                                                            <code><a href="../classes/AddAssessmentDto.html" target="_self" >AddAssessmentDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;FetchAssessmentResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="assesmentDetail"></a>
+                    <span class="name">
+                        <span ><b>assesmentDetail</b></span>
+                        <a href="#assesmentDetail"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>assesmentDetail(assessments: Assessment[])</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="436"
+                                    class="link-to-prism">src/modules/assessments/assessments.service.ts:436</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>assessments</td>
+                                            <td>
+                                                        <code>Assessment[]</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/AssessmentDetailResponse.html" target="_self" >AssessmentDetailResponse</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="assessmentLastRestDate"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>assessmentLastRestDate</b></span>
+                        <a href="#assessmentLastRestDate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>assessmentLastRestDate(patientId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="493"
+                                    class="link-to-prism">src/modules/assessments/assessments.service.ts:493</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>patientId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;Date&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchAssessment"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>fetchAssessment</b></span>
+                        <a href="#fetchAssessment"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fetchAssessment(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="140"
+                                    class="link-to-prism">src/modules/assessments/assessments.service.ts:140</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;FetchAssessmentResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchAssessments"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>fetchAssessments</b></span>
+                        <a href="#fetchAssessments"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fetchAssessments(user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="77"
+                                    class="link-to-prism">src/modules/assessments/assessments.service.ts:77</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;FetchAllAssessmentResponse[]&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchCurrentAssessment"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>fetchCurrentAssessment</b></span>
+                        <a href="#fetchCurrentAssessment"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fetchCurrentAssessment(user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>, name: AssessmentNameEnum, transaction?: <a href="../undefineds/PrismaTransactionClient.html" target="_self">PrismaTransactionClient</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="498"
+                                    class="link-to-prism">src/modules/assessments/assessments.service.ts:498</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>name</td>
+                                            <td>
+                                                        <code>AssessmentNameEnum</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>transaction</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#PrismaTransactionClient" target="_self" >PrismaTransactionClient</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;FetchAssessmentResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchCurrentAssessmentDetail"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>fetchCurrentAssessmentDetail</b></span>
+                        <a href="#fetchCurrentAssessmentDetail"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fetchCurrentAssessmentDetail(user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="110"
+                                    class="link-to-prism">src/modules/assessments/assessments.service.ts:110</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;CurrentAssessmentResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchLastPatientAssessment"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>fetchLastPatientAssessment</b></span>
+                        <a href="#fetchLastPatientAssessment"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fetchLastPatientAssessment(patientId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="574"
+                                    class="link-to-prism">src/modules/assessments/assessments.service.ts:574</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>patientId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;Assessment&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchStep"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>fetchStep</b></span>
+                        <a href="#fetchStep"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fetchStep(assesmentId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, transaction?: <a href="../undefineds/PrismaTransactionClient.html" target="_self">PrismaTransactionClient</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="588"
+                                    class="link-to-prism">src/modules/assessments/assessments.service.ts:588</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>assesmentId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>transaction</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#PrismaTransactionClient" target="_self" >PrismaTransactionClient</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;Assessment&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchUserAssessmentsByUserId"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>fetchUserAssessmentsByUserId</b></span>
+                        <a href="#fetchUserAssessmentsByUserId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fetchUserAssessmentsByUserId(user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="450"
+                                    class="link-to-prism">src/modules/assessments/assessments.service.ts:450</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;AssessmentDetailResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="findAssessmentUser"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>findAssessmentUser</b></span>
+                        <a href="#findAssessmentUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>findAssessmentUser(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="416"
+                                    class="link-to-prism">src/modules/assessments/assessments.service.ts:416</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAssessmentSection"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getAssessmentSection</b></span>
+                        <a href="#getAssessmentSection"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getAssessmentSection(assessment: AssessmentNameEnum)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="489"
+                                    class="link-to-prism">src/modules/assessments/assessments.service.ts:489</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>assessment</td>
+                                            <td>
+                                                        <code>AssessmentNameEnum</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;AssessmentInfoResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isAssessmentByIdExists"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>isAssessmentByIdExists</b></span>
+                        <a href="#isAssessmentByIdExists"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>isAssessmentByIdExists(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="616"
+                                    class="link-to-prism">src/modules/assessments/assessments.service.ts:616</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;Assessment&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isAssessmentOwner"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>isAssessmentOwner</b></span>
+                        <a href="#isAssessmentOwner"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>isAssessmentOwner(user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>, id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="622"
+                                    class="link-to-prism">src/modules/assessments/assessments.service.ts:622</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resetAssessments"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>resetAssessments</b></span>
+                        <a href="#resetAssessments"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>resetAssessments(patientId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="533"
+                                    class="link-to-prism">src/modules/assessments/assessments.service.ts:533</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>patientId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateAllergy"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>updateAllergy</b></span>
+                        <a href="#updateAllergy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateAllergy(addAllergyAssessmentDto: <a href="../classes/AddAllergyAssessmentDto.html" target="_self">AddAllergyAssessmentDto</a>, id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="274"
+                                    class="link-to-prism">src/modules/assessments/assessments.service.ts:274</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>addAllergyAssessmentDto</td>
+                                            <td>
+                                                            <code><a href="../classes/AddAllergyAssessmentDto.html" target="_self" >AddAllergyAssessmentDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;AllergyResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateAssessmentAsDone"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>updateAssessmentAsDone</b></span>
+                        <a href="#updateAssessmentAsDone"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateAssessmentAsDone(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, transaction?: <a href="../undefineds/PrismaTransactionClient.html" target="_self">PrismaTransactionClient</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="477"
+                                    class="link-to-prism">src/modules/assessments/assessments.service.ts:477</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>transaction</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#PrismaTransactionClient" target="_self" >PrismaTransactionClient</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateFagerstromReport"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>updateFagerstromReport</b></span>
+                        <a href="#updateFagerstromReport"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateFagerstromReport(IdsDto: <a href="../classes/IdDto.html" target="_self">IdDto[]</a>, id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="298"
+                                    class="link-to-prism">src/modules/assessments/assessments.service.ts:298</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>IdsDto</td>
+                                            <td>
+                                                            <code><a href="../classes/IdDto.html" target="_self" >IdDto[]</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateFagerstromScore"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>updateFagerstromScore</b></span>
+                        <a href="#updateFagerstromScore"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateFagerstromScore(updateScoreDto: <a href="../classes/UpdateScoreDto.html" target="_self">UpdateScoreDto</a>, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>, id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="374"
+                                    class="link-to-prism">src/modules/assessments/assessments.service.ts:374</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>updateScoreDto</td>
+                                            <td>
+                                                            <code><a href="../classes/UpdateScoreDto.html" target="_self" >UpdateScoreDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;number&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateHabit"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>updateHabit</b></span>
+                        <a href="#updateHabit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateHabit(createHabitInfoAssessmentDto: <a href="../classes/CreateHabitInfoAssessmentDto.html" target="_self">CreateHabitInfoAssessmentDto</a>, id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="219"
+                                    class="link-to-prism">src/modules/assessments/assessments.service.ts:219</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>createHabitInfoAssessmentDto</td>
+                                            <td>
+                                                            <code><a href="../classes/CreateHabitInfoAssessmentDto.html" target="_self" >CreateHabitInfoAssessmentDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;HabitInformationResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateMotivations"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>updateMotivations</b></span>
+                        <a href="#updateMotivations"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateMotivations(updateMotivationAssessmentDto: <a href="../classes/UpdateMotivationAssessmentDto.html" target="_self">UpdateMotivationAssessmentDto</a>, id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="391"
+                                    class="link-to-prism">src/modules/assessments/assessments.service.ts:391</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>updateMotivationAssessmentDto</td>
+                                            <td>
+                                                            <code><a href="../classes/UpdateMotivationAssessmentDto.html" target="_self" >UpdateMotivationAssessmentDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;MotivationResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updatePersonalInformation"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>updatePersonalInformation</b></span>
+                        <a href="#updatePersonalInformation"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updatePersonalInformation(createPersonalInfoAssessmentDto: <a href="../classes/CreatePersonalInfoAssessmentDto.html" target="_self">CreatePersonalInfoAssessmentDto</a>, id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="205"
+                                    class="link-to-prism">src/modules/assessments/assessments.service.ts:205</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>createPersonalInfoAssessmentDto</td>
+                                            <td>
+                                                            <code><a href="../classes/CreatePersonalInfoAssessmentDto.html" target="_self" >CreatePersonalInfoAssessmentDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;PersonalInformationResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateRiskFactors"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>updateRiskFactors</b></span>
+                        <a href="#updateRiskFactors"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateRiskFactors(updateRiskFactorAssessmentDto: <a href="../classes/UpdateRiskFactorAssessmentDto.html" target="_self">UpdateRiskFactorAssessmentDto</a>, id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="323"
+                                    class="link-to-prism">src/modules/assessments/assessments.service.ts:323</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>updateRiskFactorAssessmentDto</td>
+                                            <td>
+                                                            <code><a href="../classes/UpdateRiskFactorAssessmentDto.html" target="_self" >UpdateRiskFactorAssessmentDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;RiskFactorResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateSmokingTrigger"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>updateSmokingTrigger</b></span>
+                        <a href="#updateSmokingTrigger"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateSmokingTrigger(updateSmokingTriggerAssessmentDto: <a href="../classes/UpdateSmokingTriggerAssessmentDto.html" target="_self">UpdateSmokingTriggerAssessmentDto</a>, id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="347"
+                                    class="link-to-prism">src/modules/assessments/assessments.service.ts:347</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>updateSmokingTriggerAssessmentDto</td>
+                                            <td>
+                                                            <code><a href="../classes/UpdateSmokingTriggerAssessmentDto.html" target="_self" >UpdateSmokingTriggerAssessmentDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;SmokingTriggerResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateStep"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>updateStep</b></span>
+                        <a href="#updateStep"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateStep(assesmentId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, step: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, transaction?: <a href="../undefineds/PrismaTransactionClient.html" target="_self">PrismaTransactionClient</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="598"
+                                    class="link-to-prism">src/modules/assessments/assessments.service.ts:598</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>assesmentId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>step</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>transaction</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#PrismaTransactionClient" target="_self" >PrismaTransactionClient</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateTobacco"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>updateTobacco</b></span>
+                        <a href="#updateTobacco"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateTobacco(addTobaccoAssessmentDto: <a href="../classes/AddTobaccoAssessmentDto.html" target="_self">AddTobaccoAssessmentDto</a>, id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="250"
+                                    class="link-to-prism">src/modules/assessments/assessments.service.ts:250</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>addTobaccoAssessmentDto</td>
+                                            <td>
+                                                            <code><a href="../classes/AddTobaccoAssessmentDto.html" target="_self" >AddTobaccoAssessmentDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;TobaccoResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="upsertAssessment"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>upsertAssessment</b></span>
+                        <a href="#upsertAssessment"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>upsertAssessment(user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>, name: AssessmentNameEnum)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="174"
+                                    class="link-to-prism">src/modules/assessments/assessments.service.ts:174</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>name</td>
+                                            <td>
+                                                        <code>AssessmentNameEnum</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;FetchAssessmentResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Inject, Injectable, forwardRef } from &#x27;@nestjs/common&#x27;;
+import { AddictionLevelEnum, Assessment, AssessmentNameEnum } from &#x27;@prisma/client&#x27;;
+import { IdDto } from &#x27;src/common/dto/id.dto&#x27;;
+import { CommonService } from &#x27;src/common/services/common.service&#x27;;
+import { PrismaService } from &#x27;src/common/services/prisma.service&#x27;;
+import { FagerstromService } from &#x27;src/modules/fagerstroms/fagerstrom.service&#x27;;
+import { MotivationService } from &#x27;src/modules/motivations/motivation.service&#x27;;
+import { LanguageErrorEnum } from &#x27;src/common/enums/language-error.enum&#x27;;
+import { MultiLanguageException } from &#x27;src/common/exception-filters/multi-language.exception&#x27;;
+import { AssessmentDetailResponse } from &#x27;src/modules/assessments/resposnes/assessment-detail.response&#x27;;
+import { FetchAllAssessmentResponse } from &#x27;src/modules/assessments/resposnes/fetch-all-assessment.response&#x27;;
+import { UserPlayloadResponse } from &#x27;src/modules/patients/response/user-playload.response&#x27;;
+import { OnboardingService } from &#x27;../onboarding/onboarding.service&#x27;;
+import { HabitInformationResponse } from &#x27;../onboarding/response/habit-info.response&#x27;;
+import { AddAssessmentDto } from &#x27;./dto/add-assessment.dto&#x27;;
+import { FetchAssessmentResponse } from &#x27;./resposnes/fetch-assessment.response&#x27;;
+import { GroupsService } from &#x27;src/modules/groups/groups.service&#x27;;
+import { CurrentAssessmentResponse } from &#x27;src/modules/assessments/resposnes/current-assessment.response&#x27;;
+import * as JSON_ASSESSMENTS from &#x27;./json/assessments.json&#x27;;
+import { AssessmentInfoResponse } from &#x27;src/modules/assessments/resposnes/assessment-info.response&#x27;;
+import { tobaccoSelect } from &#x27;src/modules/tobaccos/const/tobacco.const&#x27;;
+import { TobaccoResponse } from &#x27;src/modules/tobaccos/response/tobacco.response&#x27;;
+import { AllergyResponse } from &#x27;src/modules/allergies/response/allergy.response&#x27;;
+import { allergySelect } from &#x27;src/modules/allergies/const/allergy.const&#x27;;
+import { PrismaTransactionClient } from &#x27;src/common/types/transaction.type&#x27;;
+import { motivationSelect } from &#x27;src/modules/motivations/const/motivation-select&#x27;;
+import { MotivationResponse } from &#x27;src/modules/motivations/response/motivation.response&#x27;;
+import { RiskFactorResponse } from &#x27;src/modules/risk-factors/response/risk-factor.response&#x27;;
+import { riskFactorSelect } from &#x27;src/modules/risk-factors/const/risk-factor-select&#x27;;
+import { RiskFactorsService } from &#x27;src/modules/risk-factors/risk-factors.service&#x27;;
+import { SmokingTriggerResponse } from &#x27;src/modules/smoking-triggers/response/smoking-trigger.response&#x27;;
+import { smokingTriggerSelect } from &#x27;src/modules/smoking-triggers/const/smoking-trigger-select&#x27;;
+import { SmokingTriggersService } from &#x27;src/modules/smoking-triggers/smoking-triggers.service&#x27;;
+import { TobaccosService } from &#x27;src/modules/tobaccos/tobaccos.service&#x27;;
+import { PersonalInformationResponse } from &#x27;src/modules/onboarding/response/personal-info.response&#x27;;
+import { CreatePersonalInfoAssessmentDto } from &#x27;src/modules/assessments/dto/create-personal-info-assessment.dto&#x27;;
+import { CreateHabitInfoAssessmentDto } from &#x27;src/modules/assessments/dto/create-habit-info-assessment.dto&#x27;;
+import { AddTobaccoAssessmentDto } from &#x27;src/modules/assessments/dto/add-tobacco-assessment.dto&#x27;;
+import { AllergiesService } from &#x27;src/modules/allergies/allergies.service&#x27;;
+import { AddAllergyAssessmentDto } from &#x27;src/modules/assessments/dto/add-allergy-assessment.dto&#x27;;
+import { UpdateRiskFactorAssessmentDto } from &#x27;src/modules/assessments/dto/update-risk-factor-assessment.dto&#x27;;
+import { UpdateSmokingTriggerAssessmentDto } from &#x27;src/modules/assessments/dto/update-smoking-trigger-assessment.dto&#x27;;
+import { UpdateMotivationAssessmentDto } from &#x27;src/modules/assessments/dto/update-motivation-assessment.dto&#x27;;
+import { UpdateScoreDto } from &#x27;src/modules/assessments/dto/update-score.dto&#x27;;
+import {
+  allergyStep,
+  fagerstromStep,
+  habitInfoStep,
+  motivationStep,
+  personalInfoStep,
+  riskFactorStep,
+  smokingTriggerStep,
+  tobaccoStep,
+} from &#x27;src/modules/assessments/const/assessment.const&#x27;;
+
+@Injectable()
+export class AssessmentsService {
+  constructor(
+    private prismaService: PrismaService,
+    @Inject(forwardRef(() &#x3D;&gt; OnboardingService)) private onboardingService: OnboardingService,
+    private motivationService: MotivationService,
+    private commonService: CommonService,
+    private fagerstromService: FagerstromService,
+    private groupsService: GroupsService,
+    private riskFactorsService: RiskFactorsService,
+    private smokingTriggersService: SmokingTriggersService,
+    private tobaccosService: TobaccosService,
+    private allergiesService: AllergiesService,
+  ) {}
+
+  async addAssessment(assessmentDto: AddAssessmentDto, user: UserPlayloadResponse): Promise&lt;FetchAssessmentResponse&gt; {
+    const { name } &#x3D; assessmentDto;
+
+    return await this.upsertAssessment(user, name);
+  }
+
+  async fetchAssessments(user: UserPlayloadResponse): Promise&lt;FetchAllAssessmentResponse[]&gt; {
+    const assessmentUser &#x3D; await this.prismaService.assessment.findMany({
+      where: {
+        patientId: user.patientId,
+      },
+      select: {
+        id: true,
+        fagerstromScore: true,
+        name: true,
+        createdAt: true,
+        habitInformation: {
+          select: {
+            numberCigaretesPerDay: true,
+            numberTriesQuittingSmoking: true,
+            numberYearsQuittingSmoking: true,
+            periodeSmoking: true,
+            quitDate: true,
+            quitSmoking: true,
+          },
+        },
+        tobacco: { select: tobaccoSelect },
+        allergy: { select: allergySelect },
+        riskFactor: { select: riskFactorSelect },
+        smokingTrigger: { select: smokingTriggerSelect },
+        motivation: {
+          select: motivationSelect,
+        },
+      },
+    });
+
+    return assessmentUser;
+  }
+
+  async fetchCurrentAssessmentDetail(user: UserPlayloadResponse): Promise&lt;CurrentAssessmentResponse&gt; {
+    let durationForNextAssessment &#x3D; null;
+    const assessmentDetails &#x3D; await this.fetchUserAssessmentsByUserId(user);
+    const { nextAssessment, welcomeAssessmentAt, finalAssesmentDone } &#x3D; assessmentDetails;
+
+    //Extract the duration of the next assessments from assessments json
+    const monthsNumberAfterWelcomeAssessment &#x3D; nextAssessment &amp;&amp; JSON_ASSESSMENTS[nextAssessment].MonthsAfterWelcomeAssessment;
+
+    // Transform the duration to milli sec
+    const actualDurationForNextAssessment &#x3D; monthsNumberAfterWelcomeAssessment &amp;&amp; monthsNumberAfterWelcomeAssessment * 30 * 24 * 60 * 60 * 1000;
+
+    //Duration for next assessment it will be welcomeAssessmentAt
+    // if user assessments got reseted we will have to use lastAssessmentResetAt
+    const assessmentLastRestDate &#x3D; await this.assessmentLastRestDate(user.patientId);
+
+    durationForNextAssessment &#x3D; this.commonService.remainingTime(assessmentLastRestDate);
+    if (!assessmentLastRestDate) durationForNextAssessment &#x3D; this.commonService.remainingTime(welcomeAssessmentAt);
+    //fetching the current assessment details
+    const assessmentSection &#x3D; await this.getAssessmentSection(nextAssessment);
+
+    // if the time of the next assessment has came we send it in the current assessment
+    if (durationForNextAssessment &gt; actualDurationForNextAssessment) {
+      const { id } &#x3D; await this.upsertAssessment(user, nextAssessment);
+      // current assessment time has came
+      return { ...assessmentDetails, currentAssessment: finalAssesmentDone ? null : nextAssessment, currentAssessmentId: Number(id), assessmentSection };
+    }
+
+    return { ...assessmentDetails, currentAssessment: null, currentAssessmentId: null, assessmentSection: null };
+  }
+
+  async fetchAssessment(id: number, user: UserPlayloadResponse): Promise&lt;FetchAssessmentResponse&gt; {
+    await this.isAssessmentOwner(user, id);
+
+    const assessmentUser &#x3D; await this.prismaService.assessment.findFirst({
+      where: {
+        id,
+      },
+      select: {
+        id: true,
+        fagerstromScore: true,
+        name: true,
+        habitInformation: {
+          select: {
+            numberCigaretesPerDay: true,
+            numberTriesQuittingSmoking: true,
+            numberYearsQuittingSmoking: true,
+            periodeSmoking: true,
+            quitDate: true,
+            quitSmoking: true,
+          },
+        },
+        tobacco: { select: tobaccoSelect },
+        allergy: { select: allergySelect },
+        riskFactor: { select: riskFactorSelect },
+        smokingTrigger: { select: smokingTriggerSelect },
+        motivation: {
+          select: motivationSelect,
+        },
+        createdAt: true,
+      },
+    });
+    return assessmentUser;
+  }
+
+  async upsertAssessment(user: UserPlayloadResponse, name: AssessmentNameEnum): Promise&lt;FetchAssessmentResponse&gt; {
+    const assessmentUser &#x3D; await this.fetchCurrentAssessment(user, name);
+
+    if (assessmentUser) return assessmentUser;
+
+    return await this.prismaService.assessment.create({
+      data: {
+        patient: {
+          connect: {
+            id: user.patientId,
+          },
+        },
+        name,
+      },
+      select: {
+        id: true,
+        name: true,
+        fagerstromScore: true,
+        createdAt: true,
+        habitInformation: true,
+        tobacco: { select: tobaccoSelect },
+        allergy: { select: allergySelect },
+        riskFactor: { select: riskFactorSelect },
+        smokingTrigger: { select: smokingTriggerSelect },
+        motivation: {
+          select: motivationSelect,
+        },
+      },
+    });
+  }
+
+  async updatePersonalInformation(
+    createPersonalInfoAssessmentDto: CreatePersonalInfoAssessmentDto,
+    id: number,
+    user: UserPlayloadResponse,
+  ): Promise&lt;PersonalInformationResponse&gt; {
+    await this.findAssessmentUser(id, user);
+
+    return this.prismaService.$transaction(async (tx) &#x3D;&gt; {
+      await this.updateStep(id, personalInfoStep, tx);
+
+      return await this.onboardingService.updatePersonalInfo(user, createPersonalInfoAssessmentDto, tx);
+    });
+  }
+
+  async updateHabit(createHabitInfoAssessmentDto: CreateHabitInfoAssessmentDto, id: number, user: UserPlayloadResponse): Promise&lt;HabitInformationResponse&gt; {
+    const assessmentUser &#x3D; await this.findAssessmentUser(id, user);
+    console.log(&#x27;dsvc&#x27;);
+    return this.prismaService.$transaction(async (tx) &#x3D;&gt; {
+      await tx.assessment.update({
+        where: {
+          id: assessmentUser.id,
+        },
+        data: {
+          habitInformation: {
+            upsert: {
+              where: {
+                id: assessmentUser.habitInformation?.id,
+              },
+              update: {
+                ...createHabitInfoAssessmentDto,
+              },
+              create: {
+                ...createHabitInfoAssessmentDto,
+              },
+            },
+          },
+        },
+        include: {
+          habitInformation: true,
+        },
+      });
+      await this.updateStep(id, habitInfoStep, tx);
+      return await this.onboardingService.updateHabitInfo(user.patientId, createHabitInfoAssessmentDto);
+    });
+  }
+  async updateTobacco(addTobaccoAssessmentDto: AddTobaccoAssessmentDto, id: number, user: UserPlayloadResponse): Promise&lt;TobaccoResponse&gt; {
+    await this.isAssessmentOwner(user, id);
+
+    return this.prismaService.$transaction(async (tx) &#x3D;&gt; {
+      await tx.tobacco.upsert({
+        where: {
+          assessmentId: id,
+        },
+        create: {
+          ...addTobaccoAssessmentDto,
+          assessmentId: id,
+        },
+        update: {
+          ...addTobaccoAssessmentDto,
+        },
+        select: tobaccoSelect,
+      });
+
+      await this.updateStep(id, tobaccoStep, tx);
+
+      return await this.tobaccosService.updatePatientTobacco(user, addTobaccoAssessmentDto, tx);
+    });
+  }
+
+  async updateAllergy(addAllergyAssessmentDto: AddAllergyAssessmentDto, id: number, user: UserPlayloadResponse): Promise&lt;AllergyResponse&gt; {
+    await this.isAssessmentOwner(user, id);
+
+    return this.prismaService.$transaction(async (tx) &#x3D;&gt; {
+      await tx.allergy.upsert({
+        where: {
+          assessmentId: id,
+        },
+        create: {
+          ...addAllergyAssessmentDto,
+          assessmentId: id,
+        },
+        update: {
+          ...addAllergyAssessmentDto,
+        },
+        select: allergySelect,
+      });
+
+      await this.updateStep(id, allergyStep, tx);
+
+      return await this.allergiesService.updatePatientAllergies(user, addAllergyAssessmentDto, tx);
+    });
+  }
+
+  async updateFagerstromReport(IdsDto: IdDto[], id: number, user: UserPlayloadResponse): Promise&lt;boolean&gt; {
+    const assessmentUser &#x3D; await this.findAssessmentUser(id, user);
+
+    const reportResult &#x3D; this.fagerstromService.calculateFagerstromScore(IdsDto);
+    const addictionLevel &#x3D; reportResult &gt; 7 ? AddictionLevelEnum.HIGH : AddictionLevelEnum.LOW;
+
+    await this.prismaService.assessment.update({
+      where: {
+        id: assessmentUser.id,
+      },
+      data: {
+        patient: {
+          update: {
+            addictionLevel,
+          },
+        },
+        fagerstromScore: reportResult,
+      },
+    });
+
+    this.groupsService.assignAuthedPatientToGroups(user); //this function :automatic join to groups that matches the user characteristics
+
+    return true;
+  }
+
+  async updateRiskFactors(updateRiskFactorAssessmentDto: UpdateRiskFactorAssessmentDto, id: number, user: UserPlayloadResponse): Promise&lt;RiskFactorResponse&gt; {
+    await this.isAssessmentOwner(user, id);
+
+    return this.prismaService.$transaction(async (transaction) &#x3D;&gt; {
+      await transaction.riskFactor.upsert({
+        where: {
+          assessmentId: id,
+        },
+        create: {
+          ...updateRiskFactorAssessmentDto,
+          assessmentId: id,
+        },
+        update: {
+          ...updateRiskFactorAssessmentDto,
+        },
+        select: riskFactorSelect,
+      });
+
+      await this.updateStep(id, riskFactorStep, transaction);
+
+      return await this.riskFactorsService.updatePatientRiskFatctor(user, updateRiskFactorAssessmentDto, transaction);
+    });
+  }
+
+  async updateSmokingTrigger(
+    updateSmokingTriggerAssessmentDto: UpdateSmokingTriggerAssessmentDto,
+    id: number,
+    user: UserPlayloadResponse,
+  ): Promise&lt;SmokingTriggerResponse&gt; {
+    await this.isAssessmentOwner(user, id);
+
+    return this.prismaService.$transaction(async (transaction) &#x3D;&gt; {
+      await transaction.smokingTrigger.upsert({
+        where: {
+          assessmentId: id,
+        },
+        create: {
+          ...updateSmokingTriggerAssessmentDto,
+          assessmentId: id,
+        },
+        update: {
+          ...updateSmokingTriggerAssessmentDto,
+        },
+        select: smokingTriggerSelect,
+      });
+      await this.updateStep(id, smokingTriggerStep, transaction);
+
+      return await this.smokingTriggersService.updatePatientSmokingTrigger(user, updateSmokingTriggerAssessmentDto, transaction);
+    });
+  }
+
+  async updateFagerstromScore(updateScoreDto: UpdateScoreDto, user: UserPlayloadResponse, id: number): Promise&lt;number&gt; {
+    await this.isAssessmentOwner(user, id);
+
+    this.prismaService.$transaction(async (transaction) &#x3D;&gt; {
+      await transaction.assessment.update({
+        where: { id },
+        data: {
+          ...updateScoreDto,
+        },
+      });
+
+      await this.updateStep(id, fagerstromStep, transaction);
+    });
+
+    return updateScoreDto.fagerstromScore;
+  }
+
+  async updateMotivations(updateMotivationAssessmentDto: UpdateMotivationAssessmentDto, id: number, user: UserPlayloadResponse): Promise&lt;MotivationResponse&gt; {
+    await this.isAssessmentOwner(user, id);
+
+    return this.prismaService.$transaction(async (transaction) &#x3D;&gt; {
+      await transaction.motivation.upsert({
+        where: {
+          assessmentId: id,
+        },
+        create: {
+          ...updateMotivationAssessmentDto,
+          assessmentId: id,
+        },
+        update: {
+          ...updateMotivationAssessmentDto,
+        },
+        select: motivationSelect,
+      });
+      await this.updateAssessmentAsDone(id, transaction);
+
+      await this.updateStep(id, motivationStep, transaction);
+
+      return await this.motivationService.updatePatientMotivation(user, updateMotivationAssessmentDto, transaction);
+    });
+  }
+
+  async findAssessmentUser(id: number, user: UserPlayloadResponse) {
+    const userAssessment &#x3D; await this.prismaService.assessment.findFirst({
+      where: {
+        id,
+      },
+      include: {
+        habitInformation: {
+          select: {
+            id: true,
+          },
+        },
+      },
+    });
+
+    if (!userAssessment) throw new MultiLanguageException(LanguageErrorEnum.ASSESSMENT_NOT_FOUND);
+    if (Number(userAssessment.patientId) !&#x3D;&#x3D; user.patientId) throw new MultiLanguageException(LanguageErrorEnum.ASSESSMENT_NOT_YOURS);
+
+    return userAssessment;
+  }
+
+  assesmentDetail(assessments: Assessment[]): AssessmentDetailResponse {
+    const finishedAssessments &#x3D; assessments.filter((assessment) &#x3D;&gt; assessment.isDone &amp;&amp; !assessment.isReseted);
+    // console.log(&#x27;Assessment finished&#x27;, finishedAssessments);
+    const finalAssesmentDone &#x3D; finishedAssessments.filter((assessment) &#x3D;&gt; assessment.name &#x3D;&#x3D;&#x3D; AssessmentNameEnum.FINAL);
+    const assessmentsLength &#x3D; finishedAssessments.length;
+    const assessmentsName &#x3D; Object.values(AssessmentNameEnum);
+    // console.log(finalAssesmentDone);
+    return {
+      welcomeAssessmentAt: finishedAssessments[0] ? finishedAssessments[0].createdAt : null,
+      nextAssessment: assessmentsName[assessmentsLength] ? assessmentsName[assessmentsLength] : AssessmentNameEnum.FINAL,
+      step: null,
+      finalAssesmentDone: finalAssesmentDone.length &#x3D;&#x3D;&#x3D; 0 ? false : true,
+    };
+  }
+  async fetchUserAssessmentsByUserId(user: UserPlayloadResponse): Promise&lt;AssessmentDetailResponse&gt; {
+    const userAssessments &#x3D; await this.prismaService.user.findUnique({
+      where: {
+        id: user.id,
+      },
+      include: {
+        patient: {
+          include: {
+            assessments: {
+              orderBy: {
+                createdAt: &#x27;asc&#x27;,
+              },
+            },
+          },
+        },
+      },
+    });
+
+    if (!userAssessments.patient) throw new MultiLanguageException(LanguageErrorEnum.PATIENTS_ONLY);
+
+    const assessmentDetail &#x3D; this.assesmentDetail(userAssessments.patient.assessments);
+    // console.log(&#x27;assessmentDetail&#x27;, assessmentDetail);
+    const fetchLastPatientAssessment &#x3D; await this.fetchLastPatientAssessment(user.patientId);
+
+    return { ...assessmentDetail, step: fetchLastPatientAssessment?.step ?? null };
+  }
+
+  async updateAssessmentAsDone(id: number, transaction?: PrismaTransactionClient): Promise&lt;boolean&gt; {
+    const transactionOperation &#x3D; transaction ?? this.prismaService;
+
+    await transactionOperation.assessment.update({
+      where: { id },
+      data: {
+        isDone: true,
+      },
+    });
+    return true;
+  }
+
+  async getAssessmentSection(assessment: AssessmentNameEnum): Promise&lt;AssessmentInfoResponse&gt; {
+    return assessment ? JSON_ASSESSMENTS[assessment] : null;
+  }
+
+  async assessmentLastRestDate(patientId: number): Promise&lt;Date&gt; {
+    const { lastAssessmentResetAt } &#x3D; await this.prismaService.patient.findUnique({ where: { id: patientId } });
+    return lastAssessmentResetAt;
+  }
+
+  async fetchCurrentAssessment(user: UserPlayloadResponse, name: AssessmentNameEnum, transaction?: PrismaTransactionClient): Promise&lt;FetchAssessmentResponse&gt; {
+    const prismaOperation &#x3D; transaction ?? this.prismaService;
+
+    return await prismaOperation.assessment.findFirst({
+      where: {
+        name,
+        patientId: user.patientId,
+        isReseted: false,
+      },
+      select: {
+        id: true,
+        name: true,
+        fagerstromScore: true,
+        createdAt: true,
+        habitInformation: {
+          select: {
+            numberCigaretesPerDay: true,
+            numberTriesQuittingSmoking: true,
+            numberYearsQuittingSmoking: true,
+            periodeSmoking: true,
+            quitDate: true,
+            quitSmoking: true,
+          },
+        },
+        tobacco: { select: tobaccoSelect },
+        allergy: { select: allergySelect },
+        riskFactor: { select: riskFactorSelect },
+        smokingTrigger: { select: smokingTriggerSelect },
+        motivation: {
+          select: motivationSelect,
+        },
+      },
+    });
+  }
+
+  async resetAssessments(patientId: number): Promise&lt;boolean&gt; {
+    const relapsesNumberToRestAssessments &#x3D; 20;
+    const assessmentLastRestDate &#x3D; await this.assessmentLastRestDate(patientId);
+
+    const countRelapses &#x3D; await this.prismaService.relapse.count({
+      where: {
+        patientId,
+        ...(assessmentLastRestDate &amp;&amp; {
+          createdAt: {
+            gt: assessmentLastRestDate,
+          },
+        }),
+      },
+    });
+
+    if (countRelapses &gt;&#x3D; relapsesNumberToRestAssessments) {
+      await this.prismaService.$transaction([
+        this.prismaService.assessment.updateMany({
+          where: {
+            name: {
+              not: AssessmentNameEnum.WELCOME,
+            },
+            patientId,
+          },
+          data: {
+            isReseted: true,
+          },
+        }),
+
+        this.prismaService.patient.update({
+          where: { id: patientId },
+          data: {
+            lastAssessmentResetAt: new Date(),
+          },
+        }),
+      ]);
+    }
+
+    return true;
+  }
+
+  async fetchLastPatientAssessment(patientId: number): Promise&lt;Assessment&gt; {
+    const assessments &#x3D; await this.prismaService.assessment.findMany({
+      where: {
+        patientId,
+        isReseted: false,
+      },
+      orderBy: {
+        createdAt: &#x27;desc&#x27;,
+      },
+      take: 1,
+    });
+    return assessments[0];
+  }
+
+  async fetchStep(assesmentId: number, transaction?: PrismaTransactionClient): Promise&lt;Assessment&gt; {
+    const transactionOperation &#x3D; transaction ?? this.prismaService;
+
+    return await transactionOperation.assessment.findUnique({
+      where: {
+        id: assesmentId,
+      },
+    });
+  }
+
+  async updateStep(assesmentId: number, step: number, transaction?: PrismaTransactionClient): Promise&lt;boolean&gt; {
+    const transactionOperation &#x3D; transaction ?? this.prismaService;
+    const assessment &#x3D; await this.fetchStep(assesmentId, transaction);
+
+    //if statement to make sure step stores last step reached by the user
+    if (!assessment.step || assessment.step &lt; step)
+      await transactionOperation.assessment.update({
+        where: {
+          id: assesmentId,
+        },
+        data: {
+          step,
+        },
+      });
+
+    return true;
+  }
+
+  async isAssessmentByIdExists(id: number): Promise&lt;Assessment&gt; {
+    const assessment &#x3D; await this.prismaService.assessment.findUnique({ where: { id } });
+    if (!assessment) throw new MultiLanguageException(LanguageErrorEnum.ASSESSMENT_NOT_FOUND);
+    return assessment;
+  }
+
+  async isAssessmentOwner(user: UserPlayloadResponse, id: number): Promise&lt;boolean&gt; {
+    const assessment &#x3D; await this.isAssessmentByIdExists(id);
+
+    if (Number(assessment.patientId) !&#x3D;&#x3D; user.patientId) throw new MultiLanguageException(LanguageErrorEnum.ASSESSMENT_NOT_YOURS);
+    return true;
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'AssessmentsService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,1239 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>smoking-halim documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">smoking-halim documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >MessagesService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/modules/messages/messages.service.ts</code>
+        </p>
+
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#addMessageToGroup" >addMessageToGroup</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#addMessageToGroupChatHttp" >addMessageToGroupChatHttp</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#deleteMessage" >deleteMessage</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#findMessageById" >findMessageById</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#groupChatMentionedNotification" >groupChatMentionedNotification</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#isHealthSpecialistInGroupChats" >isHealthSpecialistInGroupChats</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#isMessageOwner" >isMessageOwner</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(prismaService: <a href="../injectables/PrismaService.html" target="_self">PrismaService</a>, groupChatsService: <a href="../injectables/GroupChatsService.html" target="_self">GroupChatsService</a>, commonService: <a href="../injectables/CommonService.html" target="_self">CommonService</a>, socketService: <a href="../injectables/SocketService.html" target="_self">SocketService</a>, fileService: <a href="../injectables/FileService.html" target="_self">FileService</a>, usersService: <a href="../injectables/UsersService.html" target="_self">UsersService</a>, notificationService: <a href="../injectables/NotificationService.html" target="_self">NotificationService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/modules/messages/messages.service.ts:22</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>prismaService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PrismaService.html" target="_self" >PrismaService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>groupChatsService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/GroupChatsService.html" target="_self" >GroupChatsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>commonService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CommonService.html" target="_self" >CommonService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>socketService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SocketService.html" target="_self" >SocketService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>fileService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/FileService.html" target="_self" >FileService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>usersService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UsersService.html" target="_self" >UsersService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>notificationService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/NotificationService.html" target="_self" >NotificationService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addMessageToGroup"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>addMessageToGroup</b></span>
+                        <a href="#addMessageToGroup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addMessageToGroup(user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>, socketMessageGroupChatDto: <a href="../classes/SocketMessageGroupChatDto.html" target="_self">SocketMessageGroupChatDto</a>, fileData?: <a href="../classes/FileResponse.html" target="_self">FileResponse</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="68"
+                                    class="link-to-prism">src/modules/messages/messages.service.ts:68</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>socketMessageGroupChatDto</td>
+                                            <td>
+                                                            <code><a href="../classes/SocketMessageGroupChatDto.html" target="_self" >SocketMessageGroupChatDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>fileData</td>
+                                            <td>
+                                                            <code><a href="../classes/FileResponse.html" target="_self" >FileResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;MessageResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addMessageToGroupChatHttp"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>addMessageToGroupChatHttp</b></span>
+                        <a href="#addMessageToGroupChatHttp"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addMessageToGroupChatHttp(user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>, messageGroupChatDto: <a href="../classes/MessageGroupChatDto.html" target="_self">MessageGroupChatDto</a>, file: Express.Multer.File)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="33"
+                                    class="link-to-prism">src/modules/messages/messages.service.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>messageGroupChatDto</td>
+                                            <td>
+                                                            <code><a href="../classes/MessageGroupChatDto.html" target="_self" >MessageGroupChatDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>file</td>
+                                            <td>
+                                                        <code>Express.Multer.File</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;MessageResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteMessage"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>deleteMessage</b></span>
+                        <a href="#deleteMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deleteMessage(user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>, id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="55"
+                                    class="link-to-prism">src/modules/messages/messages.service.ts:55</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;SimpleMessageResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="findMessageById"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>findMessageById</b></span>
+                        <a href="#findMessageById"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>findMessageById(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="166"
+                                    class="link-to-prism">src/modules/messages/messages.service.ts:166</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="groupChatMentionedNotification"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>groupChatMentionedNotification</b></span>
+                        <a href="#groupChatMentionedNotification"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>groupChatMentionedNotification(user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>, groupChatId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, settingOptionNameEnum: <a href="../interfaces/SettingOption.html" target="_self">SettingOptionNameEnum</a>, senderName: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, userIdsForNotification: <a href="../classes/IdDto.html" target="_self">IdDto[]</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="198"
+                                    class="link-to-prism">src/modules/messages/messages.service.ts:198</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>groupChatId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>settingOptionNameEnum</td>
+                                            <td>
+                                                            <code><a href="../interfaces/SettingOption.html" target="_self" >SettingOptionNameEnum</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>senderName</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>userIdsForNotification</td>
+                                            <td>
+                                                            <code><a href="../classes/IdDto.html" target="_self" >IdDto[]</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isHealthSpecialistInGroupChats"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>isHealthSpecialistInGroupChats</b></span>
+                        <a href="#isHealthSpecialistInGroupChats"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>isHealthSpecialistInGroupChats(groupChatIds: number[], healthSpecialistId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="182"
+                                    class="link-to-prism">src/modules/messages/messages.service.ts:182</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>groupChatIds</td>
+                                            <td>
+                                                        <code>number[]</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>healthSpecialistId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isMessageOwner"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>isMessageOwner</b></span>
+                        <a href="#isMessageOwner"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>isMessageOwner(messageId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="173"
+                                    class="link-to-prism">src/modules/messages/messages.service.ts:173</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>messageId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { UserPlayloadResponse } from &#x27;src/modules/patients/response/user-playload.response&#x27;;
+import { Injectable } from &#x27;@nestjs/common&#x27;;
+import { PrismaService } from &#x27;src/common/services/prisma.service&#x27;;
+import { GroupChatsService } from &#x27;src/modules/group-chats/group-chats.service&#x27;;
+import { MessageGroupChatDto } from &#x27;src/modules/messages/dto/message-group-chat.dto&#x27;;
+import { MessageResponse } from &#x27;src/modules/messages/response/message.response&#x27;;
+import { CommonService } from &#x27;src/common/services/common.service&#x27;;
+import { MultiLanguageException } from &#x27;src/common/exception-filters/multi-language.exception&#x27;;
+import { LanguageErrorEnum } from &#x27;src/common/enums/language-error.enum&#x27;;
+import { SimpleMessageResponse } from &#x27;src/modules/messages/response/simple-message.response&#x27;;
+import { SocketService } from &#x27;src/modules/socket/socket.service&#x27;;
+import { SocketEventEnum } from &#x27;src/common/enums/socket-event.enum&#x27;;
+import { FileService } from &#x27;src/common/services/file.service&#x27;;
+import { FileResponse } from &#x27;src/modules/private-chat-messages/response/file.response&#x27;;
+import { SocketMessageGroupChatDto } from &#x27;src/modules/messages/dto/socket-message-group-chat.dto&#x27;;
+import { UsersService } from &#x27;src/modules/users/users.service&#x27;;
+import { NotificationService } from &#x27;src/modules/notification/notification.service&#x27;;
+import { IdDto } from &#x27;src/common/dto/id.dto&#x27;;
+import { SettingOptionNameEnum } from &#x27;@prisma/client&#x27;;
+
+@Injectable()
+export class MessagesService {
+  constructor(
+    private readonly prismaService: PrismaService,
+    private readonly groupChatsService: GroupChatsService,
+    private commonService: CommonService,
+    private socketService: SocketService,
+    private fileService: FileService,
+    private usersService: UsersService,
+    private notificationService: NotificationService,
+  ) {}
+
+  async addMessageToGroupChatHttp(user: UserPlayloadResponse, messageGroupChatDto: MessageGroupChatDto, file: Express.Multer.File): Promise&lt;MessageResponse&gt; {
+    const { groupChatId, message, socketId } &#x3D; messageGroupChatDto;
+    let fileData: FileResponse &#x3D; null;
+    const room &#x3D; String(groupChatId);
+
+    if (file) fileData &#x3D; await this.fileService.uploadFile(file);
+
+    const addMessageResponse &#x3D; await this.addMessageToGroup(user, messageGroupChatDto, fileData); //save message in db
+    const { sender } &#x3D; addMessageResponse;
+
+    this.socketService.socket
+      .to(&#x60;group_chats_${room}&#x60;)
+      .emit(SocketEventEnum.MESSAGE_GROUP_CHATS, this.commonService.objectParser({ groupChatId, message, hasFile: !!fileData, senderId: user.id }));
+
+    this.socketService.socket
+      .to(&#x60;group_chat_${room}&#x60;)
+      .except(socketId) //make this dynamic
+      .emit(SocketEventEnum.MESSAGE_GROUP_CHAT, this.commonService.objectParser({ ...addMessageResponse, sender: { ...sender, isHealthSpecialist: true } }));
+
+    return addMessageResponse;
+  }
+
+  async deleteMessage(user: UserPlayloadResponse, id: number): Promise&lt;SimpleMessageResponse&gt; {
+    await this.isMessageOwner(id, user.id);
+
+    return await this.prismaService.message.delete({
+      where: { id },
+      select: {
+        id: true,
+        message: true,
+        createdAt: true,
+      },
+    });
+  }
+
+  async addMessageToGroup(user: UserPlayloadResponse, socketMessageGroupChatDto: SocketMessageGroupChatDto, fileData?: FileResponse): Promise&lt;MessageResponse&gt; {
+    const { groupChatId, message, replyId, mentionedUserIds } &#x3D; socketMessageGroupChatDto;
+    const isMentionedUsers &#x3D; mentionedUserIds?.length &gt; 0;
+    const userIds &#x3D; isMentionedUsers &amp;&amp; mentionedUserIds.map((user: IdDto) &#x3D;&gt; Number(user.id));
+    const userIdsForNotification &#x3D;
+      isMentionedUsers &amp;&amp;
+      mentionedUserIds.map((user: IdDto) &#x3D;&gt; {
+        return {
+          id: user.id,
+        };
+      });
+
+    if (user.isPatient &amp;&amp; message) {
+      const isUrlNotDetected &#x3D; this.commonService.isUrlNotDetected(message);
+      if (isUrlNotDetected) throw new MultiLanguageException(LanguageErrorEnum.URL_NOT_ALLOWED);
+    }
+
+    if (user.isHS) await this.groupChatsService.isHealthSpecialistInGroup(groupChatId, user.healthSpecialistId);
+    else await this.groupChatsService.isParticipantExists(groupChatId, user.id);
+
+    if (replyId) await this.findMessageById(replyId);
+
+    if (isMentionedUsers) await this.usersService.isUsersByIdExist(userIds);
+
+    const sentMessage &#x3D; await this.prismaService.message.create({
+      data: {
+        message,
+        groupChatId,
+        senderId: user.id,
+        replyId,
+        ...(fileData &amp;&amp; { file: { create: fileData } }),
+        ...(isMentionedUsers &amp;&amp; { mentionedUsers: { connect: mentionedUserIds } }),
+      },
+      select: {
+        id: true,
+        message: true,
+        sender: {
+          select: {
+            id: true,
+            personalInformation: { select: { firstName: true, lastName: true } },
+          },
+        },
+        reply: {
+          select: {
+            id: true,
+            file: {
+              select: {
+                blobName: true,
+                extension: true,
+                name: true,
+              },
+            },
+            mentionedUsers: {
+              select: {
+                id: true,
+                personalInformation: { select: { firstName: true, lastName: true } },
+              },
+            },
+            sender: {
+              select: {
+                id: true,
+                personalInformation: { select: { firstName: true, lastName: true } },
+              },
+            },
+            message: true,
+            createdAt: true,
+          },
+        },
+        file: {
+          select: {
+            name: true,
+            blobName: true,
+            extension: true,
+            size: true,
+          },
+        },
+        mentionedUsers: {
+          select: {
+            id: true,
+            personalInformation: {
+              select: { id: true, firstName: true, lastName: true },
+            },
+          },
+        },
+        createdAt: true,
+      },
+    });
+    const senderName &#x3D; &#x60;${sentMessage.sender.personalInformation.firstName} ${sentMessage.sender.personalInformation.lastName}&#x60;;
+
+    const pushNotificationMessage &#x3D; &#x60;${sentMessage.sender.personalInformation.firstName} ${sentMessage.sender.personalInformation.lastName} sent you a message!&#x60;;
+    if (isMentionedUsers) {
+      this.groupChatMentionedNotification(user, groupChatId, SettingOptionNameEnum.MENTION_IN_PRIVATE_GROUP, senderName, userIdsForNotification);
+      this.notificationService.sendPushNotif(userIdsForNotification, SettingOptionNameEnum.MENTION_IN_PRIVATE_GROUP, pushNotificationMessage);
+    }
+
+    return sentMessage;
+  }
+
+  async findMessageById(id: number): Promise&lt;boolean&gt; {
+    const message &#x3D; await this.prismaService.message.findUnique({ where: { id }, select: { id: true } });
+
+    if (!message) throw new MultiLanguageException(LanguageErrorEnum.MESSAGE_NOT_FOUND);
+    return true;
+  }
+
+  async isMessageOwner(messageId: number, userId: number): Promise&lt;boolean&gt; {
+    await this.findMessageById(messageId);
+
+    const message &#x3D; await this.prismaService.message.findUnique({ where: { id: messageId, senderId: userId } });
+
+    if (!message) throw new MultiLanguageException(LanguageErrorEnum.MESSAGE_NOT_YOURS);
+    return true;
+  }
+
+  async isHealthSpecialistInGroupChats(groupChatIds: number[], healthSpecialistId: number): Promise&lt;boolean&gt; {
+    const groupChat &#x3D; await this.prismaService.groupChat.aggregate({
+      where: {
+        id: { in: groupChatIds },
+        healthSpecialistId,
+      },
+      _count: {
+        _all: true,
+      },
+    });
+
+    if (groupChat._count._all &lt; groupChatIds.length) throw new MultiLanguageException(LanguageErrorEnum.HEALTH_SPECIALIST_NOT_IN_GROUP_CHAT);
+
+    return true;
+  }
+
+  async groupChatMentionedNotification(
+    user: UserPlayloadResponse,
+    groupChatId: number,
+    settingOptionNameEnum: SettingOptionNameEnum,
+    senderName: string,
+    userIdsForNotification: IdDto[],
+  ): Promise&lt;boolean&gt; {
+    const notificationMessage &#x3D; &#x60;${senderName} sent you a message!&#x60;;
+    const notificationMessageAr &#x3D; &#x60;${senderName} أرسل لك رسالة!&#x60;;
+
+    const createNotificationDto &#x3D; {
+      messageAr: notificationMessageAr,
+      messageEn: notificationMessage,
+      titleAr: &#x27;رسالة جديدة!&#x27;,
+      titleEn: &#x27;New message!&#x27;,
+      deliveryDate: new Date(),
+      notificationType: &#x27;GroupChat&#x27;,
+      isCritical: false,
+    };
+
+    const healthSpecialistUserId &#x3D; await this.groupChatsService.groupChatHealthSpecialistUserId(groupChatId);
+
+    const isHealthSpecialistMentioned &#x3D; userIdsForNotification.map((user) &#x3D;&gt; Number(user.id)).includes(healthSpecialistUserId);
+
+    if (isHealthSpecialistMentioned)
+      this.notificationService.createAdminNotification(user, createNotificationDto, BigInt(healthSpecialistUserId), groupChatId, settingOptionNameEnum);
+    return true;
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'MessagesService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,2347 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>smoking-halim documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">smoking-halim documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content class">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Classes</li>
+  <li class="breadcrumb-item" >SocketListener</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/modules/socket/socket.listener.ts</code>
+        </p>
+
+
+
+
+            <p class="comment">
+                <h3>Implements</h3>
+            </p>
+            <p class="comment">
+                        <code>OnGatewayInit</code>
+                        <code>OnGatewayConnection</code>
+                        <code>OnGatewayDisconnect</code>
+            </p>
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#logger" >logger</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Public</span>
+                                <a href="#server" >server</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#adminJoinGroupChatRoom" >adminJoinGroupChatRoom</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#adminJoinGroupChatRooms" >adminJoinGroupChatRooms</a>
+                            </li>
+                            <li>
+                                <a href="#afterInit" >afterInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#cravingEvent" >cravingEvent</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#deleteGroupChatMessage" >deleteGroupChatMessage</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#deletePrivateChatMessage" >deletePrivateChatMessage</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#handleChatDeleteEvent" >handleChatDeleteEvent</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#handleChatEvent" >handleChatEvent</a>
+                            </li>
+                            <li>
+                                <a href="#handleConnection" >handleConnection</a>
+                            </li>
+                            <li>
+                                <a href="#handleDisconnect" >handleDisconnect</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#healthSpecialistJoinPrivateChatRoom" >healthSpecialistJoinPrivateChatRoom</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#healthSpecialistJoinPrivateChatRooms" >healthSpecialistJoinPrivateChatRooms</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#participantJoinGroupChatRoom" >participantJoinGroupChatRoom</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#privateChatStatusChange" >privateChatStatusChange</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#sendGroupChatMessage" >sendGroupChatMessage</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#sendPrivateChatMessage" >sendPrivateChatMessage</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Async</span>
+                                <a href="#userJoinPrivateChatRoom" >userJoinPrivateChatRoom</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(privateChatsListener: <a href="../injectables/PrivateChatsListener.html" target="_self">PrivateChatsListener</a>, cravingsListener: <a href="../injectables/CravingsListener.html" target="_self">CravingsListener</a>, messagesListener: <a href="../injectables/MessagesListener.html" target="_self">MessagesListener</a>, privateChatMessagesListener: <a href="../injectables/PrivateChatMessagesListener.html" target="_self">PrivateChatMessagesListener</a>, communityMessagesListener: <a href="../injectables/CommunityMessagesListener.html" target="_self">CommunityMessagesListener</a>, socketService: <a href="../injectables/SocketService.html" target="_self">SocketService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/modules/socket/socket.listener.ts:50</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>privateChatsListener</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PrivateChatsListener.html" target="_self" >PrivateChatsListener</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>cravingsListener</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CravingsListener.html" target="_self" >CravingsListener</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>messagesListener</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/MessagesListener.html" target="_self" >MessagesListener</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>privateChatMessagesListener</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PrivateChatMessagesListener.html" target="_self" >PrivateChatMessagesListener</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>communityMessagesListener</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CommunityMessagesListener.html" target="_self" >CommunityMessagesListener</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>socketService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SocketService.html" target="_self" >SocketService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="logger"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>logger</b></span>
+                        <a href="#logger"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Logger</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Logger(&#x27;SocketListener&#x27;)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/modules/socket/socket.listener.ts:62</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="server"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Public</span>
+                        <span ><b>server</b></span>
+                        <a href="#server"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Server</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @WebSocketServer()<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/modules/socket/socket.listener.ts:60</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="adminJoinGroupChatRoom"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>adminJoinGroupChatRoom</b></span>
+                        <a href="#adminJoinGroupChatRoom"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>adminJoinGroupChatRoom(healthSpecialistJoinRoomDto: <a href="../classes/HealthSpecialistJoinRoomDto.html" target="_self">HealthSpecialistJoinRoomDto</a>, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;])<br />@SubscribeMessage(SocketEventEnum.ADMIN_JOIN_GROUP)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="93"
+                                    class="link-to-prism">src/modules/socket/socket.listener.ts:93</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>healthSpecialistJoinRoomDto</td>
+                                            <td>
+                                                            <code><a href="../classes/HealthSpecialistJoinRoomDto.html" target="_self" >HealthSpecialistJoinRoomDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="adminJoinGroupChatRooms"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>adminJoinGroupChatRooms</b></span>
+                        <a href="#adminJoinGroupChatRooms"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>adminJoinGroupChatRooms(healthSpecialistJoinRoomDto: <a href="../classes/JoinHealthSpecialistGroupChatRoomsDto.html" target="_self">JoinHealthSpecialistGroupChatRoomsDto</a>, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;])<br />@SubscribeMessage(SocketEventEnum.ADMIN_JOIN_GROUP_CHATS)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="103"
+                                    class="link-to-prism">src/modules/socket/socket.listener.ts:103</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>healthSpecialistJoinRoomDto</td>
+                                            <td>
+                                                            <code><a href="../classes/JoinHealthSpecialistGroupChatRoomsDto.html" target="_self" >JoinHealthSpecialistGroupChatRoomsDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="afterInit"></a>
+                    <span class="name">
+                        <span ><b>afterInit</b></span>
+                        <a href="#afterInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>afterInit(server: Server)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="64"
+                                    class="link-to-prism">src/modules/socket/socket.listener.ts:64</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>server</td>
+                                            <td>
+                                                        <code>Server</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cravingEvent"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>cravingEvent</b></span>
+                        <a href="#cravingEvent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>cravingEvent(urgentSupportDto: <a href="../classes/UrgentSupportDto.html" target="_self">UrgentSupportDto</a>, client: Socket, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;])<br />@SubscribeMessage(SocketEventEnum.CRAVING)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="215"
+                                    class="link-to-prism">src/modules/socket/socket.listener.ts:215</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>urgentSupportDto</td>
+                                            <td>
+                                                            <code><a href="../classes/UrgentSupportDto.html" target="_self" >UrgentSupportDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>client</td>
+                                            <td>
+                                                        <code>Socket</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;SuccessResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteGroupChatMessage"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>deleteGroupChatMessage</b></span>
+                        <a href="#deleteGroupChatMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deleteGroupChatMessage(deleteMessageDto: <a href="../classes/DeleteMessageDto.html" target="_self">DeleteMessageDto</a>, client: Socket, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;, &#x27;undefined&#x27;])<br />@SubscribeMessage(SocketEventEnum.DELETE_MESSAGE_GROUP_CHAT)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="113"
+                                    class="link-to-prism">src/modules/socket/socket.listener.ts:113</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>deleteMessageDto</td>
+                                            <td>
+                                                            <code><a href="../classes/DeleteMessageDto.html" target="_self" >DeleteMessageDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>client</td>
+                                            <td>
+                                                        <code>Socket</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;MessageGroupChatSocketResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deletePrivateChatMessage"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>deletePrivateChatMessage</b></span>
+                        <a href="#deletePrivateChatMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deletePrivateChatMessage(deleteMessageDto: <a href="../classes/DeleteMessageDto.html" target="_self">DeleteMessageDto</a>, client: Socket, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;, &#x27;undefined&#x27;])<br />@SubscribeMessage(SocketEventEnum.DELETE_MESSAGE_PRIVATE_CHAT)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="190"
+                                    class="link-to-prism">src/modules/socket/socket.listener.ts:190</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>deleteMessageDto</td>
+                                            <td>
+                                                            <code><a href="../classes/DeleteMessageDto.html" target="_self" >DeleteMessageDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>client</td>
+                                            <td>
+                                                        <code>Socket</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;PrivateChatMessageSocketResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleChatDeleteEvent"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>handleChatDeleteEvent</b></span>
+                        <a href="#handleChatDeleteEvent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>handleChatDeleteEvent(deleteMessageDto: <a href="../classes/DeleteMessageDto.html" target="_self">DeleteMessageDto</a>, client: Socket, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth()<br />@SubscribeMessage(SocketEventEnum.DELETE_MESSAGE_COMMUNITY_CHAT)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="137"
+                                    class="link-to-prism">src/modules/socket/socket.listener.ts:137</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>deleteMessageDto</td>
+                                            <td>
+                                                            <code><a href="../classes/DeleteMessageDto.html" target="_self" >DeleteMessageDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>client</td>
+                                            <td>
+                                                        <code>Socket</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;CommunityChatSocketResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleChatEvent"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>handleChatEvent</b></span>
+                        <a href="#handleChatEvent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>handleChatEvent(communityMessageDto: <a href="../classes/CommunityMessageDto.html" target="_self">CommunityMessageDto</a>, client: Socket, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;])<br />@SubscribeMessage(SocketEventEnum.MESSAGE_COMMUNITY_CHAT)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="126"
+                                    class="link-to-prism">src/modules/socket/socket.listener.ts:126</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>communityMessageDto</td>
+                                            <td>
+                                                            <code><a href="../classes/CommunityMessageDto.html" target="_self" >CommunityMessageDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>client</td>
+                                            <td>
+                                                        <code>Socket</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;CommunityChatSocketResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleConnection"></a>
+                    <span class="name">
+                        <span ><b>handleConnection</b></span>
+                        <a href="#handleConnection"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>handleConnection(client: Socket)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="228"
+                                    class="link-to-prism">src/modules/socket/socket.listener.ts:228</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>client</td>
+                                            <td>
+                                                        <code>Socket</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleDisconnect"></a>
+                    <span class="name">
+                        <span ><b>handleDisconnect</b></span>
+                        <a href="#handleDisconnect"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>handleDisconnect(client: Socket)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="224"
+                                    class="link-to-prism">src/modules/socket/socket.listener.ts:224</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>client</td>
+                                            <td>
+                                                        <code>Socket</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="healthSpecialistJoinPrivateChatRoom"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>healthSpecialistJoinPrivateChatRoom</b></span>
+                        <a href="#healthSpecialistJoinPrivateChatRoom"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>healthSpecialistJoinPrivateChatRoom(participantJoinPrivateChatRoomDto: <a href="../classes/ParticipantJoinPrivateChatRoomDto.html" target="_self">ParticipantJoinPrivateChatRoomDto</a>, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;])<br />@SubscribeMessage(SocketEventEnum.HS_JOIN_PRIVATE_CHAT)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="170"
+                                    class="link-to-prism">src/modules/socket/socket.listener.ts:170</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>participantJoinPrivateChatRoomDto</td>
+                                            <td>
+                                                            <code><a href="../classes/ParticipantJoinPrivateChatRoomDto.html" target="_self" >ParticipantJoinPrivateChatRoomDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;SuccessResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="healthSpecialistJoinPrivateChatRooms"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>healthSpecialistJoinPrivateChatRooms</b></span>
+                        <a href="#healthSpecialistJoinPrivateChatRooms"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>healthSpecialistJoinPrivateChatRooms(joinHealthSpecialistPrivateChatRoomDto: <a href="../classes/JoinHealthSpecialistPrivateChatRoomDto.html" target="_self">JoinHealthSpecialistPrivateChatRoomDto</a>, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;])<br />@SubscribeMessage(SocketEventEnum.HS_JOIN_PRIVATE_CHATS)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="180"
+                                    class="link-to-prism">src/modules/socket/socket.listener.ts:180</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>joinHealthSpecialistPrivateChatRoomDto</td>
+                                            <td>
+                                                            <code><a href="../classes/JoinHealthSpecialistPrivateChatRoomDto.html" target="_self" >JoinHealthSpecialistPrivateChatRoomDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;SuccessResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="participantJoinGroupChatRoom"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>participantJoinGroupChatRoom</b></span>
+                        <a href="#participantJoinGroupChatRoom"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>participantJoinGroupChatRoom(patientJoinRoomDto: <a href="../classes/PatientJoinRoomDto.html" target="_self">PatientJoinRoomDto</a>, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;])<br />@SubscribeMessage(SocketEventEnum.PARTICIPANT_JOIN_GROUP)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="83"
+                                    class="link-to-prism">src/modules/socket/socket.listener.ts:83</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>patientJoinRoomDto</td>
+                                            <td>
+                                                            <code><a href="../classes/PatientJoinRoomDto.html" target="_self" >PatientJoinRoomDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="privateChatStatusChange"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>privateChatStatusChange</b></span>
+                        <a href="#privateChatStatusChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>privateChatStatusChange(privateChatInteractionIdDto: <a href="../classes/PrivateChatInteractionIdDto.html" target="_self">PrivateChatInteractionIdDto</a>, client: Socket, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;])<br />@SubscribeMessage(SocketEventEnum.PRIVATE_CHAT_INTERACTION)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="203"
+                                    class="link-to-prism">src/modules/socket/socket.listener.ts:203</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>privateChatInteractionIdDto</td>
+                                            <td>
+                                                            <code><a href="../classes/PrivateChatInteractionIdDto.html" target="_self" >PrivateChatInteractionIdDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>client</td>
+                                            <td>
+                                                        <code>Socket</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;PrivateChatInteractionSocketResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sendGroupChatMessage"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>sendGroupChatMessage</b></span>
+                        <a href="#sendGroupChatMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>sendGroupChatMessage(socketMessageGroupChatDto: <a href="../classes/SocketMessageGroupChatDto.html" target="_self">SocketMessageGroupChatDto</a>, client: Socket, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth()<br />@SubscribeMessage(SocketEventEnum.MESSAGE_GROUP_CHAT)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="72"
+                                    class="link-to-prism">src/modules/socket/socket.listener.ts:72</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>socketMessageGroupChatDto</td>
+                                            <td>
+                                                            <code><a href="../classes/SocketMessageGroupChatDto.html" target="_self" >SocketMessageGroupChatDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>client</td>
+                                            <td>
+                                                        <code>Socket</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;MessageGroupChatSocketResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sendPrivateChatMessage"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>sendPrivateChatMessage</b></span>
+                        <a href="#sendPrivateChatMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>sendPrivateChatMessage(socketMessagePrivateDto: <a href="../classes/SocketMessagePrivateDto.html" target="_self">SocketMessagePrivateDto</a>, client: Socket, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;, &#x27;undefined&#x27;])<br />@SubscribeMessage(SocketEventEnum.MESSAGE_PRIVATE_CHAT)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="149"
+                                    class="link-to-prism">src/modules/socket/socket.listener.ts:149</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>socketMessagePrivateDto</td>
+                                            <td>
+                                                            <code><a href="../classes/SocketMessagePrivateDto.html" target="_self" >SocketMessagePrivateDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>client</td>
+                                            <td>
+                                                        <code>Socket</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;PrivateChatMessageSocketResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="userJoinPrivateChatRoom"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Async</span>
+                        <span ><b>userJoinPrivateChatRoom</b></span>
+                        <a href="#userJoinPrivateChatRoom"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>userJoinPrivateChatRoom(participantJoinPrivateChatRoomDto: <a href="../classes/ParticipantJoinPrivateChatRoomDto.html" target="_self">ParticipantJoinPrivateChatRoomDto</a>, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@JwtAuth([&#x27;undefined&#x27;])<br />@SubscribeMessage(SocketEventEnum.PATIENT_JOIN_PRIVATE_CHAT)<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="160"
+                                    class="link-to-prism">src/modules/socket/socket.listener.ts:160</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>participantJoinPrivateChatRoomDto</td>
+                                            <td>
+                                                            <code><a href="../classes/ParticipantJoinPrivateChatRoomDto.html" target="_self" >ParticipantJoinPrivateChatRoomDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;SuccessResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+  WebSocketGateway,
+  OnGatewayInit,
+  OnGatewayConnection,
+  OnGatewayDisconnect,
+  WebSocketServer,
+  ConnectedSocket,
+  SubscribeMessage,
+  MessageBody,
+} from &#x27;@nestjs/websockets&#x27;;
+import { Logger, UseFilters, UsePipes } from &#x27;@nestjs/common&#x27;;
+import { Server, Socket } from &#x27;socket.io&#x27;;
+import { SocketService } from &#x27;src/modules/socket/socket.service&#x27;;
+import { JwtAuth } from &#x27;src/common/decorators/jwt-auth.decorator&#x27;;
+import { RoleDecoratorEnum } from &#x27;src/common/enums/role-decorator.enum&#x27;;
+import { SocketEventEnum } from &#x27;src/common/enums/socket-event.enum&#x27;;
+import { UrgentSupportDto } from &#x27;src/modules/private-chat-messages/dto/urgent-support.dto&#x27;;
+import { UserPlayloadResponse } from &#x27;src/modules/patients/response/user-playload.response&#x27;;
+import { User } from &#x27;src/common/decorators/auth.decorator&#x27;;
+import { SuccessResponse } from &#x27;src/common/responses/socket.response&#x27;;
+import { SocketExceptionFilter } from &#x27;src/common/exception-filters/socket-exception.filter&#x27;;
+import { WSValidationPipe } from &#x27;src/common/pipes/socket-validation.pipe&#x27;;
+import { CravingsListener } from &#x27;src/modules/cravings/cravings.listener&#x27;;
+import { PrivateChatsListener } from &#x27;src/modules/private-chats/private-chat.listener&#x27;;
+import { PrivateChatInteractionSocketResponse } from &#x27;src/modules/private-chat-messages/response/private-chat-interaction-socket.response&#x27;;
+import { PrivateChatInteractionIdDto } from &#x27;src/modules/private-chat-messages/dto/private-chat-interaction.dto&#x27;;
+import { MessagesListener } from &#x27;src/modules/messages/messages.listener&#x27;;
+import { DeleteMessageDto } from &#x27;src/modules/private-chat-messages/dto/delete-message.dto&#x27;;
+import { MessageGroupChatSocketResponse } from &#x27;src/modules/messages/response/message-group-chat.response&#x27;;
+import { HealthSpecialistJoinRoomDto } from &#x27;src/modules/messages/dto/health-specialist-join-room.dto&#x27;;
+import { PatientJoinRoomDto } from &#x27;src/modules/messages/dto/patient-join-room.dto&#x27;;
+import { SocketMessagePrivateDto } from &#x27;src/modules/private-chat-messages/dto/socket-message-private.dto&#x27;;
+import { PrivateChatMessageSocketResponse } from &#x27;src/modules/private-chat-messages/response/private-chat-message-socket.response&#x27;;
+import { ParticipantJoinPrivateChatRoomDto } from &#x27;src/modules/private-chat-messages/dto/participant-join-private-chat-room.dto&#x27;;
+import { PrivateChatMessagesListener } from &#x27;src/modules/private-chat-messages/private-chat-messages.listener&#x27;;
+import { JoinHealthSpecialistPrivateChatRoomDto } from &#x27;src/modules/private-chat-messages/dto/health-specialist-join-private-chat-room.dto&#x27;;
+import { CommunityChatSocketResponse } from &#x27;src/modules/community-messages/response/community-chat-socket.response&#x27;;
+import { CommunityMessageDto } from &#x27;src/modules/community-messages/dto/community-messages.dto&#x27;;
+import { CommunityMessagesListener } from &#x27;src/modules/community-messages/community-messages.listener&#x27;;
+import { JoinHealthSpecialistGroupChatRoomsDto } from &#x27;src/modules/messages/response/health-specialist-join-group-chat-room.dto&#x27;;
+import { SocketMessageGroupChatDto } from &#x27;src/modules/messages/dto/socket-message-group-chat.dto&#x27;;
+
+@WebSocketGateway({
+  cors: {
+    origin: &#x27;*&#x27;,
+  },
+})
+@UseFilters(new SocketExceptionFilter())
+@UsePipes(new WSValidationPipe())
+export class SocketListener implements OnGatewayInit, OnGatewayConnection, OnGatewayDisconnect {
+  constructor(
+    private privateChatsListener: PrivateChatsListener,
+    private cravingsListener: CravingsListener,
+    private messagesListener: MessagesListener,
+    private privateChatMessagesListener: PrivateChatMessagesListener,
+    private communityMessagesListener: CommunityMessagesListener,
+    private socketService: SocketService,
+  ) {}
+
+  @WebSocketServer() public server: Server;
+
+  private logger: Logger &#x3D; new Logger(&#x27;SocketListener&#x27;);
+
+  afterInit(server: Server) {
+    this.socketService.socket &#x3D; server;
+  }
+
+  //group chats
+
+  @JwtAuth()
+  @SubscribeMessage(SocketEventEnum.MESSAGE_GROUP_CHAT)
+  async sendGroupChatMessage(
+    @MessageBody()
+    socketMessageGroupChatDto: SocketMessageGroupChatDto,
+    @ConnectedSocket() client: Socket,
+    @User() user: UserPlayloadResponse,
+  ): Promise&lt;MessageGroupChatSocketResponse&gt; {
+    return await this.messagesListener.sendGroupChatMessage(socketMessageGroupChatDto, client, user, this.server);
+  }
+
+  @JwtAuth([RoleDecoratorEnum.USER])
+  @SubscribeMessage(SocketEventEnum.PARTICIPANT_JOIN_GROUP)
+  async participantJoinGroupChatRoom(
+    @MessageBody()
+    patientJoinRoomDto: PatientJoinRoomDto,
+    @User() user: UserPlayloadResponse,
+  ) {
+    return await this.messagesListener.participantJoinGroupChatRoom(patientJoinRoomDto, user, this.server);
+  }
+
+  @JwtAuth([RoleDecoratorEnum.SYSADMIN])
+  @SubscribeMessage(SocketEventEnum.ADMIN_JOIN_GROUP)
+  async adminJoinGroupChatRoom(
+    @MessageBody()
+    healthSpecialistJoinRoomDto: HealthSpecialistJoinRoomDto,
+    @User() user: UserPlayloadResponse,
+  ) {
+    return await this.messagesListener.adminJoinGroupChatRoom(healthSpecialistJoinRoomDto, user, this.server);
+  }
+
+  @JwtAuth([RoleDecoratorEnum.SYSADMIN])
+  @SubscribeMessage(SocketEventEnum.ADMIN_JOIN_GROUP_CHATS)
+  async adminJoinGroupChatRooms(
+    @MessageBody()
+    healthSpecialistJoinRoomDto: JoinHealthSpecialistGroupChatRoomsDto,
+    @User() user: UserPlayloadResponse,
+  ) {
+    return await this.messagesListener.adminJoinGroupChatRooms(healthSpecialistJoinRoomDto, user, this.server);
+  }
+
+  @JwtAuth([RoleDecoratorEnum.HEALTH_SPECIALIST, RoleDecoratorEnum.USER])
+  @SubscribeMessage(SocketEventEnum.DELETE_MESSAGE_GROUP_CHAT)
+  async deleteGroupChatMessage(
+    @MessageBody()
+    deleteMessageDto: DeleteMessageDto,
+    @ConnectedSocket() client: Socket,
+    @User() user: UserPlayloadResponse,
+  ): Promise&lt;MessageGroupChatSocketResponse&gt; {
+    return await this.messagesListener.deleteGroupChatMessage(deleteMessageDto, client, user);
+  }
+
+  //Community  chat
+
+  @JwtAuth([RoleDecoratorEnum.USER])
+  @SubscribeMessage(SocketEventEnum.MESSAGE_COMMUNITY_CHAT)
+  async handleChatEvent(
+    @MessageBody()
+    communityMessageDto: CommunityMessageDto,
+    @ConnectedSocket() client: Socket,
+    @User() user: UserPlayloadResponse,
+  ): Promise&lt;CommunityChatSocketResponse&gt; {
+    return await this.communityMessagesListener.sendCommunityChatMessage(communityMessageDto, client, user);
+  }
+
+  @JwtAuth()
+  @SubscribeMessage(SocketEventEnum.DELETE_MESSAGE_COMMUNITY_CHAT)
+  async handleChatDeleteEvent(
+    @MessageBody()
+    deleteMessageDto: DeleteMessageDto,
+    @ConnectedSocket() client: Socket,
+    @User() user: UserPlayloadResponse,
+  ): Promise&lt;CommunityChatSocketResponse&gt; {
+    return await this.communityMessagesListener.handleChatDeleteEvent(deleteMessageDto, client, user);
+  }
+  //private chat
+
+  @JwtAuth([RoleDecoratorEnum.HEALTH_SPECIALIST, RoleDecoratorEnum.USER])
+  @SubscribeMessage(SocketEventEnum.MESSAGE_PRIVATE_CHAT)
+  async sendPrivateChatMessage(
+    @MessageBody()
+    socketMessagePrivateDto: SocketMessagePrivateDto,
+    @ConnectedSocket() client: Socket,
+    @User() user: UserPlayloadResponse,
+  ): Promise&lt;PrivateChatMessageSocketResponse&gt; {
+    return this.privateChatMessagesListener.sendPrivateChatMessage(socketMessagePrivateDto, client, user, this.server);
+  }
+
+  @JwtAuth([RoleDecoratorEnum.USER])
+  @SubscribeMessage(SocketEventEnum.PATIENT_JOIN_PRIVATE_CHAT)
+  async userJoinPrivateChatRoom(
+    @MessageBody()
+    participantJoinPrivateChatRoomDto: ParticipantJoinPrivateChatRoomDto,
+    @User() user: UserPlayloadResponse,
+  ): Promise&lt;SuccessResponse&gt; {
+    return this.privateChatMessagesListener.userJoinPrivateChatRoom(participantJoinPrivateChatRoomDto, user, this.server);
+  }
+
+  @JwtAuth([RoleDecoratorEnum.HEALTH_SPECIALIST])
+  @SubscribeMessage(SocketEventEnum.HS_JOIN_PRIVATE_CHAT)
+  async healthSpecialistJoinPrivateChatRoom(
+    @MessageBody()
+    participantJoinPrivateChatRoomDto: ParticipantJoinPrivateChatRoomDto,
+    @User() user: UserPlayloadResponse,
+  ): Promise&lt;SuccessResponse&gt; {
+    return this.privateChatMessagesListener.healthSpecialistJoinPrivateChatRoom(participantJoinPrivateChatRoomDto, user, this.server);
+  }
+
+  @JwtAuth([RoleDecoratorEnum.HEALTH_SPECIALIST])
+  @SubscribeMessage(SocketEventEnum.HS_JOIN_PRIVATE_CHATS)
+  async healthSpecialistJoinPrivateChatRooms(
+    @MessageBody()
+    joinHealthSpecialistPrivateChatRoomDto: JoinHealthSpecialistPrivateChatRoomDto,
+    @User() user: UserPlayloadResponse,
+  ): Promise&lt;SuccessResponse&gt; {
+    return this.privateChatMessagesListener.healthSpecialistJoinPrivateChatRooms(joinHealthSpecialistPrivateChatRoomDto, user, this.server);
+  }
+
+  @JwtAuth([RoleDecoratorEnum.HEALTH_SPECIALIST, RoleDecoratorEnum.USER])
+  @SubscribeMessage(SocketEventEnum.DELETE_MESSAGE_PRIVATE_CHAT)
+  async deletePrivateChatMessage(
+    @MessageBody()
+    deleteMessageDto: DeleteMessageDto,
+    @ConnectedSocket() client: Socket,
+    @User() user: UserPlayloadResponse,
+  ): Promise&lt;PrivateChatMessageSocketResponse&gt; {
+    return this.privateChatMessagesListener.deletePrivateChatMessage(deleteMessageDto, client, user);
+  }
+
+  //interaction for private chat
+  //this event to enable/disable chat
+  @JwtAuth([RoleDecoratorEnum.HEALTH_SPECIALIST])
+  @SubscribeMessage(SocketEventEnum.PRIVATE_CHAT_INTERACTION)
+  async privateChatStatusChange(
+    @MessageBody()
+    privateChatInteractionIdDto: PrivateChatInteractionIdDto,
+    @ConnectedSocket() client: Socket,
+    @User() user: UserPlayloadResponse,
+  ): Promise&lt;PrivateChatInteractionSocketResponse&gt; {
+    return await this.privateChatsListener.privateChatStatusChange(privateChatInteractionIdDto, client, user);
+  }
+
+  // Craving
+  @JwtAuth([RoleDecoratorEnum.USER])
+  @SubscribeMessage(SocketEventEnum.CRAVING)
+  async cravingEvent(
+    @MessageBody()
+    urgentSupportDto: UrgentSupportDto,
+    @ConnectedSocket() client: Socket,
+    @User() user: UserPlayloadResponse,
+  ): Promise&lt;SuccessResponse&gt; {
+    return await this.cravingsListener.cravingEvent(urgentSupportDto, client, user);
+  }
+
+  handleDisconnect(client: Socket) {
+    this.logger.log(&#x60;Client disconnected: ${client.id}&#x60;);
+  }
+
+  handleConnection(client: Socket) {
+    this.logger.log(&#x60;Client connected: ${client.id}&#x60;);
+  }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'SocketListener.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

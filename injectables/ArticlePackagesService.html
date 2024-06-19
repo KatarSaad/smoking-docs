@@ -1,0 +1,1738 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>smoking-halim documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">smoking-halim documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >ArticlePackagesService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/modules/article-packages/article-packages.service.ts</code>
+        </p>
+
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#addArticlePackage" >addArticlePackage</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#addArticleToArticlePackage" >addArticleToArticlePackage</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#articlePackageById" >articlePackageById</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#articlePackages" >articlePackages</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#defaultPackageArticlesIds" >defaultPackageArticlesIds</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#deleteArticleFromArticlePackage" >deleteArticleFromArticlePackage</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#deletePackage" >deletePackage</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#isArticleExistsInPackag" >isArticleExistsInPackag</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#isArticleNotExistInPackag" >isArticleNotExistInPackag</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#isArticlePackageByIdExists" >isArticlePackageByIdExists</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#isArticlePackageEditable" >isArticlePackageEditable</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#updateArticleInArticlePackage" >updateArticleInArticlePackage</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#updateArticlePackage" >updateArticlePackage</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(prismaService: <a href="../injectables/PrismaService.html" target="_self">PrismaService</a>, articlesService: <a href="../injectables/ArticlesService.html" target="_self">ArticlesService</a>, groupsService: <a href="../injectables/GroupsService.html" target="_self">GroupsService</a>, redisService: <a href="../injectables/RedisService.html" target="_self">RedisService</a>, environmentService: <a href="../injectables/EnvironmentService.html" target="_self">EnvironmentService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/modules/article-packages/article-packages.service.ts:20</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>prismaService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PrismaService.html" target="_self" >PrismaService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>articlesService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ArticlesService.html" target="_self" >ArticlesService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>groupsService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/GroupsService.html" target="_self" >GroupsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>redisService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/RedisService.html" target="_self" >RedisService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>environmentService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/EnvironmentService.html" target="_self" >EnvironmentService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addArticlePackage"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>addArticlePackage</b></span>
+                        <a href="#addArticlePackage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addArticlePackage(addArticlePackageDto: <a href="../classes/AddArticlePackageDto.html" target="_self">AddArticlePackageDto</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="59"
+                                    class="link-to-prism">src/modules/article-packages/article-packages.service.ts:59</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>addArticlePackageDto</td>
+                                            <td>
+                                                            <code><a href="../classes/AddArticlePackageDto.html" target="_self" >AddArticlePackageDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;ArticlePackageWithCountResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addArticleToArticlePackage"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>addArticleToArticlePackage</b></span>
+                        <a href="#addArticleToArticlePackage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addArticleToArticlePackage(addRecommendedArticleDto: <a href="../classes/AddRecommendedArticleDto.html" target="_self">AddRecommendedArticleDto</a>, packageId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="227"
+                                    class="link-to-prism">src/modules/article-packages/article-packages.service.ts:227</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>addRecommendedArticleDto</td>
+                                            <td>
+                                                            <code><a href="../classes/AddRecommendedArticleDto.html" target="_self" >AddRecommendedArticleDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>packageId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;ArticlePackageWithCountResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="articlePackageById"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>articlePackageById</b></span>
+                        <a href="#articlePackageById"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>articlePackageById(language: LanguageEnum, id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="108"
+                                    class="link-to-prism">src/modules/article-packages/article-packages.service.ts:108</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>language</td>
+                                            <td>
+                                                        <code>LanguageEnum</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/FetchArticleById.html" target="_self" >Promise&lt;FetchArticleById&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="articlePackages"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>articlePackages</b></span>
+                        <a href="#articlePackages"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>articlePackages()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="29"
+                                    class="link-to-prism">src/modules/article-packages/article-packages.service.ts:29</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;ArticlePackageWithCountResponse[]&gt;</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="defaultPackageArticlesIds"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>defaultPackageArticlesIds</b></span>
+                        <a href="#defaultPackageArticlesIds"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>defaultPackageArticlesIds()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="348"
+                                    class="link-to-prism">src/modules/article-packages/article-packages.service.ts:348</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/IdDto.html" target="_self" >Promise&lt;IdDto[]&gt;</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteArticleFromArticlePackage"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>deleteArticleFromArticlePackage</b></span>
+                        <a href="#deleteArticleFromArticlePackage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deleteArticleFromArticlePackage(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, articleId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="311"
+                                    class="link-to-prism">src/modules/article-packages/article-packages.service.ts:311</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>articleId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;ArticlePackageWithCountResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deletePackage"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>deletePackage</b></span>
+                        <a href="#deletePackage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deletePackage(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="203"
+                                    class="link-to-prism">src/modules/article-packages/article-packages.service.ts:203</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;ArticlePackageWithCountResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isArticleExistsInPackag"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>isArticleExistsInPackag</b></span>
+                        <a href="#isArticleExistsInPackag"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>isArticleExistsInPackag(articlePackageId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, articleId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="373"
+                                    class="link-to-prism">src/modules/article-packages/article-packages.service.ts:373</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>articlePackageId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>articleId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isArticleNotExistInPackag"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>isArticleNotExistInPackag</b></span>
+                        <a href="#isArticleNotExistInPackag"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>isArticleNotExistInPackag(articlePackageId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, articleId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="384"
+                                    class="link-to-prism">src/modules/article-packages/article-packages.service.ts:384</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>articlePackageId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>articleId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isArticlePackageByIdExists"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>isArticlePackageByIdExists</b></span>
+                        <a href="#isArticlePackageByIdExists"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>isArticlePackageByIdExists(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="364"
+                                    class="link-to-prism">src/modules/article-packages/article-packages.service.ts:364</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isArticlePackageEditable"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>isArticlePackageEditable</b></span>
+                        <a href="#isArticlePackageEditable"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>isArticlePackageEditable(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="395"
+                                    class="link-to-prism">src/modules/article-packages/article-packages.service.ts:395</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateArticleInArticlePackage"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>updateArticleInArticlePackage</b></span>
+                        <a href="#updateArticleInArticlePackage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateArticleInArticlePackage(updateRecommendedArticleDto: <a href="../classes/UpdateRecommendedArticleDto.html" target="_self">UpdateRecommendedArticleDto</a>, packageId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, articleId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="264"
+                                    class="link-to-prism">src/modules/article-packages/article-packages.service.ts:264</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>updateRecommendedArticleDto</td>
+                                            <td>
+                                                            <code><a href="../classes/UpdateRecommendedArticleDto.html" target="_self" >UpdateRecommendedArticleDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>packageId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>articleId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;ArticlePackageWithCountResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateArticlePackage"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>updateArticlePackage</b></span>
+                        <a href="#updateArticlePackage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateArticlePackage(updateArticlePackage: <a href="../classes/UpdateArticlePackage.html" target="_self">UpdateArticlePackage</a>, id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="152"
+                                    class="link-to-prism">src/modules/article-packages/article-packages.service.ts:152</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>updateArticlePackage</td>
+                                            <td>
+                                                            <code><a href="../classes/UpdateArticlePackage.html" target="_self" >UpdateArticlePackage</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;ArticlePackageWithCountResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@nestjs/common&#x27;;
+import { ArticleStatusEnum, LanguageEnum } from &#x27;@prisma/client&#x27;;
+import { plainToInstance } from &#x27;class-transformer&#x27;;
+import { IdDto } from &#x27;src/common/dto/id.dto&#x27;;
+import { LanguageErrorEnum } from &#x27;src/common/enums/language-error.enum&#x27;;
+import { MultiLanguageException } from &#x27;src/common/exception-filters/multi-language.exception&#x27;;
+import { EnvironmentService } from &#x27;src/common/services/environment.service&#x27;;
+import { PrismaService } from &#x27;src/common/services/prisma.service&#x27;;
+import { RedisService } from &#x27;src/common/services/redis.service&#x27;;
+import { AddArticlePackageDto } from &#x27;src/modules/article-packages/dto/add-article-package.dto&#x27;;
+import { AddRecommendedArticleDto } from &#x27;src/modules/article-packages/dto/add-recommended-article.Dto&#x27;;
+import { UpdateArticlePackage } from &#x27;src/modules/article-packages/dto/update-article-package.dto&#x27;;
+import { UpdateRecommendedArticleDto } from &#x27;src/modules/article-packages/dto/update-recommended-article.Dto&#x27;;
+import { ArticlePackageWithCountResponse } from &#x27;src/modules/article-packages/response/article-package.response&#x27;;
+import { FetchArticleById } from &#x27;src/modules/article-packages/response/fetch-article-by-id.response&#x27;;
+import { ArticlesService } from &#x27;src/modules/articles/articles.service&#x27;;
+import { GroupsService } from &#x27;src/modules/groups/groups.service&#x27;;
+
+@Injectable()
+export class ArticlePackagesService {
+  constructor(
+    private prismaService: PrismaService,
+    private articlesService: ArticlesService,
+    private groupsService: GroupsService,
+    private redisService: RedisService,
+    private environmentService: EnvironmentService,
+  ) {}
+
+  async articlePackages(): Promise&lt;ArticlePackageWithCountResponse[]&gt; {
+    return await this.prismaService.articlePackage.findMany({
+      select: {
+        id: true,
+        isEditable: true,
+        targetGroup: {
+          select: {
+            id: true,
+            name: true,
+          },
+        },
+        _count: {
+          select: {
+            recommendedArticles: true,
+          },
+        },
+      },
+      orderBy: [
+        {
+          isEditable: &#x27;desc&#x27;,
+        },
+        {
+          recommendedArticles: {
+            _count: &#x27;desc&#x27;,
+          },
+        },
+      ],
+    });
+  }
+
+  async addArticlePackage(addArticlePackageDto: AddArticlePackageDto): Promise&lt;ArticlePackageWithCountResponse&gt; {
+    const { recommendedArticles, targetGroupId } &#x3D; addArticlePackageDto;
+    let articlesToConnect &#x3D; null;
+
+    const groupArticlePackage &#x3D; await this.groupsService.groupArticlePackage(targetGroupId);
+    if (groupArticlePackage) throw new MultiLanguageException(LanguageErrorEnum.GROUP_HAS_ARTICLE_PACKAGE);
+
+    if (recommendedArticles?.length &gt; 0) {
+      await this.articlesService.isArticlesByIdExists(recommendedArticles, ArticleStatusEnum.APPROVED);
+
+      articlesToConnect &#x3D; recommendedArticles.map((recommendedArticle) &#x3D;&gt; {
+        return {
+          articleId: recommendedArticle.id,
+          displayDaysAfterQuitting: recommendedArticle?.displayDaysAfterQuitting,
+        };
+      });
+    }
+
+    return await this.prismaService.articlePackage.create({
+      data: {
+        targetGroup: {
+          connect: {
+            id: targetGroupId,
+          },
+        },
+        ...(recommendedArticles &amp;&amp; {
+          recommendedArticles: {
+            create: articlesToConnect,
+          },
+        }),
+      },
+      select: {
+        id: true,
+        isEditable: true,
+        targetGroup: {
+          select: {
+            id: true,
+            name: true,
+          },
+        },
+        _count: {
+          select: {
+            recommendedArticles: true,
+          },
+        },
+      },
+    });
+  }
+
+  async articlePackageById(language: LanguageEnum, id: number): Promise&lt;FetchArticleById&gt; {
+    const articlePackageById &#x3D; await this.prismaService.articlePackage.findUnique({
+      where: { id },
+      select: {
+        id: true,
+        isEditable: true,
+        targetGroup: {
+          select: {
+            id: true,
+            name: true,
+          },
+        },
+        recommendedArticles: {
+          select: {
+            article: {
+              select: {
+                id: true,
+                image: true,
+                articlesTranslation: {
+                  where: {
+                    language: {
+                      code: language,
+                    },
+                  },
+                  select: {
+                    title: true,
+                    body: true,
+                  },
+                },
+              },
+            },
+            displayDaysAfterQuitting: true,
+          },
+        },
+      },
+    });
+    if (!articlePackageById) throw new MultiLanguageException(LanguageErrorEnum.ARTICLE_PACKAGE_NOT_FOUND);
+    const serializedArticlePackageById &#x3D; plainToInstance(FetchArticleById, articlePackageById, {
+      excludeExtraneousValues: true,
+      enableImplicitConversion: true,
+    });
+    return serializedArticlePackageById;
+  }
+
+  async updateArticlePackage(updateArticlePackage: UpdateArticlePackage, id: number): Promise&lt;ArticlePackageWithCountResponse&gt; {
+    const { recommendedArticles, targetGroupId } &#x3D; updateArticlePackage;
+    await this.isArticlePackageByIdExists(id);
+
+    if (targetGroupId) {
+      const groupArticlePackage &#x3D; await this.groupsService.groupArticlePackage(targetGroupId);
+      if (groupArticlePackage) throw new MultiLanguageException(LanguageErrorEnum.GROUP_HAS_ARTICLE_PACKAGE);
+    }
+
+    const articlesToConnect &#x3D; recommendedArticles.map((recommendedArticle) &#x3D;&gt; {
+      return {
+        articleId: recommendedArticle.id,
+        displayDaysAfterQuitting: recommendedArticle?.displayDaysAfterQuitting,
+      };
+    });
+
+    const articlePackageById &#x3D; await this.prismaService.articlePackage.update({
+      where: { id },
+      data: {
+        ...(targetGroupId &amp;&amp; {
+          targetGroup: {
+            connect: {
+              id: targetGroupId,
+            },
+          },
+        }),
+        recommendedArticles: {
+          deleteMany: {},
+          create: articlesToConnect,
+        },
+      },
+      select: {
+        id: true,
+        isEditable: true,
+        targetGroup: {
+          select: {
+            id: true,
+            name: true,
+          },
+        },
+        _count: {
+          select: {
+            recommendedArticles: true,
+          },
+        },
+      },
+    });
+
+    return articlePackageById;
+  }
+
+  async deletePackage(id: number): Promise&lt;ArticlePackageWithCountResponse&gt; {
+    await this.isArticlePackageByIdExists(id);
+    await this.isArticlePackageEditable(id);
+
+    return await this.prismaService.articlePackage.delete({
+      where: { id },
+      select: {
+        id: true,
+        isEditable: true,
+        targetGroup: {
+          select: {
+            id: true,
+            name: true,
+          },
+        },
+        _count: {
+          select: {
+            recommendedArticles: true,
+          },
+        },
+      },
+    });
+  }
+
+  async addArticleToArticlePackage(addRecommendedArticleDto: AddRecommendedArticleDto, packageId: number): Promise&lt;ArticlePackageWithCountResponse&gt; {
+    const { displayDaysAfterQuitting, id } &#x3D; addRecommendedArticleDto;
+
+    await this.isArticlePackageByIdExists(packageId);
+
+    await this.articlesService.isArticleByIdExists([ArticleStatusEnum.APPROVED], Number(id));
+
+    await this.isArticleNotExistInPackag(packageId, Number(id));
+
+    return await this.prismaService.articlePackage.update({
+      where: { id: packageId },
+      data: {
+        recommendedArticles: {
+          create: {
+            displayDaysAfterQuitting,
+            articleId: id,
+          },
+        },
+      },
+      select: {
+        id: true,
+        isEditable: true,
+        targetGroup: {
+          select: {
+            id: true,
+            name: true,
+          },
+        },
+        _count: {
+          select: {
+            recommendedArticles: true,
+          },
+        },
+      },
+    });
+  }
+
+  async updateArticleInArticlePackage(
+    updateRecommendedArticleDto: UpdateRecommendedArticleDto,
+    packageId: number,
+    articleId: number,
+  ): Promise&lt;ArticlePackageWithCountResponse&gt; {
+    const { displayDaysAfterQuitting, id } &#x3D; updateRecommendedArticleDto;
+
+    await this.isArticlePackageByIdExists(packageId);
+
+    await this.articlesService.isArticleByIdExists(null, Number(id));
+
+    await this.isArticleExistsInPackag(packageId, Number(articleId));
+
+    return await this.prismaService.articlePackage.update({
+      where: { id: packageId },
+      data: {
+        recommendedArticles: {
+          delete: {
+            articlePackageId_articleId: {
+              articleId,
+              articlePackageId: packageId,
+            },
+          },
+          create: {
+            displayDaysAfterQuitting,
+            articleId: id,
+          },
+        },
+      },
+      select: {
+        id: true,
+        isEditable: true,
+        targetGroup: {
+          select: {
+            id: true,
+            name: true,
+          },
+        },
+        _count: {
+          select: {
+            recommendedArticles: true,
+          },
+        },
+      },
+    });
+  }
+
+  async deleteArticleFromArticlePackage(id: number, articleId: number): Promise&lt;ArticlePackageWithCountResponse&gt; {
+    await this.isArticlePackageByIdExists(id);
+
+    await this.articlesService.isArticleByIdExists(null, articleId);
+
+    await this.isArticleExistsInPackag(id, articleId);
+
+    return await this.prismaService.articlePackage.update({
+      where: { id },
+      data: {
+        recommendedArticles: {
+          delete: {
+            articlePackageId_articleId: {
+              articleId,
+              articlePackageId: id,
+            },
+          },
+        },
+      },
+      select: {
+        id: true,
+        isEditable: true,
+        targetGroup: {
+          select: {
+            id: true,
+            name: true,
+          },
+        },
+        _count: {
+          select: {
+            recommendedArticles: true,
+          },
+        },
+      },
+    });
+  }
+
+  async defaultPackageArticlesIds(): Promise&lt;IdDto[]&gt; {
+    const defaultPackageArticleIdsRedisKey &#x3D; &#x60;defaultPackageArticleIds&#x60;;
+    const cacheResults &#x3D; await this.redisService.getResponseKey(defaultPackageArticleIdsRedisKey);
+    if (cacheResults) return cacheResults;
+
+    const defaultArticlePackages &#x3D; await this.prismaService.articlePackage.findMany({
+      where: {
+        isEditable: false,
+      },
+      select: { id: true },
+    });
+    this.redisService.setResponseKey(defaultPackageArticleIdsRedisKey, defaultArticlePackages, this.environmentService.redisConfig.TTL);
+
+    return defaultArticlePackages;
+  }
+
+  async isArticlePackageByIdExists(id: number): Promise&lt;boolean&gt; {
+    const articlePackageById &#x3D; await this.prismaService.articlePackage.findUnique({
+      where: { id },
+      select: { id: true },
+    });
+    if (!articlePackageById) throw new MultiLanguageException(LanguageErrorEnum.ARTICLE_PACKAGE_NOT_FOUND);
+    return true;
+  }
+
+  async isArticleExistsInPackag(articlePackageId: number, articleId: number): Promise&lt;boolean&gt; {
+    const packageOnArticle &#x3D; await this.prismaService.articlePackagesOnArticles.findFirst({
+      where: {
+        articleId,
+        articlePackageId,
+      },
+    });
+    if (!packageOnArticle) throw new MultiLanguageException(LanguageErrorEnum.ARTICLE_NOT_FOUND_IN_PACKAGE);
+    return true;
+  }
+
+  async isArticleNotExistInPackag(articlePackageId: number, articleId: number): Promise&lt;boolean&gt; {
+    const packageOnArticle &#x3D; await this.prismaService.articlePackagesOnArticles.findFirst({
+      where: {
+        articleId,
+        articlePackageId,
+      },
+    });
+    if (packageOnArticle) throw new MultiLanguageException(LanguageErrorEnum.ARTICLE_EXISTS_IN_PACKAGE);
+    return true;
+  }
+
+  async isArticlePackageEditable(id: number): Promise&lt;boolean&gt; {
+    const articlePackage &#x3D; await this.prismaService.articlePackage.findUnique({
+      where: { id },
+      select: {
+        id: true,
+        isEditable: true,
+      },
+    });
+    if (!articlePackage) throw new MultiLanguageException(LanguageErrorEnum.ARTICLE_PACKAGE_NOT_FOUND);
+    if (!articlePackage.isEditable) throw new MultiLanguageException(LanguageErrorEnum.ITEM_NOT_EDIABLE);
+    return true;
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'ArticlePackagesService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

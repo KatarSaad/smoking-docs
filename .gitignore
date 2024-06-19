@@ -1,0 +1,45 @@
+# Node.js
+node_modules/
+dist/
+coverage/
+.env
+.DS_Store
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# TypeScript
+*.tsbuildinfo
+
+# Compodoc
+documentation/
+
+# Logs
+logs
+*.log
+logs/
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# OS-specific files
+Thumbs.db
+ehthumbs.db
+*.stackdump
+*.swp
+._*
+.Spotlight-V100
+.Trashes
+
+# IDEs and editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# GitHub Actions
+/.github

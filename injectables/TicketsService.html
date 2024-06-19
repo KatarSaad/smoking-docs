@@ -1,0 +1,1914 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>smoking-halim documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">smoking-halim documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >TicketsService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/modules/tickets/tickets.service.ts</code>
+        </p>
+
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#countTicketsByStatusAndAssignedToAdmin" >countTicketsByStatusAndAssignedToAdmin</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#createAttachments" >createAttachments</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#createTicket" >createTicket</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#deleteTicket" >deleteTicket</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getTicketById" >getTicketById</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getTickets" >getTickets</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getTicketsOfPatient" >getTicketsOfPatient</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#isAdmin" >isAdmin</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#isTicketByIdExists" >isTicketByIdExists</a>
+                            </li>
+                            <li>
+                                <a href="#transformToOrderAndWhere" >transformToOrderAndWhere</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#updateTicketByAdmin" >updateTicketByAdmin</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#updateTicketByPatient" >updateTicketByPatient</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#userIdToAdminId" >userIdToAdminId</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(prismaService: <a href="../injectables/PrismaService.html" target="_self">PrismaService</a>, fileService: <a href="../injectables/FileService.html" target="_self">FileService</a>, notificationService: <a href="../injectables/NotificationService.html" target="_self">NotificationService</a>, usersService: <a href="../injectables/UsersService.html" target="_self">UsersService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/modules/tickets/tickets.service.ts:25</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>prismaService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PrismaService.html" target="_self" >PrismaService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>fileService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/FileService.html" target="_self" >FileService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>notificationService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/NotificationService.html" target="_self" >NotificationService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>usersService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UsersService.html" target="_self" >UsersService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="countTicketsByStatusAndAssignedToAdmin"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>countTicketsByStatusAndAssignedToAdmin</b></span>
+                        <a href="#countTicketsByStatusAndAssignedToAdmin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>countTicketsByStatusAndAssignedToAdmin(adminId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="402"
+                                    class="link-to-prism">src/modules/tickets/tickets.service.ts:402</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>adminId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;CountTicketByStatusAndAssignedToAdminResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createAttachments"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>createAttachments</b></span>
+                        <a href="#createAttachments"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createAttachments(ticketId, fileNames: string[], transaction: <a href="../undefineds/PrismaTransactionClient.html" target="_self">PrismaTransactionClient</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="451"
+                                    class="link-to-prism">src/modules/tickets/tickets.service.ts:451</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>ticketId</td>
+                                            <td>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>fileNames</td>
+                                            <td>
+                                                        <code>string[]</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>transaction</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#PrismaTransactionClient" target="_self" >PrismaTransactionClient</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createTicket"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>createTicket</b></span>
+                        <a href="#createTicket"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createTicket(user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>, ticketDto: <a href="../classes/PatientAddTicketDto.html" target="_self">PatientAddTicketDto</a>, attachments: Express.Multer.File[])</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="33"
+                                    class="link-to-prism">src/modules/tickets/tickets.service.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>ticketDto</td>
+                                            <td>
+                                                            <code><a href="../classes/PatientAddTicketDto.html" target="_self" >PatientAddTicketDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>attachments</td>
+                                            <td>
+                                                        <code>Express.Multer.File[]</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;PatientTicketResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteTicket"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>deleteTicket</b></span>
+                        <a href="#deleteTicket"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deleteTicket(ticketId)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="428"
+                                    class="link-to-prism">src/modules/tickets/tickets.service.ts:428</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>ticketId</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;number&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getTicketById"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getTicketById</b></span>
+                        <a href="#getTicketById"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getTicketById(ticketId)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="288"
+                                    class="link-to-prism">src/modules/tickets/tickets.service.ts:288</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>ticketId</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;TicketResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getTickets"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getTickets</b></span>
+                        <a href="#getTickets"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getTickets(user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>, ticketFilterDTO: <a href="../classes/TicketFilterDTO.html" target="_self">TicketFilterDTO</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="169"
+                                    class="link-to-prism">src/modules/tickets/tickets.service.ts:169</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>ticketFilterDTO</td>
+                                            <td>
+                                                            <code><a href="../classes/TicketFilterDTO.html" target="_self" >TicketFilterDTO</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;PaginationTicketResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getTicketsOfPatient"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getTicketsOfPatient</b></span>
+                        <a href="#getTicketsOfPatient"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getTicketsOfPatient(user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>, paginationDto: <a href="../classes/PaginationDto.html" target="_self">PaginationDto</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="238"
+                                    class="link-to-prism">src/modules/tickets/tickets.service.ts:238</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>paginationDto</td>
+                                            <td>
+                                                            <code><a href="../classes/PaginationDto.html" target="_self" >PaginationDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;PaginationTicketResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isAdmin"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>isAdmin</b></span>
+                        <a href="#isAdmin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>isAdmin(userId: number | )</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="475"
+                                    class="link-to-prism">src/modules/tickets/tickets.service.ts:475</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                        <code>number | </code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isTicketByIdExists"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>isTicketByIdExists</b></span>
+                        <a href="#isTicketByIdExists"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>isTicketByIdExists(id)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="469"
+                                    class="link-to-prism">src/modules/tickets/tickets.service.ts:469</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="transformToOrderAndWhere"></a>
+                    <span class="name">
+                        <span ><b>transformToOrderAndWhere</b></span>
+                        <a href="#transformToOrderAndWhere"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>transformToOrderAndWhere(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, ticketFilterDTO: <a href="../classes/TicketFilterDTO.html" target="_self">TicketFilterDTO</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="360"
+                                    class="link-to-prism">src/modules/tickets/tickets.service.ts:360</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>ticketFilterDTO</td>
+                                            <td>
+                                                            <code><a href="../classes/TicketFilterDTO.html" target="_self" >TicketFilterDTO</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>literal type</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateTicketByAdmin"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>updateTicketByAdmin</b></span>
+                        <a href="#updateTicketByAdmin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateTicketByAdmin(user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>, ticketId, updateTicketByAdminDto: <a href="../classes/UpdateTicketByAdminDto.html" target="_self">UpdateTicketByAdminDto</a>, images: Express.Multer.File[])</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="99"
+                                    class="link-to-prism">src/modules/tickets/tickets.service.ts:99</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>ticketId</td>
+                                            <td>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>updateTicketByAdminDto</td>
+                                            <td>
+                                                            <code><a href="../classes/UpdateTicketByAdminDto.html" target="_self" >UpdateTicketByAdminDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>images</td>
+                                            <td>
+                                                        <code>Express.Multer.File[]</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;TicketResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateTicketByPatient"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>updateTicketByPatient</b></span>
+                        <a href="#updateTicketByPatient"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateTicketByPatient(ticketId, dto: <a href="../classes/UpdateTicketByPatientDto.html" target="_self">UpdateTicketByPatientDto</a>, attachments: Express.Multer.File[])</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="78"
+                                    class="link-to-prism">src/modules/tickets/tickets.service.ts:78</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>ticketId</td>
+                                            <td>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>dto</td>
+                                            <td>
+                                                            <code><a href="../classes/UpdateTicketByPatientDto.html" target="_self" >UpdateTicketByPatientDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>attachments</td>
+                                            <td>
+                                                        <code>Express.Multer.File[]</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;PatientTicketResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="userIdToAdminId"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>userIdToAdminId</b></span>
+                        <a href="#userIdToAdminId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>userIdToAdminId(userId:  | number)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="495"
+                                    class="link-to-prism">src/modules/tickets/tickets.service.ts:495</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                        <code> | number</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@nestjs/common&#x27;;
+import { PrismaService } from &#x27;src/common/services/prisma.service&#x27;;
+import { FileService } from &#x27;src/common/services/file.service&#x27;;
+import { PatientAddTicketDto } from &#x27;./dto/patient-add-ticket.dto&#x27;;
+import { UserPlayloadResponse } from &#x27;../patients/response/user-playload.response&#x27;;
+import { UpdateTicketByPatientDto } from &#x27;./dto/update-ticket-by-patient.dto&#x27;;
+import { UpdateTicketByAdminDto } from &#x27;./dto/update-ticket-by-admin.dto&#x27;;
+import { TicketResponse } from &#x27;./response/ticket.response&#x27;;
+import { PatientTicketResponse } from &#x27;./response/patient-ticket.response&#x27;;
+import { PaginationTicketResponse } from &#x27;src/common/responses/Paggination-data.response&#x27;;
+import { TicketFilterDTO } from &#x27;./dto/filter-ticket.dto&#x27;;
+import { OrderByType, WhereType } from &#x27;./interfaces/pagination.interface&#x27;;
+import { OrderByEnum, WhereEnum } from &#x27;./enums/pagination.enums&#x27;;
+import { CountTicketByStatusAndAssignedToAdminResponse } from &#x27;./response/count-tickets-stats.response&#x27;;
+import { Prisma, SettingOptionNameEnum, StatusEnum, TicketCategoryEnum } from &#x27;@prisma/client&#x27;;
+import { PrismaTransactionClient } from &#x27;src/common/types/transaction.type&#x27;;
+import { MultiLanguageException } from &#x27;src/common/exception-filters/multi-language.exception&#x27;;
+import { LanguageErrorEnum } from &#x27;src/common/enums/language-error.enum&#x27;;
+import { PaginationDto } from &#x27;src/common/dto/pagination.dto&#x27;;
+import { NotificationService } from &#x27;src/modules/notification/notification.service&#x27;;
+import { CreateNotificationDto } from &#x27;src/modules/notification/dto/create-notification.dto&#x27;;
+import { UsersService } from &#x27;src/modules/users/users.service&#x27;;
+
+@Injectable()
+export class TicketsService {
+  constructor(
+    private readonly prismaService: PrismaService,
+    private readonly fileService: FileService,
+    private readonly notificationService: NotificationService,
+    private readonly usersService: UsersService,
+  ) {}
+
+  async createTicket(user: UserPlayloadResponse, ticketDto: PatientAddTicketDto, attachments: Express.Multer.File[]): Promise&lt;PatientTicketResponse&gt; {
+    const { category, subject, description } &#x3D; ticketDto;
+    const createNotificationDto: CreateNotificationDto &#x3D; {
+      messageAr: &#x27;تم إنشاء تذكرة جديدة&#x27;,
+      messageEn: &#x27;New ticket created&#x27;,
+      titleAr: &#x27;تم إنشاء تذكرة جديدة&#x27;,
+      titleEn: &#x27;New ticket created&#x27;,
+      deliveryDate: new Date(),
+      notificationType: &#x27;Ticket&#x27;,
+      isCritical: false,
+    };
+
+    // Handle file uploads
+    const isImages &#x3D; attachments?.length &gt; 0;
+    const uploadedFileNames &#x3D; await this.fileService.uploadImages(attachments);
+
+    const createdTicketTransaction &#x3D; await this.prismaService.$transaction(async (transaction) &#x3D;&gt; {
+      // Create the ticket
+      const createdTicket &#x3D; await transaction.ticket.create({
+        data: {
+          subject,
+          description,
+          category,
+          reporterId: user.patientId,
+        },
+      });
+      if (isImages) await this.createAttachments(createdTicket.id, uploadedFileNames, transaction);
+
+      return createdTicket;
+    });
+
+    const superAdminId &#x3D; await this.usersService.fetchSuperadminId();
+
+    this.notificationService.createAdminNotification(
+      user,
+      createNotificationDto,
+      BigInt(superAdminId),
+      Number(createdTicketTransaction.id),
+      SettingOptionNameEnum.TICKET_ASSIGNMENT_NOTIFICATION,
+    );
+
+    // Return the created ticket along with its attachments
+    return this.getTicketById(createdTicketTransaction.id);
+  }
+
+  async updateTicketByPatient(ticketId: bigint, dto: UpdateTicketByPatientDto, attachments: Express.Multer.File[]): Promise&lt;PatientTicketResponse&gt; {
+    // Update the ticket details
+    const uploadedFileNames &#x3D; await this.fileService.uploadImages(attachments);
+
+    await this.prismaService.$transaction(async (transaction) &#x3D;&gt; {
+      await transaction.ticket.update({
+        where: { id: ticketId },
+        data: {
+          subject: dto.subject,
+          description: dto.description,
+          category: dto.category,
+        },
+      });
+
+      await this.createAttachments(ticketId, uploadedFileNames, transaction);
+    });
+
+    // Return the created ticket along with its attachments
+    return this.getTicketById(ticketId);
+  }
+
+  async updateTicketByAdmin(
+    user: UserPlayloadResponse,
+    ticketId: bigint,
+    updateTicketByAdminDto: UpdateTicketByAdminDto,
+    images: Express.Multer.File[],
+  ): Promise&lt;TicketResponse&gt; {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { attachments, assignedToId, ...restOfDto } &#x3D; updateTicketByAdminDto;
+    const adminId &#x3D; await this.userIdToAdminId(assignedToId);
+    const isImages &#x3D; images?.length &gt; 0;
+    const uploadedFileNames &#x3D; await this.fileService.uploadImages(images);
+    const ticket &#x3D; await this.isTicketByIdExists(ticketId);
+    if (!ticket) throw new MultiLanguageException(LanguageErrorEnum.TICKET_NOT_FOUND);
+
+    // Update the ticket details
+    const updatedTicketTransaction &#x3D; await this.prismaService.$transaction(async (transaction) &#x3D;&gt; {
+      const updatedTicket &#x3D; await transaction.ticket.update({
+        where: { id: ticketId },
+        data: {
+          ...restOfDto,
+          assignedToId: adminId,
+        },
+      });
+
+      if (isImages) await this.createAttachments(ticketId, uploadedFileNames, transaction);
+
+      return updatedTicket;
+    });
+
+    if (assignedToId) {
+      const createNotificationDto: CreateNotificationDto &#x3D; {
+        messageAr: &#x27;تم تخصيص التذكرة لي&#x27;,
+        messageEn: &#x27;Ticket is assigned to me&#x27;,
+        titleAr: &#x27;تم تخصيص التذكرة لي&#x27;,
+        titleEn: &#x27;Ticket is assigned to me&#x27;,
+        deliveryDate: new Date(),
+        notificationType: &#x27;Ticket&#x27;,
+        isCritical: false,
+      };
+      this.notificationService.createAdminNotification(
+        user,
+        createNotificationDto,
+        assignedToId,
+        Number(updatedTicketTransaction.id),
+        SettingOptionNameEnum.TICKET_ASSIGNMENT_NOTIFICATION,
+      );
+    }
+
+    if (updateTicketByAdminDto.priority) {
+      const createNotificationDto: CreateNotificationDto &#x3D; {
+        messageAr: &#x27;تغييرات أولوية التذاكر&#x27;,
+        messageEn: &#x27;Ticket priority changes&#x27;,
+        titleAr: &#x27;تغييرات أولوية التذاكر&#x27;,
+        titleEn: &#x27;Ticket priority changes&#x27;,
+        deliveryDate: new Date(),
+        notificationType: &#x27;Ticket&#x27;,
+        isCritical: false,
+      };
+      this.notificationService.createAdminNotification(
+        user,
+        createNotificationDto,
+        assignedToId,
+        Number(updatedTicketTransaction.id),
+        SettingOptionNameEnum.TICKET_PRIORITY_UPDATE,
+      );
+    }
+
+    return this.getTicketById(ticketId);
+  }
+
+  async getTickets(user: UserPlayloadResponse, ticketFilterDTO: TicketFilterDTO): Promise&lt;PaginationTicketResponse&gt; {
+    const { currentPage, sizePerPage, search } &#x3D; ticketFilterDTO;
+    const { orderByField, whereField, filterCategory } &#x3D; this.transformToOrderAndWhere(user.adminId, ticketFilterDTO);
+    const searchNumber &#x3D; parseInt(search);
+
+    const whereConditions: Prisma.TicketWhereInput[] &#x3D; [
+      whereField,
+      // Add conditions for searching subject, description, and id
+      filterCategory,
+      {
+        OR: [
+          {
+            subject: {
+              contains: search, // Check if subject contains the search keyword
+            },
+          },
+
+          // Add condition for searching by id
+          isNaN(searchNumber) ? {} : { id: searchNumber }, // Nullify the condition if searchNumber is NaN
+        ],
+      },
+    ];
+
+    const [tickets, paginationData] &#x3D; await this.prismaService
+      .extendPagination()
+      .ticket.paginate({
+        include: {
+          assignedTo: {
+            select: {
+              id: true,
+              user: {
+                select: {
+                  id: true,
+                  personalInformation: {
+                    select: {
+                      firstName: true,
+                      lastName: true,
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+        orderBy: orderByField,
+        where: {
+          AND: whereConditions,
+          // OR: [filterQuestion, filterSuggestion],
+        },
+      })
+      .withPages({ includePageCount: true, page: currentPage, limit: sizePerPage });
+
+    const data &#x3D; tickets.map((ticket) &#x3D;&gt; ({
+      id: ticket.id,
+      category: ticket.category,
+      subject: ticket.subject,
+      description: ticket.description,
+      status: ticket.status,
+      createdAt: ticket.createdAt,
+      updatedAt: ticket.updatedAt,
+      assignedToFirstName: ticket.assignedTo?.user?.personalInformation?.firstName ?? null,
+      assignedToLastName: ticket.assignedTo?.user?.personalInformation?.lastName ?? null,
+      assignedToId: ticket.assignedTo?.user?.id,
+      priority: ticket.priority,
+    }));
+
+    return { data: data, totalItems: paginationData.totalCount };
+  }
+
+  async getTicketsOfPatient(user: UserPlayloadResponse, paginationDto: PaginationDto): Promise&lt;PaginationTicketResponse&gt; {
+    const { currentPage, sizePerPage } &#x3D; paginationDto;
+    const [tickets, paginationData] &#x3D; await this.prismaService
+      .extendPagination()
+      .ticket.paginate({
+        include: {
+          assignedTo: {
+            select: {
+              id: true,
+              user: {
+                select: {
+                  id: true,
+                  personalInformation: {
+                    select: {
+                      firstName: true,
+                      lastName: true,
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+        where: { reporterId: user.patientId },
+        orderBy: [
+          {
+            status: &#x27;asc&#x27;,
+          },
+          { updatedAt: &#x27;desc&#x27; },
+        ],
+      })
+      .withPages({ includePageCount: true, page: currentPage, limit: sizePerPage });
+
+    const data &#x3D; tickets.map((ticket) &#x3D;&gt; ({
+      id: ticket.id,
+      subject: ticket.subject,
+      category: ticket.category,
+      description: ticket.description,
+      status: ticket.status,
+      priority: ticket.priority,
+      assignedToFirstName: ticket.assignedTo?.user?.personalInformation?.firstName,
+      assignedToLastName: ticket.assignedTo?.user?.personalInformation?.lastName,
+      assignedToId: ticket.assignedTo?.id,
+      createdAt: ticket.createdAt,
+      updatedAt: ticket.updatedAt,
+    }));
+
+    return { data, totalItems: paginationData.totalCount };
+  }
+
+  async getTicketById(ticketId: bigint): Promise&lt;TicketResponse&gt; {
+    const ticket &#x3D; await this.prismaService.ticket.findUnique({
+      where: { id: ticketId },
+      include: {
+        assignedTo: {
+          select: {
+            id: true,
+            user: {
+              select: {
+                id: true,
+                personalInformation: {
+                  select: {
+                    firstName: true,
+                    lastName: true,
+                  },
+                },
+              },
+            },
+          },
+        },
+        reporter: {
+          select: {
+            user: { select: { id: true, personalInformation: true } },
+          },
+        },
+        comments: {
+          include: {
+            creator: {
+              include: {
+                personalInformation: true,
+              },
+            },
+          },
+        },
+        attachments: true,
+      },
+    });
+
+    if (!ticket) throw new MultiLanguageException(LanguageErrorEnum.TICKET_NOT_FOUND);
+
+    return {
+      id: ticket.id,
+      subject: ticket.subject,
+      category: ticket.category,
+      description: ticket.description,
+      reporterId: ticket.reporter.user.id,
+      reporterFirstName: ticket.reporter.user.personalInformation.firstName,
+      reporterLastName: ticket.reporter.user.personalInformation.lastName,
+      assignedToFirstName: ticket.assignedTo?.user?.personalInformation?.firstName,
+      assignedToLastName: ticket.assignedTo?.user?.personalInformation?.lastName,
+      assignedToId: ticket.assignedTo?.user?.id,
+      status: ticket.status,
+      createdAt: ticket.createdAt,
+      updatedAt: ticket.updatedAt,
+      priority: ticket.priority,
+      comments: ticket.comments.map((comment) &#x3D;&gt; ({
+        id: comment.id,
+        message: comment.message,
+        ticketId: comment.ticketId,
+        creatorId: comment.creatorId,
+        createdAt: comment.createdAt,
+        creatorFirstName: comment.creator.personalInformation.firstName,
+        creatorLastName: comment.creator.personalInformation.lastName,
+      })),
+      attachments: ticket.attachments.map((attachment) &#x3D;&gt; ({
+        id: attachment.id,
+        imageName: attachment.imageName,
+        ticketId: attachment.ticketId,
+      })),
+    };
+  }
+
+  transformToOrderAndWhere(userId: number, ticketFilterDTO: TicketFilterDTO): { orderByField: OrderByType; whereField: WhereType; filterCategory: WhereType } {
+    const orderByField: OrderByType &#x3D; {};
+    const whereField: WhereType &#x3D; {};
+    let filterCategory: WhereType &#x3D; {};
+    if (ticketFilterDTO.question &#x3D;&#x3D;&#x3D; true) filterCategory.category &#x3D; TicketCategoryEnum.QUESTION;
+    if (ticketFilterDTO.suggestion &#x3D;&#x3D;&#x3D; true) filterCategory.category &#x3D; TicketCategoryEnum.SUGGESTION;
+    if (ticketFilterDTO.question &#x3D;&#x3D;&#x3D; true &amp;&amp; ticketFilterDTO.suggestion &#x3D;&#x3D;&#x3D; true) filterCategory &#x3D; {};
+    if (ticketFilterDTO.orderBy) {
+      switch (ticketFilterDTO.orderBy) {
+        case OrderByEnum.PRIORITY:
+          orderByField.priority &#x3D; ticketFilterDTO.orderDirection;
+          break;
+
+        case OrderByEnum.UPDATEDAT:
+          orderByField.updatedAt &#x3D; ticketFilterDTO.orderDirection;
+          break;
+        default:
+          break;
+      }
+    }
+
+    if (ticketFilterDTO.where) {
+      switch (ticketFilterDTO.where) {
+        case WhereEnum.OPEN:
+          whereField.status &#x3D; StatusEnum.OPEN;
+          break;
+        case WhereEnum.CLOSED:
+          whereField.status &#x3D; StatusEnum.RESOLVED;
+          break;
+        case WhereEnum.ASSIGNED_TO_ME:
+          whereField.assignedToId &#x3D; userId;
+          whereField.status &#x3D; StatusEnum.OPEN;
+
+          break;
+        default:
+          break;
+      }
+    }
+
+    return { orderByField, whereField, filterCategory };
+  }
+
+  async countTicketsByStatusAndAssignedToAdmin(adminId: number): Promise&lt;CountTicketByStatusAndAssignedToAdminResponse&gt; {
+    const openTicketsCount &#x3D; await this.prismaService.ticket.count({
+      where: {
+        status: StatusEnum.OPEN,
+      },
+    });
+
+    const closedTicketsCount &#x3D; await this.prismaService.ticket.count({
+      where: {
+        status: StatusEnum.RESOLVED,
+      },
+    });
+
+    const assignedToAdminTicketsCount &#x3D; await this.prismaService.ticket.count({
+      where: {
+        assignedToId: adminId,
+      },
+    });
+
+    return {
+      openTicketsCount,
+      closedTicketsCount,
+      assignedToAdminTicketsCount,
+    };
+  }
+
+  async deleteTicket(ticketId: bigint): Promise&lt;number&gt; {
+    // Retrieve the ticket and its attachments
+    const ticket &#x3D; await this.getTicketById(ticketId);
+
+    // Check if the ticket has attachments
+    if (ticket.attachments &amp;&amp; ticket.attachments.length &gt; 0) {
+      // Iterate over each attachment and delete it
+      for (const attach of ticket.attachments) {
+        await this.fileService.deleteFile(attach.imageName);
+      }
+    }
+
+    // Delete the ticket
+    const deletedTicket &#x3D; await this.prismaService.ticket.delete({
+      where: {
+        id: ticketId,
+      },
+    });
+
+    // Return the number of deleted tickets (should be 1 if successful)
+    return Number(deletedTicket.id);
+  }
+
+  async createAttachments(ticketId: bigint, fileNames: string[], transaction: PrismaTransactionClient): Promise&lt;boolean&gt; {
+    const transactionOperation &#x3D; transaction ?? this.prismaService;
+
+    const attachmentsData: Prisma.AttachmentCreateManyInput[] &#x3D; fileNames.map((fileName) &#x3D;&gt; {
+      return {
+        imageName: fileName,
+        ticketId,
+      };
+    });
+
+    // Create attachments
+    await transactionOperation.attachment.createMany({
+      data: attachmentsData,
+    });
+
+    return true;
+  }
+
+  async isTicketByIdExists(id: bigint): Promise&lt;boolean&gt; {
+    const ticket &#x3D; await this.prismaService.ticket.findUnique({ where: { id }, select: { id: true } });
+
+    if (!ticket) throw new MultiLanguageException(LanguageErrorEnum.TICKET_NOT_FOUND);
+    return true;
+  }
+  async isAdmin(userId: number | bigint): Promise&lt;boolean&gt; {
+    const user &#x3D; await this.prismaService.user.findUnique({
+      where: {
+        id: userId,
+      },
+      select: {
+        admin: {
+          select: {
+            healthSpecialist: true,
+            id: true,
+          },
+        },
+      },
+    });
+    if (!user) throw new MultiLanguageException(LanguageErrorEnum.USER_NOT_FOUND);
+
+    if (!user?.admin || user?.admin?.healthSpecialist) throw new MultiLanguageException(LanguageErrorEnum.FORBIDDEN_RESOURCES);
+
+    return true;
+  }
+  async userIdToAdminId(userId: bigint | number): Promise&lt;bigint&gt; {
+    const isAdmin &#x3D; await this.isAdmin(userId);
+    if (!isAdmin) throw new MultiLanguageException(LanguageErrorEnum.UNAUTHORIZED);
+    const admin &#x3D; await this.prismaService.admin.findUnique({
+      where: {
+        userId: userId,
+      },
+    });
+    return admin.id;
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'TicketsService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

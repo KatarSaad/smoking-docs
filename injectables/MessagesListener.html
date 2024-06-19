@@ -1,0 +1,914 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>smoking-halim documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">smoking-halim documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >MessagesListener</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/modules/messages/messages.listener.ts</code>
+        </p>
+
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#adminJoinGroupChatRoom" >adminJoinGroupChatRoom</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#adminJoinGroupChatRooms" >adminJoinGroupChatRooms</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#deleteGroupChatMessage" >deleteGroupChatMessage</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#participantJoinGroupChatRoom" >participantJoinGroupChatRoom</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#sendGroupChatMessage" >sendGroupChatMessage</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(groupChatsService: <a href="../injectables/GroupChatsService.html" target="_self">GroupChatsService</a>, messagesService: <a href="../injectables/MessagesService.html" target="_self">MessagesService</a>, commonService: <a href="../injectables/CommonService.html" target="_self">CommonService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/modules/messages/messages.listener.ts:19</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>groupChatsService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/GroupChatsService.html" target="_self" >GroupChatsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>messagesService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/MessagesService.html" target="_self" >MessagesService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>commonService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CommonService.html" target="_self" >CommonService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="adminJoinGroupChatRoom"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>adminJoinGroupChatRoom</b></span>
+                        <a href="#adminJoinGroupChatRoom"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>adminJoinGroupChatRoom(payload: <a href="../classes/HealthSpecialistJoinRoomDto.html" target="_self">HealthSpecialistJoinRoomDto</a>, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>, server: Server)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="63"
+                                    class="link-to-prism">src/modules/messages/messages.listener.ts:63</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>payload</td>
+                                            <td>
+                                                            <code><a href="../classes/HealthSpecialistJoinRoomDto.html" target="_self" >HealthSpecialistJoinRoomDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>server</td>
+                                            <td>
+                                                        <code>Server</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="adminJoinGroupChatRooms"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>adminJoinGroupChatRooms</b></span>
+                        <a href="#adminJoinGroupChatRooms"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>adminJoinGroupChatRooms(payload: <a href="../classes/JoinHealthSpecialistGroupChatRoomsDto.html" target="_self">JoinHealthSpecialistGroupChatRoomsDto</a>, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>, server: Server)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="74"
+                                    class="link-to-prism">src/modules/messages/messages.listener.ts:74</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>payload</td>
+                                            <td>
+                                                            <code><a href="../classes/JoinHealthSpecialistGroupChatRoomsDto.html" target="_self" >JoinHealthSpecialistGroupChatRoomsDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>server</td>
+                                            <td>
+                                                        <code>Server</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;SuccessResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteGroupChatMessage"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>deleteGroupChatMessage</b></span>
+                        <a href="#deleteGroupChatMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deleteGroupChatMessage(deleteMessageDto: <a href="../classes/DeleteMessageDto.html" target="_self">DeleteMessageDto</a>, client: Socket, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="84"
+                                    class="link-to-prism">src/modules/messages/messages.listener.ts:84</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>deleteMessageDto</td>
+                                            <td>
+                                                            <code><a href="../classes/DeleteMessageDto.html" target="_self" >DeleteMessageDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>client</td>
+                                            <td>
+                                                        <code>Socket</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;MessageGroupChatSocketResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="participantJoinGroupChatRoom"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>participantJoinGroupChatRoom</b></span>
+                        <a href="#participantJoinGroupChatRoom"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>participantJoinGroupChatRoom(payload: <a href="../classes/PatientJoinRoomDto.html" target="_self">PatientJoinRoomDto</a>, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>, server: Server)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="51"
+                                    class="link-to-prism">src/modules/messages/messages.listener.ts:51</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>payload</td>
+                                            <td>
+                                                            <code><a href="../classes/PatientJoinRoomDto.html" target="_self" >PatientJoinRoomDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>server</td>
+                                            <td>
+                                                        <code>Server</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sendGroupChatMessage"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>sendGroupChatMessage</b></span>
+                        <a href="#sendGroupChatMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>sendGroupChatMessage(socketMessageGroupChatDto: <a href="../classes/SocketMessageGroupChatDto.html" target="_self">SocketMessageGroupChatDto</a>, client: Socket, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>, server: Server)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="26"
+                                    class="link-to-prism">src/modules/messages/messages.listener.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>socketMessageGroupChatDto</td>
+                                            <td>
+                                                            <code><a href="../classes/SocketMessageGroupChatDto.html" target="_self" >SocketMessageGroupChatDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>client</td>
+                                            <td>
+                                                        <code>Socket</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>server</td>
+                                            <td>
+                                                        <code>Server</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;MessageGroupChatSocketResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Server, Socket } from &#x27;socket.io&#x27;;
+import { UserPlayloadResponse } from &#x27;../patients/response/user-playload.response&#x27;;
+import { GroupChatsService } from &#x27;src/modules/group-chats/group-chats.service&#x27;;
+import { Injectable } from &#x27;@nestjs/common&#x27;;
+import { MessagesService } from &#x27;src/modules/messages/messages.service&#x27;;
+import { HealthSpecialistJoinRoomDto } from &#x27;src/modules/messages/dto/health-specialist-join-room.dto&#x27;;
+import { CommonService } from &#x27;src/common/services/common.service&#x27;;
+import { PatientJoinRoomDto } from &#x27;src/modules/messages/dto/patient-join-room.dto&#x27;;
+import { MultiLanguageException } from &#x27;src/common/exception-filters/multi-language.exception&#x27;;
+import { LanguageErrorEnum } from &#x27;src/common/enums/language-error.enum&#x27;;
+import { MessageGroupChatSocketResponse } from &#x27;src/modules/messages/response/message-group-chat.response&#x27;;
+import { SocketEventEnum } from &#x27;src/common/enums/socket-event.enum&#x27;;
+import { DeleteMessageDto } from &#x27;src/modules/private-chat-messages/dto/delete-message.dto&#x27;;
+import { SocketMessageGroupChatDto } from &#x27;src/modules/messages/dto/socket-message-group-chat.dto&#x27;;
+import { JoinHealthSpecialistGroupChatRoomsDto } from &#x27;src/modules/messages/response/health-specialist-join-group-chat-room.dto&#x27;;
+import { SuccessResponse } from &#x27;src/common/responses/socket.response&#x27;;
+
+@Injectable()
+export class MessagesListener {
+  constructor(
+    private groupChatsService: GroupChatsService,
+    private messagesService: MessagesService,
+    private commonService: CommonService,
+  ) {}
+
+  async sendGroupChatMessage(
+    socketMessageGroupChatDto: SocketMessageGroupChatDto,
+    client: Socket,
+    user: UserPlayloadResponse,
+    server: Server,
+  ): Promise&lt;MessageGroupChatSocketResponse&gt; {
+    const { groupChatId, message } &#x3D; socketMessageGroupChatDto;
+    const room &#x3D; &#x27;group_chat_&#x27; + String(groupChatId);
+    const groupChatsRoom &#x3D; &#x27;group_chats_&#x27; + String(groupChatId);
+
+    const addMessageResponse &#x3D; await this.messagesService.addMessageToGroup(user, socketMessageGroupChatDto); //save message in db
+    const { sender } &#x3D; addMessageResponse;
+    const isHealthSpecialist &#x3D; user.isHS;
+
+    server.to(groupChatsRoom).emit(SocketEventEnum.MESSAGE_GROUP_CHATS, this.commonService.objectParser({ groupChatId, message, senderId: user.id, hasFile: false }));
+
+    // broadcast message to sockets connected to the group room(except the sender)
+    client.broadcast
+      .to(room)
+      .timeout(5000)
+      .emit(SocketEventEnum.MESSAGE_GROUP_CHAT, this.commonService.objectParser({ ...addMessageResponse, sender: { ...sender, isHealthSpecialist } }));
+
+    return { success: true, messageId: Number(addMessageResponse.id) };
+  }
+
+  async participantJoinGroupChatRoom(payload: PatientJoinRoomDto, user: UserPlayloadResponse, server: Server) {
+    const { socketId } &#x3D; payload;
+
+    const groupChatId &#x3D; await this.groupChatsService.userGroupChatId(user.id);
+
+    if (!groupChatId) throw new MultiLanguageException(LanguageErrorEnum.WITHOUT_GROUP_CHAT);
+
+    server.in(socketId).socketsJoin(&#x27;group_chat_&#x27; + String(groupChatId));
+
+    return { success: true };
+  }
+
+  async adminJoinGroupChatRoom(payload: HealthSpecialistJoinRoomDto, user: UserPlayloadResponse, server: Server) {
+    const { groupChatId, socketId } &#x3D; payload;
+    const room &#x3D; &#x27;group_chat_&#x27; + String(groupChatId);
+
+    if (user.isHS) await this.groupChatsService.isHealthSpecialistInGroup(Number(groupChatId), user.healthSpecialistId);
+
+    server.in(socketId).socketsJoin(room);
+
+    return { success: true };
+  }
+
+  async adminJoinGroupChatRooms(payload: JoinHealthSpecialistGroupChatRoomsDto, user: UserPlayloadResponse, server: Server): Promise&lt;SuccessResponse&gt; {
+    const { socketId, groupChatIds } &#x3D; payload;
+    const groupChatIdsStrings &#x3D; groupChatIds.map((id) &#x3D;&gt; &#x60;group_chats_${id}&#x60;);
+
+    if (user.isHS) await this.messagesService.isHealthSpecialistInGroupChats(groupChatIds, user.healthSpecialistId);
+    server.in(socketId).socketsJoin(groupChatIdsStrings);
+
+    return { success: true };
+  }
+
+  async deleteGroupChatMessage(deleteMessageDto: DeleteMessageDto, client: Socket, user: UserPlayloadResponse): Promise&lt;MessageGroupChatSocketResponse&gt; {
+    const { id } &#x3D; deleteMessageDto;
+
+    const deletedMessage &#x3D; await this.messagesService.deleteMessage(user, id);
+
+    const deletedMessageId &#x3D; Number(deletedMessage.id);
+
+    client.broadcast.timeout(5000).emit(SocketEventEnum.DELETE_MESSAGE_GROUP_CHAT, { messageId: deletedMessageId });
+
+    return { success: true, messageId: deletedMessageId };
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'MessagesListener.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

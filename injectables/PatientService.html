@@ -1,0 +1,3128 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>smoking-halim documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">smoking-halim documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >PatientService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/modules/patients/patient.service.ts</code>
+        </p>
+
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#createPatient" >createPatient</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#deleteAccount" >deleteAccount</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#fetchNotBlockedPatientsNames" >fetchNotBlockedPatientsNames</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#fetchPatient" >fetchPatient</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#fetchPatientDetails" >fetchPatientDetails</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#fetchPatients" >fetchPatients</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#fetchPatientsNamesOnly" >fetchPatientsNamesOnly</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#fetchPatientsNamesOnlyNotInGroup" >fetchPatientsNamesOnlyNotInGroup</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#fetchPatientsNamesOnlyWithoutPrivateChat" >fetchPatientsNamesOnlyWithoutPrivateChat</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#findOneUser" >findOneUser</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#findPatientIdByUserId" >findPatientIdByUserId</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#isUserHasNotUsername" >isUserHasNotUsername</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#isUserHasUsername" >isUserHasUsername</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#isUsernameExists" >isUsernameExists</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#isUserPatient" >isUserPatient</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#isUsersPatients" >isUsersPatients</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#patientProfile" >patientProfile</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#updatePatient" >updatePatient</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#updatePatientPassword" >updatePatientPassword</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#updatePatientProfile" >updatePatientProfile</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#updatePatientUsername" >updatePatientUsername</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(settingsService: <a href="../injectables/SettingService.html" target="_self">SettingService</a>, prismaService: <a href="../injectables/PrismaService.html" target="_self">PrismaService</a>, assessmentService: <a href="../injectables/AssessmentsService.html" target="_self">AssessmentsService</a>, commonService: <a href="../injectables/CommonService.html" target="_self">CommonService</a>, redisService: <a href="../injectables/RedisService.html" target="_self">RedisService</a>, environmentService: <a href="../injectables/EnvironmentService.html" target="_self">EnvironmentService</a>, groupsService: <a href="../injectables/GroupsService.html" target="_self">GroupsService</a>, usersService: <a href="../injectables/UsersService.html" target="_self">UsersService</a>, nrtsService: <a href="../injectables/NrtsService.html" target="_self">NrtsService</a>, notificationService: <a href="../injectables/NotificationService.html" target="_self">NotificationService</a>, challengesService: <a href="../injectables/ChallengesService.html" target="_self">ChallengesService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/modules/patients/patient.service.ts:47</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>settingsService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SettingService.html" target="_self" >SettingService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>prismaService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PrismaService.html" target="_self" >PrismaService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>assessmentService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AssessmentsService.html" target="_self" >AssessmentsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>commonService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CommonService.html" target="_self" >CommonService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>redisService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/RedisService.html" target="_self" >RedisService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>environmentService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/EnvironmentService.html" target="_self" >EnvironmentService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>groupsService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/GroupsService.html" target="_self" >GroupsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>usersService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UsersService.html" target="_self" >UsersService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>nrtsService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/NrtsService.html" target="_self" >NrtsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>notificationService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/NotificationService.html" target="_self" >NotificationService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>challengesService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ChallengesService.html" target="_self" >ChallengesService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createPatient"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>createPatient</b></span>
+                        <a href="#createPatient"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createPatient(createPatientDto: <a href="../classes/CreatePatientDto.html" target="_self">CreatePatientDto</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="926"
+                                    class="link-to-prism">src/modules/patients/patient.service.ts:926</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>createPatientDto</td>
+                                            <td>
+                                                            <code><a href="../classes/CreatePatientDto.html" target="_self" >CreatePatientDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/User.html" target="_self" >Promise&lt;User&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteAccount"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>deleteAccount</b></span>
+                        <a href="#deleteAccount"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deleteAccount(user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="219"
+                                    class="link-to-prism">src/modules/patients/patient.service.ts:219</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;PatientNameQidResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchNotBlockedPatientsNames"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>fetchNotBlockedPatientsNames</b></span>
+                        <a href="#fetchNotBlockedPatientsNames"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fetchNotBlockedPatientsNames(facilities: number[], searchWithCursorPaginationDto: <a href="../classes/SearchWithCursorPaginationDto.html" target="_self">SearchWithCursorPaginationDto</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="804"
+                                    class="link-to-prism">src/modules/patients/patient.service.ts:804</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>facilities</td>
+                                            <td>
+                                                        <code>number[]</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>searchWithCursorPaginationDto</td>
+                                            <td>
+                                                            <code><a href="../classes/SearchWithCursorPaginationDto.html" target="_self" >SearchWithCursorPaginationDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;PaginationCursorNotBlockedPatientsResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchPatient"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>fetchPatient</b></span>
+                        <a href="#fetchPatient"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fetchPatient(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="402"
+                                    class="link-to-prism">src/modules/patients/patient.service.ts:402</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;ShowPatientProfileResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchPatientDetails"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>fetchPatientDetails</b></span>
+                        <a href="#fetchPatientDetails"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fetchPatientDetails(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, language: LanguageEnum)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="613"
+                                    class="link-to-prism">src/modules/patients/patient.service.ts:613</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>language</td>
+                                            <td>
+                                                        <code>LanguageEnum</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;FetchPatientDetailsResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchPatients"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>fetchPatients</b></span>
+                        <a href="#fetchPatients"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fetchPatients(facilities: number[], showPatientFilter: <a href="../classes/ShowPatientFilter.html" target="_self">ShowPatientFilter</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="62"
+                                    class="link-to-prism">src/modules/patients/patient.service.ts:62</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>facilities</td>
+                                            <td>
+                                                        <code>number[]</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>showPatientFilter</td>
+                                            <td>
+                                                            <code><a href="../classes/ShowPatientFilter.html" target="_self" >ShowPatientFilter</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/PaginationPatients.html" target="_self" >Promise&lt;PaginationPatients&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchPatientsNamesOnly"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>fetchPatientsNamesOnly</b></span>
+                        <a href="#fetchPatientsNamesOnly"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fetchPatientsNamesOnly(facilities: number[])</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="180"
+                                    class="link-to-prism">src/modules/patients/patient.service.ts:180</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>facilities</td>
+                                            <td>
+                                                        <code>number[]</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;PatientNameOnlyResponse[]&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchPatientsNamesOnlyNotInGroup"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>fetchPatientsNamesOnlyNotInGroup</b></span>
+                        <a href="#fetchPatientsNamesOnlyNotInGroup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fetchPatientsNamesOnlyNotInGroup(facilities: number[], searchName: <a href="../classes/PatientOnlyNamesSearchDto.html" target="_self">PatientOnlyNamesSearchDto</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="704"
+                                    class="link-to-prism">src/modules/patients/patient.service.ts:704</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>facilities</td>
+                                            <td>
+                                                        <code>number[]</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>searchName</td>
+                                            <td>
+                                                            <code><a href="../classes/PatientOnlyNamesSearchDto.html" target="_self" >PatientOnlyNamesSearchDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;PatientNameQidResponse[]&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchPatientsNamesOnlyWithoutPrivateChat"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>fetchPatientsNamesOnlyWithoutPrivateChat</b></span>
+                        <a href="#fetchPatientsNamesOnlyWithoutPrivateChat"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fetchPatientsNamesOnlyWithoutPrivateChat(facilities: number[], searchName: <a href="../classes/PatientOnlyNamesSearchDto.html" target="_self">PatientOnlyNamesSearchDto</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="754"
+                                    class="link-to-prism">src/modules/patients/patient.service.ts:754</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>facilities</td>
+                                            <td>
+                                                        <code>number[]</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>searchName</td>
+                                            <td>
+                                                            <code><a href="../classes/PatientOnlyNamesSearchDto.html" target="_self" >PatientOnlyNamesSearchDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;PatientNameQidResponse[]&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="findOneUser"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>findOneUser</b></span>
+                        <a href="#findOneUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>findOneUser(field: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, value: string |  | number)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="200"
+                                    class="link-to-prism">src/modules/patients/patient.service.ts:200</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>field</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>value</td>
+                                            <td>
+                                                        <code>string |  | number</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/User.html" target="_self" >Promise&lt;User&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="findPatientIdByUserId"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>findPatientIdByUserId</b></span>
+                        <a href="#findPatientIdByUserId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>findPatientIdByUserId(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, transaction: <a href="../undefineds/PrismaTransactionClient.html" target="_self">PrismaTransactionClient</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="981"
+                                    class="link-to-prism">src/modules/patients/patient.service.ts:981</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>transaction</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/typealiases.html#PrismaTransactionClient" target="_self" >PrismaTransactionClient</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;number&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isUserHasNotUsername"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>isUserHasNotUsername</b></span>
+                        <a href="#isUserHasNotUsername"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>isUserHasNotUsername(patientId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="902"
+                                    class="link-to-prism">src/modules/patients/patient.service.ts:902</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>patientId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isUserHasUsername"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>isUserHasUsername</b></span>
+                        <a href="#isUserHasUsername"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>isUserHasUsername(patientId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="914"
+                                    class="link-to-prism">src/modules/patients/patient.service.ts:914</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>patientId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isUsernameExists"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>isUsernameExists</b></span>
+                        <a href="#isUsernameExists"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>isUsernameExists(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, username: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="886"
+                                    class="link-to-prism">src/modules/patients/patient.service.ts:886</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>username</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isUserPatient"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>isUserPatient</b></span>
+                        <a href="#isUserPatient"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>isUserPatient(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="966"
+                                    class="link-to-prism">src/modules/patients/patient.service.ts:966</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>userId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isUsersPatients"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>isUsersPatients</b></span>
+                        <a href="#isUsersPatients"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>isUsersPatients(ids: <a href="../classes/IdDto.html" target="_self">IdDto[]</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="1008"
+                                    class="link-to-prism">src/modules/patients/patient.service.ts:1008</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>ids</td>
+                                            <td>
+                                                            <code><a href="../classes/IdDto.html" target="_self" >IdDto[]</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="patientProfile"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>patientProfile</b></span>
+                        <a href="#patientProfile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>patientProfile(user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>, language: LanguageEnum)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="237"
+                                    class="link-to-prism">src/modules/patients/patient.service.ts:237</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>language</td>
+                                            <td>
+                                                        <code>LanguageEnum</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;PatientProfileResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updatePatient"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>updatePatient</b></span>
+                        <a href="#updatePatient"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updatePatient(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, updatePatientDto: <a href="../classes/UpdatePatientDto.html" target="_self">UpdatePatientDto</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="480"
+                                    class="link-to-prism">src/modules/patients/patient.service.ts:480</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>updatePatientDto</td>
+                                            <td>
+                                                            <code><a href="../classes/UpdatePatientDto.html" target="_self" >UpdatePatientDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;UpdatePatientResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updatePatientPassword"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>updatePatientPassword</b></span>
+                        <a href="#updatePatientPassword"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updatePatientPassword(where: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, newPassword: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="957"
+                                    class="link-to-prism">src/modules/patients/patient.service.ts:957</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>where</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>newPassword</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/User.html" target="_self" >Promise&lt;User&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updatePatientProfile"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>updatePatientProfile</b></span>
+                        <a href="#updatePatientProfile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updatePatientProfile(user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>, updateProfileDto: <a href="../classes/UpdateProfileDto.html" target="_self">UpdateProfileDto</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="306"
+                                    class="link-to-prism">src/modules/patients/patient.service.ts:306</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>updateProfileDto</td>
+                                            <td>
+                                                            <code><a href="../classes/UpdateProfileDto.html" target="_self" >UpdateProfileDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updatePatientUsername"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>updatePatientUsername</b></span>
+                        <a href="#updatePatientUsername"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updatePatientUsername(updateUsernameDto: <a href="../classes/UpdateUsernameDto.html" target="_self">UpdateUsernameDto</a>, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="384"
+                                    class="link-to-prism">src/modules/patients/patient.service.ts:384</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>updateUsernameDto</td>
+                                            <td>
+                                                            <code><a href="../classes/UpdateUsernameDto.html" target="_self" >UpdateUsernameDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#User" target="_self" >Promise&lt;UpdatePatientUsername&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Inject, Injectable, forwardRef } from &#x27;@nestjs/common&#x27;;
+import { LanguageEnum, Prisma, User } from &#x27;@prisma/client&#x27;;
+import { LanguageErrorEnum } from &#x27;src/common/enums/language-error.enum&#x27;;
+import { MultiLanguageException } from &#x27;src/common/exception-filters/multi-language.exception&#x27;;
+import { PaginationPatients } from &#x27;src/common/responses/Paggination-data.response&#x27;;
+import { CommonService } from &#x27;src/common/services/common.service&#x27;;
+import { PrismaService } from &#x27;src/common/services/prisma.service&#x27;;
+import { AssessmentsService } from &#x27;src/modules/assessments/assessments.service&#x27;;
+import { FetchPatientDetailsResponse } from &#x27;src/modules/patients/response/fetch-patient-details.response&#x27;;
+import { CreatePatientDto } from &#x27;./dto/create-patient.dto&#x27;;
+import { ShowPatientFilter } from &#x27;./dto/show-patient-filter.dto&#x27;;
+import { UpdatePatientDto } from &#x27;./dto/update-patient.dto&#x27;;
+import { UpdateProfileDto } from &#x27;./dto/update-profile.dto&#x27;;
+import { UpdateUsernameDto } from &#x27;./dto/update-username.dto&#x27;;
+import { PatientProfileResponse } from &#x27;./response/patient-pofile.response&#x27;;
+import { ShowPatientProfileResponse } from &#x27;./response/show-patient-profile.response&#x27;;
+import { UpdatePatientResponse } from &#x27;./response/update-patient.response&#x27;;
+import { UserPlayloadResponse } from &#x27;./response/user-playload.response&#x27;;
+import { ShowFlatPatientResponse } from &#x27;src/modules/patients/response/flat-patient.response&#x27;;
+import { PatientResultCountResponse } from &#x27;src/modules/patients/response/patient-result-count.response&#x27;;
+import { plainToInstance } from &#x27;class-transformer&#x27;;
+import { RedisService } from &#x27;src/common/services/redis.service&#x27;;
+import { EnvironmentService } from &#x27;src/common/services/environment.service&#x27;;
+import { GroupsService } from &#x27;src/modules/groups/groups.service&#x27;;
+import { UsersService } from &#x27;src/modules/users/users.service&#x27;;
+import { NrtsService } from &#x27;src/modules/nrts/nrts.service&#x27;;
+import { IdDto } from &#x27;src/common/dto/id.dto&#x27;;
+import { PatientNameOnlyResponse } from &#x27;src/modules/patients/response/patient-name-only.response&#x27;;
+import { NotificationService } from &#x27;../notification/notification.service&#x27;;
+import { PatientOnlyNamesSearchDto } from &#x27;src/modules/patients/dto/patient-only-names-search.dto&#x27;;
+import { UpdatePatientUsername } from &#x27;src/modules/patients/response/update-patient-username.response&#x27;;
+import { SearchWithCursorPaginationDto } from &#x27;src/common/dto/search-with-cursor-pagination.dto&#x27;;
+import { PaginationCursorNotBlockedPatientsResponse } from &#x27;src/common/responses/paggination-cursor.response&#x27;;
+import { PatientNameQidResponse } from &#x27;src/modules/patients/response/patient-name-qid.response&#x27;;
+import { FetchNotBlockedPatientsResponse } from &#x27;src/modules/patients/response/fetch-no-blocked-patients.response&#x27;;
+import { SettingsData } from &#x27;src/common/consts/settings-data&#x27;;
+import { SettingService } from &#x27;../settings/settings.service&#x27;;
+import { PrismaTransactionClient } from &#x27;src/common/types/transaction.type&#x27;;
+import { ChallengesService } from &#x27;../challenges/challenges.service&#x27;;
+import { motivationSelect } from &#x27;src/modules/motivations/const/motivation-select&#x27;;
+import { tobaccoSelect } from &#x27;src/modules/tobaccos/const/tobacco.const&#x27;;
+import { allergySelect } from &#x27;src/modules/allergies/const/allergy.const&#x27;;
+import { riskFactorSelect } from &#x27;src/modules/risk-factors/const/risk-factor-select&#x27;;
+import { smokingTriggerSelect } from &#x27;src/modules/smoking-triggers/const/smoking-trigger-select&#x27;;
+
+@Injectable()
+export class PatientService {
+  constructor(
+    private settingsService: SettingService,
+    private readonly prismaService: PrismaService,
+    @Inject(forwardRef(() &#x3D;&gt; AssessmentsService)) private assessmentService: AssessmentsService,
+    private commonService: CommonService,
+    private redisService: RedisService,
+    private environmentService: EnvironmentService,
+    @Inject(forwardRef(() &#x3D;&gt; GroupsService)) private groupsService: GroupsService,
+    @Inject(forwardRef(() &#x3D;&gt; UsersService)) private readonly usersService: UsersService,
+    @Inject(forwardRef(() &#x3D;&gt; NrtsService)) private nrtsService: NrtsService,
+    @Inject(forwardRef(() &#x3D;&gt; NotificationService)) private notificationService: NotificationService,
+    @Inject(forwardRef(() &#x3D;&gt; ChallengesService)) private challengesService: ChallengesService,
+  ) {}
+
+  async fetchPatients(facilities: number[], showPatientFilter: ShowPatientFilter): Promise&lt;PaginationPatients&gt; {
+    const {
+      sizePerPage,
+      currentPage,
+      addictionLevel,
+      gender,
+      smoker,
+      minAge,
+      maxAge,
+      minMessage,
+      maxMessage,
+      search,
+      healthFacilityId,
+      healthSpecialistId,
+      sortColumn,
+      isSorted,
+    } &#x3D; showPatientFilter;
+
+    const tableArg &#x3D; Prisma.raw(sortColumn); //to be able to use the column name as variable
+    const sqlSort &#x3D; isSorted ? Prisma.sql&#x60; DESC&#x60; : Prisma.sql&#x60; ASC&#x60;;
+    const incrementedPage &#x3D; currentPage - 1;
+
+    const minDateOfBirth &#x3D; new Date();
+    const maxDateOfBirth &#x3D; new Date();
+
+    minDateOfBirth.setFullYear(minDateOfBirth.getFullYear() - minAge);
+    maxDateOfBirth.setFullYear(maxDateOfBirth.getFullYear() - maxAge);
+
+    const fullTextSearch &#x3D; search ? this.commonService.addLeadingPlusAndTrailingWildcard(search) : undefined;
+    const searchQID &#x3D; &#x60;${search}%&#x60;; //this is a trick to pass the search value
+
+    const isFiltringHealthSpecialistId &#x3D; Prisma.sql&#x60;${healthSpecialistId ? Prisma.sql&#x60;AND patientsList.supportDoctorId &#x3D; ${healthSpecialistId}&#x60; : Prisma.empty}&#x60;;
+    const isFiltringAddictionLevel &#x3D; Prisma.sql&#x60;${addictionLevel ? Prisma.sql&#x60;AND patientsList.addictionLevel &#x3D; ${addictionLevel}&#x60; : Prisma.empty}&#x60;;
+    const isFiltringGender &#x3D; Prisma.sql&#x60;${gender ? Prisma.sql&#x60;AND personalinformation.gender &#x3D; ${gender}&#x60; : Prisma.empty}&#x60;;
+    const isFiltringQuitSmoking &#x3D; Prisma.sql&#x60;${smoker ? Prisma.sql&#x60;AND habitinformation.quitSmoking &#x3D; ${smoker}&#x60; : Prisma.empty}&#x60;;
+    const isFiltringFacilities &#x3D; Prisma.sql&#x60;${
+      facilities ? Prisma.sql&#x60;AND (patientsList.facilityId IS NULL OR patientsList.facilityId IN (${Prisma.join(facilities)}))&#x60; : Prisma.empty
+    }&#x60;;
+    const isFiltringFacilityId &#x3D; Prisma.sql&#x60;${healthFacilityId ? Prisma.sql&#x60;AND patientsList.facilityId &#x3D; ${healthFacilityId}&#x60; : Prisma.empty}&#x60;;
+    const isFiltringMinAge &#x3D; Prisma.sql&#x60;${minAge ? Prisma.sql&#x60;AND personalinformation.dateOfBirth &lt; ${minDateOfBirth}&#x60; : Prisma.empty}&#x60;;
+    const isFiltringMaxAge &#x3D; Prisma.sql&#x60;${maxAge ? Prisma.sql&#x60;AND personalinformation.dateOfBirth &gt; ${maxDateOfBirth}&#x60; : Prisma.empty}&#x60;;
+    //search
+    const isFiltringSearch &#x3D; Prisma.sql&#x60;${
+      search
+        ? Prisma.sql&#x60;AND (MATCH (personalinformation.firstName , personalinformation.lastName) AGAINST (${fullTextSearch} IN BOOLEAN MODE)
+      OR qid LIKE ${searchQID}) &#x60;
+        : Prisma.empty
+    }&#x60;;
+    //filters for  aggregations
+    const isFiltringMinMessage &#x3D; Prisma.sql&#x60;${minMessage ? Prisma.sql&#x60;AND messages &gt;&#x3D; ${minMessage}&#x60; : Prisma.empty}&#x60;;
+    const isFiltringMaxMessage &#x3D; Prisma.sql&#x60;${maxMessage ? Prisma.sql&#x60;AND messages &lt;&#x3D; ${maxMessage}&#x60; : Prisma.empty}&#x60;;
+
+    const [patients, queryCount]: [ShowFlatPatientResponse[], PatientResultCountResponse[]] &#x3D; await this.prismaService.$transaction([
+      this.prismaService.$queryRaw&#x60;
+      SELECT DISTINCT usersList.id as id,usersList.qid as qid,usersList.createdAt as createdAt,
+      personalinformation.firstName as firstName,personalinformation.lastName as lastName,
+      patientsList.addictionLevel as addictionLevel,
+      habitinformation.numberCigaretesPerDay as numberCigaretesPerDay, habitinformation.quitDate as quitDate,
+
+      CONCAT(personalinformation.firstName, &#x27; &#x27;,personalinformation.lastName) as name,
+
+      (SELECT COUNT(*) FROM patient WHERE relapsesList.patientId&#x3D;patientsList.id) as relapses,
+      (SELECT COUNT(*) FROM message WHERE message.senderId&#x3D;usersList.id) as messages
+
+      FROM  user  usersList
+
+      INNER JOIN patient patientsList ON patientsList.userId &#x3D; usersList.id
+      LEFT JOIN relapse relapsesList ON relapsesList.patientId &#x3D; patientsList.id
+      INNER JOIN habitinformation ON habitinformation.patientId &#x3D; patientsList.id
+      INNER JOIN personalinformation ON personalinformation.userId &#x3D; usersList.id
+
+      WHERE true  ${isFiltringSearch}
+      ${isFiltringHealthSpecialistId}
+      ${isFiltringAddictionLevel}
+      ${isFiltringGender}
+      ${isFiltringQuitSmoking}
+      ${isFiltringFacilities}
+      ${isFiltringFacilityId}
+      ${isFiltringMinAge} ${isFiltringMaxAge}
+
+      HAVING  true ${isFiltringMinMessage} ${isFiltringMaxMessage}
+
+      ORDER BY ${tableArg} ${sqlSort}
+
+      LIMIT ${sizePerPage} OFFSET ${incrementedPage * sizePerPage};&#x60;,
+
+      this.prismaService.$queryRaw&#x60;SELECT (SELECT COUNT(*) FROM patient WHERE ANY_VALUE(relapsesList.patientId)&#x3D;patient.id) as relapses,
+      (SELECT COUNT(*) FROM message WHERE message.senderId&#x3D;ANY_VALUE(usersList.id)) as messages,
+
+      COUNT(*) as totalCount
+
+      FROM  user  usersList
+
+      INNER JOIN patient patientsList ON patientsList.userId &#x3D; usersList.id
+      LEFT JOIN relapse relapsesList ON relapsesList.patientId &#x3D; patientsList.id
+      INNER JOIN habitinformation ON habitinformation.patientId &#x3D; patientsList.id
+      INNER JOIN personalinformation ON personalinformation.userId &#x3D; usersList.id
+
+      WHERE true  ${isFiltringSearch}
+      ${isFiltringHealthSpecialistId}
+      ${isFiltringAddictionLevel}
+      ${isFiltringGender}
+      ${isFiltringQuitSmoking}
+      ${isFiltringFacilities}
+      ${isFiltringFacilityId}
+      ${isFiltringMinAge} ${isFiltringMaxAge}
+
+      HAVING  true ${isFiltringMinMessage} ${isFiltringMaxMessage};&#x60;,
+    ]);
+
+    const serializedPatients &#x3D; plainToInstance(ShowFlatPatientResponse, patients, {
+      excludeExtraneousValues: true,
+      enableImplicitConversion: true,
+    });
+
+    return { data: serializedPatients, totalItems: queryCount[0].totalCount };
+  }
+
+  async fetchPatientsNamesOnly(facilities: number[]): Promise&lt;PatientNameOnlyResponse[]&gt; {
+    return await this.prismaService.user.findMany({
+      select: {
+        id: true,
+        personalInformation: {
+          select: {
+            firstName: true,
+            lastName: true,
+          },
+        },
+      },
+      where: {
+        patient: { OR: [{ facilityId: { in: facilities } }, { facilityId: null }] },
+      },
+      orderBy: {
+        createdAt: &#x27;desc&#x27;,
+      },
+    });
+  }
+
+  async findOneUser(field: string, value: string | bigint | number): Promise&lt;User&gt; {
+    const user &#x3D; await this.prismaService.user.findUnique({
+      where: {
+        ...(field &#x3D;&#x3D;&#x3D; &#x27;id&#x27; &amp;&amp; { id: Number(value) }),
+        ...(field &#x3D;&#x3D;&#x3D; &#x27;qid&#x27; &amp;&amp; { qid: value.toString() }),
+      },
+      include: {
+        patient: {
+          select: {
+            id: true,
+          },
+        },
+      },
+    });
+    if (!user) throw new MultiLanguageException(LanguageErrorEnum.USER_NOT_FOUND);
+
+    return user;
+  }
+
+  async deleteAccount(user: UserPlayloadResponse): Promise&lt;PatientNameQidResponse&gt; {
+    return await this.prismaService.user.delete({
+      where: {
+        id: user.patientId,
+      },
+      select: {
+        id: true,
+        qid: true,
+        personalInformation: {
+          select: {
+            firstName: true,
+            lastName: true,
+          },
+        },
+      },
+    });
+  }
+
+  async patientProfile(user: UserPlayloadResponse, language: LanguageEnum): Promise&lt;PatientProfileResponse&gt; {
+    const patientProfileRedisKey &#x3D; &#x60;patientProfile?user${user.id}&amp;language${language}&#x60;;
+    const cacheResults &#x3D; await this.redisService.getResponseKey(patientProfileRedisKey);
+
+    const currentAssessment &#x3D; await this.assessmentService.fetchCurrentAssessmentDetail(user);
+
+    if (cacheResults) return { ...cacheResults, patient: { ...cacheResults.patient, currentAssessment } };
+
+    const profile &#x3D; await this.prismaService.user.findUnique({
+      where: {
+        id: user.id,
+      },
+      select: {
+        id: true,
+        qid: true,
+        groupChat: {
+          select: {
+            id: true,
+            name: true,
+          },
+        },
+        personalInformation: {
+          select: {
+            firstName: true,
+            lastName: true,
+            dateOfBirth: true,
+            gender: true,
+            height: true,
+            weight: true,
+          },
+        },
+        patient: {
+          select: {
+            username: true,
+            motivation: {
+              select: motivationSelect,
+            },
+            assessments: {
+              include: {},
+              orderBy: {
+                createdAt: &#x27;asc&#x27;,
+              },
+            },
+            habitInformation: {
+              select: {
+                numberCigaretesPerDay: true,
+                numberTriesQuittingSmoking: true,
+                numberYearsQuittingSmoking: true,
+                periodeSmoking: true,
+                quitDate: true,
+                quitSmoking: true,
+              },
+            },
+            tobacco: { select: tobaccoSelect },
+            allergy: { select: allergySelect },
+            riskFactor: { select: riskFactorSelect },
+            smokingTrigger: { select: smokingTriggerSelect },
+          },
+        },
+      },
+    });
+
+    if (!profile) throw new MultiLanguageException(LanguageErrorEnum.PROFILE_NOT_FOUND);
+
+    this.redisService.setResponseKey(patientProfileRedisKey, profile, this.environmentService.redisConfig.TTL);
+
+    return { ...profile, patient: { ...profile.patient, currentAssessment } };
+  }
+
+  async updatePatientProfile(user: UserPlayloadResponse, updateProfileDto: UpdateProfileDto): Promise&lt;boolean&gt; {
+    const { username, habitInformation, personalInformation } &#x3D; updateProfileDto;
+    if (username) await this.isUsernameExists(user.id, username);
+    //update quit date
+    const oldUserProfileQuitDate &#x3D; await this.prismaService.user.findUnique({
+      where: {
+        id: user.id,
+      },
+      select: {
+        patient: {
+          select: {
+            habitInformation: {
+              select: {
+                quitDate: true,
+              },
+            },
+          },
+        },
+      },
+    });
+    if (updateProfileDto.habitInformation.quitDate &amp;&amp; oldUserProfileQuitDate.patient.habitInformation.quitDate !&#x3D; updateProfileDto.habitInformation.quitDate) {
+      const notifsToCancel &#x3D; await this.prismaService.notification.findMany({
+        where: {
+          notificationType: {
+            contains: &#x27;automatedWeekly&#x27;,
+          },
+        },
+        select: {
+          id: true,
+        },
+      });
+      await this.notificationService.cancelNotificationCron([
+        &#x60;schedulePreparedness:${user.id}&#x60;,
+        ...notifsToCancel.map((notif) &#x3D;&gt; &#x60;scheduleNotification:${notif.id}:${user.id}&#x60;),
+      ]);
+      if (new Date(updateProfileDto.habitInformation.quitDate) &gt; new Date()) {
+        this.notificationService.launchNotificationCron(
+          &#x27;schedulePreparedness&#x27;,
+          {
+            userId: user.id,
+            identifier: &#x60;schedulePreparedness:${user.id}&#x60;,
+            endDate: new Date(updateProfileDto.habitInformation.quitDate),
+          },
+          {
+            repeat: {
+              pattern: &#x27;0 0 * * *&#x27;,
+            },
+          },
+        );
+      } else {
+        this.notificationService.launchNotificationCron(&#x27;scheduleWeekly&#x27;, { userId: Number(user.id) }, { delay: 0 });
+      }
+    }
+    await this.prismaService.user.update({
+      where: {
+        id: user.id,
+      },
+      data: {
+        personalInformation: {
+          update: {
+            ...personalInformation,
+          },
+        },
+        patient: {
+          update: {
+            username,
+            habitInformation: {
+              update: {
+                ...habitInformation,
+              },
+            },
+          },
+        },
+      },
+    });
+    return true;
+  }
+
+  async updatePatientUsername(updateUsernameDto: UpdateUsernameDto, user: UserPlayloadResponse): Promise&lt;UpdatePatientUsername&gt; {
+    const { username } &#x3D; updateUsernameDto;
+    await this.isUsernameExists(user.id, username);
+    await this.isUserHasNotUsername(user.patientId);
+
+    return await this.prismaService.patient.update({
+      where: {
+        id: user.patientId,
+      },
+      data: {
+        username,
+      },
+      select: {
+        username: true,
+      },
+    });
+  }
+
+  async fetchPatient(id: number): Promise&lt;ShowPatientProfileResponse&gt; {
+    const patient &#x3D; await this.prismaService.user.findUnique({
+      where: {
+        id,
+      },
+      select: {
+        personalInformation: {
+          select: {
+            firstName: true,
+            lastName: true,
+          },
+        },
+        patient: {
+          select: {
+            habitInformation: {
+              select: {
+                numberCigaretesPerDay: true,
+                quitDate: true,
+              },
+            },
+            addictionLevel: true,
+
+            supportDoctor: {
+              select: {
+                admin: {
+                  select: {
+                    user: {
+                      select: {
+                        personalInformation: {
+                          select: {
+                            firstName: true,
+                            lastName: true,
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+            facility: {
+              select: {
+                id: true,
+                name: true,
+              },
+            },
+            tobacco: { select: tobaccoSelect },
+            allergy: { select: allergySelect },
+            riskFactor: { select: riskFactorSelect },
+            smokingTrigger: { select: smokingTriggerSelect },
+            assessments: {
+              select: {
+                name: true,
+                id: true,
+                fagerstromScore: true,
+                createdAt: true,
+              },
+              orderBy: {
+                createdAt: &#x27;asc&#x27;,
+              },
+            },
+            activities: {
+              select: {
+                id: true,
+                name: true,
+                createdAt: true,
+              },
+            },
+          },
+        },
+      },
+    });
+
+    if (!patient) throw new MultiLanguageException(LanguageErrorEnum.USER_NOT_FOUND);
+
+    return patient;
+  }
+
+  async updatePatient(id: number, updatePatientDto: UpdatePatientDto): Promise&lt;UpdatePatientResponse&gt; {
+    let assisstedByIdExists &#x3D; null;
+    const { addictionLevel, assisstedById, facilityId } &#x3D; updatePatientDto;
+    const userToFetch &#x3D; await this.prismaService.user.findUnique({
+      where: {
+        id,
+      },
+      select: {
+        patient: {
+          select: {
+            facility: {
+              select: {
+                id: true,
+              },
+            },
+            supportDoctor: {
+              select: {
+                id: true,
+              },
+            },
+          },
+        },
+      },
+    });
+
+    if (!userToFetch) throw new MultiLanguageException(LanguageErrorEnum.USER_NOT_FOUND);
+
+    const currentFacilityId &#x3D; facilityId || userToFetch.patient?.facility.id;
+    const currentSupportDoctorId &#x3D; assisstedById || userToFetch.patient?.supportDoctor.id;
+
+    if (facilityId) {
+      const assisstedByIdExists &#x3D; !!(await this.prismaService.user.findUnique({
+        where: {
+          id: currentSupportDoctorId,
+        },
+      }));
+      if (!assisstedByIdExists) throw new MultiLanguageException(LanguageErrorEnum.FACILITY_NOT_FOUND);
+    }
+
+    if (assisstedById) {
+      assisstedByIdExists &#x3D; await this.prismaService.user.findUnique({
+        where: {
+          id: currentSupportDoctorId,
+        },
+        select: {
+          admin: {
+            select: {
+              healthSpecialist: {
+                select: {
+                  id: true,
+                },
+              },
+            },
+          },
+        },
+      });
+      if (!assisstedByIdExists?.healthSpecialist) throw new MultiLanguageException(LanguageErrorEnum.DOCTOR_NOT_FOUND);
+    }
+
+    //checking if the new facility/healthSpecialist are connected
+    if (facilityId || assisstedById) {
+      const healthSpecialistFacility &#x3D; await this.prismaService.user.findUnique({
+        where: {
+          id: currentSupportDoctorId,
+          admin: {
+            healthSpecialist: {
+              facilityId: currentFacilityId,
+            },
+          },
+        },
+      });
+      if (!healthSpecialistFacility) throw new MultiLanguageException(LanguageErrorEnum.DOCTOR_NOT_IN_FACILITY);
+    }
+
+    return await this.prismaService.user.update({
+      where: {
+        id,
+      },
+      data: {
+        patient: {
+          update: {
+            addictionLevel,
+
+            ...(facilityId &amp;&amp; {
+              facilityId: {
+                set: currentFacilityId,
+              },
+            }),
+            //client will send userId but we use healthSpecialistId to link patient to its supportDoctor
+            ...(assisstedById &amp;&amp; {
+              supportDoctorId: {
+                set: assisstedByIdExists.healthSpecialist.id,
+              },
+            }),
+          },
+        },
+      },
+      select: {
+        patient: {
+          select: {
+            addictionLevel: true,
+            facility: {
+              select: {
+                id: true,
+                name: true,
+              },
+            },
+            supportDoctor: {
+              select: {
+                id: true,
+                admin: {
+                  select: {
+                    user: {
+                      select: {
+                        id: true,
+                        personalInformation: {
+                          select: {
+                            firstName: true,
+                            lastName: true,
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    });
+  }
+
+  async fetchPatientDetails(id: number, language: LanguageEnum): Promise&lt;FetchPatientDetailsResponse&gt; {
+    //verify if the user is a patient
+    await this.isUserPatient(id);
+    const userById &#x3D; await this.usersService.findPatientByUserId(id);
+
+    //fetch patient grps
+    const patientGroups &#x3D; await this.groupsService.fetchPatientGroups(Number(userById.patient.id));
+    const patientGroupsIds &#x3D; patientGroups.map((patientGroup) &#x3D;&gt; patientGroup.id);
+
+    const [patientArticlePackages, nrtDetailResponse] &#x3D; await Promise.all([
+      //fetch this user article packages
+      this.prismaService.articlePackage.findMany({
+        select: {
+          targetGroup: {
+            select: {
+              id: true,
+              name: true,
+            },
+          },
+        },
+        where: {
+          OR: [
+            {
+              targetGroupId: {
+                in: patientGroupsIds,
+              },
+            },
+            {
+              isEditable: false,
+            },
+          ],
+        },
+      }),
+
+      //fetch userNrt
+      this.nrtsService.userNrt(language, id),
+    ]);
+    //just transform data to display only needed data to client
+    const targetGroups &#x3D; patientArticlePackages.map((patientArticlePackage) &#x3D;&gt; patientArticlePackage.targetGroup);
+
+    const user &#x3D; await this.prismaService.user.findUnique({
+      where: { id },
+      select: {
+        qid: true,
+        personalInformation: {
+          select: {
+            firstName: true,
+            lastName: true,
+          },
+        },
+        patient: {
+          select: {
+            habitInformation: {
+              select: {
+                numberCigaretesPerDay: true,
+                quitDate: true,
+              },
+            },
+            tobacco: { select: tobaccoSelect },
+            allergy: { select: allergySelect },
+            riskFactor: { select: riskFactorSelect },
+            smokingTrigger: { select: smokingTriggerSelect },
+            motivation: {
+              select: motivationSelect,
+            },
+            facility: {
+              select: {
+                id: true,
+                name: true,
+              },
+            },
+            assessments: {
+              select: {
+                id: true,
+                name: true,
+                fagerstromScore: true,
+                createdAt: true,
+              },
+              orderBy: {
+                createdAt: &#x27;asc&#x27;,
+              },
+            },
+          },
+        },
+      },
+    });
+
+    if (!user) throw new MultiLanguageException(LanguageErrorEnum.USER_NOT_FOUND);
+    return { ...user, patient: { ...user.patient, articlePackagesTargetGroups: targetGroups, nrtDetailResponse } };
+  }
+
+  async fetchPatientsNamesOnlyNotInGroup(facilities: number[], searchName: PatientOnlyNamesSearchDto): Promise&lt;PatientNameQidResponse[]&gt; {
+    const { search } &#x3D; searchName;
+    const fullTextSearch &#x3D; search ? this.commonService.addLeadingPlusAndTrailingWildcard(search) : undefined;
+
+    return await this.prismaService.user.findMany({
+      select: {
+        id: true,
+        qid: true,
+        personalInformation: {
+          select: {
+            firstName: true,
+            lastName: true,
+          },
+        },
+      },
+      where: {
+        groupChatId: null,
+        ...(search &amp;&amp; {
+          OR: [
+            {
+              personalInformation: {
+                firstName: {
+                  search: fullTextSearch,
+                },
+                lastName: {
+                  search: fullTextSearch,
+                },
+              },
+            },
+            {
+              qid: { startsWith: search },
+            },
+          ],
+        }),
+
+        //if facilities exists we filter based on facility otherwise its a superadmin we shouldnt filte,r only we make sure its a patient
+        ...(facilities
+          ? {
+              patient: { facilityId: { in: facilities } },
+            }
+          : {
+              patient: { isNot: null },
+            }),
+      },
+      orderBy: {
+        createdAt: &#x27;desc&#x27;,
+      },
+    });
+  }
+
+  async fetchPatientsNamesOnlyWithoutPrivateChat(facilities: number[], searchName: PatientOnlyNamesSearchDto): Promise&lt;PatientNameQidResponse[]&gt; {
+    const { search } &#x3D; searchName;
+    const fullTextSearch &#x3D; search ? this.commonService.addLeadingPlusAndTrailingWildcard(search) : undefined;
+
+    return await this.prismaService.user.findMany({
+      select: {
+        id: true,
+        qid: true,
+        personalInformation: {
+          select: {
+            firstName: true,
+            lastName: true,
+          },
+        },
+      },
+      where: {
+        patientPrivateChat: null,
+        ...(search &amp;&amp; {
+          OR: [
+            {
+              personalInformation: {
+                firstName: {
+                  search: fullTextSearch,
+                },
+                lastName: {
+                  search: fullTextSearch,
+                },
+              },
+            },
+            {
+              qid: { startsWith: search },
+            },
+          ],
+        }),
+
+        //if facilities exists we filter based on facility otherwise its a superadmin we shouldnt filte,r only we make sure its a patient
+        ...(facilities
+          ? {
+              patient: { facilityId: { in: facilities } },
+            }
+          : {
+              patient: { isNot: null },
+            }),
+      },
+      orderBy: {
+        createdAt: &#x27;desc&#x27;,
+      },
+    });
+  }
+
+  async fetchNotBlockedPatientsNames(
+    facilities: number[],
+    searchWithCursorPaginationDto: SearchWithCursorPaginationDto,
+  ): Promise&lt;PaginationCursorNotBlockedPatientsResponse&gt; {
+    const { search, oldCursorId, sizePerPage } &#x3D; searchWithCursorPaginationDto;
+    const fullTextSearch &#x3D; search ? this.commonService.addLeadingPlusAndTrailingWildcard(search) : undefined;
+
+    const [users, userPagination] &#x3D; await this.prismaService
+      .extendPagination()
+      .user.paginate({
+        select: {
+          id: true,
+          patient: { select: { username: true } },
+          personalInformation: {
+            select: {
+              firstName: true,
+              lastName: true,
+            },
+          },
+        },
+        where: {
+          blockedUsers: {
+            none: {
+              OR: [
+                {
+                  AND: [{ isBlocked: true }, { endAt: { gt: new Date() } }],
+                },
+                {
+                  AND: [{ isBlocked: true }, { endAt: { gt: new Date() } }],
+                },
+              ],
+            },
+          },
+          ...(search &amp;&amp; {
+            OR: [
+              {
+                personalInformation: {
+                  firstName: {
+                    search: fullTextSearch,
+                  },
+                  lastName: {
+                    search: fullTextSearch,
+                  },
+                },
+              },
+              {
+                qid: { startsWith: search },
+              },
+            ],
+          }),
+
+          //if facilities exists we filter based on facility otherwise its a superadmin we shouldnt filte,r only we make sure its a patient
+          ...(facilities
+            ? {
+                patient: { facilityId: { in: facilities }, username: { not: null } },
+              }
+            : {
+                patient: { username: { not: null } },
+              }),
+        },
+        orderBy: {
+          createdAt: &#x27;desc&#x27;,
+        },
+      })
+      .withCursor({
+        limit: sizePerPage,
+        after: oldCursorId ? &#x60;${oldCursorId}&#x60; : null,
+        getCursor({ id }) {
+          return id.toString();
+        },
+      });
+
+    const serializedUsers &#x3D; plainToInstance(FetchNotBlockedPatientsResponse, users, {
+      excludeExtraneousValues: true,
+      enableImplicitConversion: true,
+    });
+
+    const { hasNextPage, hasPreviousPage, endCursor, startCursor } &#x3D; userPagination;
+
+    return { data: serializedUsers, hasNextPage, hasPreviousPage, endCursor: Number(endCursor), startCursor: Number(startCursor) };
+  }
+
+  async isUsernameExists(id: number, username: string): Promise&lt;boolean&gt; {
+    const isUsernameExists &#x3D; !!(await this.prismaService.user.findFirst({
+      where: {
+        id: {
+          not: id,
+        },
+        patient: {
+          username,
+        },
+      },
+    }));
+
+    if (isUsernameExists) throw new MultiLanguageException(LanguageErrorEnum.USERNAME_EXISTS);
+    return true;
+  }
+
+  async isUserHasNotUsername(patientId: number): Promise&lt;boolean&gt; {
+    const isUserHasUsername &#x3D; await this.prismaService.patient.findFirst({
+      where: {
+        id: patientId,
+      },
+      select: { username: true },
+    });
+
+    if (isUserHasUsername.username) throw new MultiLanguageException(LanguageErrorEnum.CHAT_USERNAME_SET);
+    return true;
+  }
+
+  async isUserHasUsername(patientId: number): Promise&lt;boolean&gt; {
+    const isUserHasUsername &#x3D; await this.prismaService.patient.findFirst({
+      where: {
+        id: patientId,
+      },
+      select: { username: true },
+    });
+
+    if (!isUserHasUsername.username) throw new MultiLanguageException(LanguageErrorEnum.USER_WITHOUT_USERNAME);
+    return true;
+  }
+
+  async createPatient(createPatientDto: CreatePatientDto): Promise&lt;User&gt; {
+    const user &#x3D; await this.prismaService.$transaction(async (prisma) &#x3D;&gt; {
+      // Create the user with personal information
+      const user &#x3D; await prisma.user.create({
+        data: {
+          ...createPatientDto,
+          personalInformation: {
+            create: {},
+          },
+          patient: {
+            create: {
+              habitInformation: {
+                create: {},
+              },
+            },
+          },
+        },
+      });
+
+      // Assign settings to the user
+      const settingsData &#x3D; SettingsData.user;
+      await this.settingsService.assignSettings(settingsData, user.id, prisma);
+
+      return user;
+    });
+    //Seeding Challenges to the patient
+    //TODO: rework the seeds when register feature is specified
+    await this.challengesService.seedChallengesForPatient(user.id);
+    return user;
+  }
+
+  async updatePatientPassword(where: any, newPassword: string): Promise&lt;User&gt; {
+    return await this.prismaService.user.update({
+      where,
+      data: {
+        password: newPassword,
+      },
+    });
+  }
+
+  async isUserPatient(userId: number): Promise&lt;boolean&gt; {
+    const user &#x3D; await this.prismaService.user.findUnique({
+      where: {
+        id: userId,
+      },
+      select: {
+        patient: { select: { id: true } },
+      },
+    });
+    if (!user) throw new MultiLanguageException(LanguageErrorEnum.USER_NOT_FOUND);
+
+    if (!user.patient) throw new MultiLanguageException(LanguageErrorEnum.PATIENT_NOT_FOUND);
+    return true;
+  }
+
+  async findPatientIdByUserId(userId: number, transaction: PrismaTransactionClient): Promise&lt;number&gt; {
+    const findPatientIdByUserIdRedisKey &#x3D; &#x60;findPatientIdByUserId?user${userId}&#x60;;
+    const prismaOperation &#x3D; transaction ?? this.prismaService;
+
+    const cacheResults &#x3D; await this.redisService.getResponseKey(findPatientIdByUserIdRedisKey);
+    if (cacheResults) return cacheResults;
+
+    await this.isUserPatient(userId);
+
+    const user &#x3D; await prismaOperation.user.findUnique({
+      where: {
+        id: userId,
+      },
+      select: {
+        patient: {
+          select: {
+            id: true,
+          },
+        },
+      },
+    });
+
+    this.redisService.setResponseKey(findPatientIdByUserIdRedisKey, Number(user.patient.id), this.environmentService.redisConfig.longerTimeToLive);
+
+    return Number(user.patient.id);
+  }
+
+  async isUsersPatients(ids: IdDto[]): Promise&lt;boolean&gt; {
+    const userIds &#x3D; ids.map((groupChat) &#x3D;&gt; groupChat.id);
+
+    const usersPatients &#x3D; await this.prismaService.user.aggregate({
+      where: { id: { in: userIds }, patient: { isNot: null } },
+      _count: {
+        _all: true,
+      },
+    });
+
+    if (ids.length &gt; usersPatients._count._all) throw new MultiLanguageException(LanguageErrorEnum.PATIENT_NOT_FOUND);
+    return true;
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'PatientService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

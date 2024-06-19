@@ -1,0 +1,2097 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>smoking-halim documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">smoking-halim documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >GroupsService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/modules/groups/groups.service.ts</code>
+        </p>
+
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#addGroup" >addGroup</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#assignAuthedPatientToGroups" >assignAuthedPatientToGroups</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#assignPatientToGroup" >assignPatientToGroup</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#deleteGroup" >deleteGroup</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#fetchGroupById" >fetchGroupById</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#fetchGroupsNamesOnly" >fetchGroupsNamesOnly</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#fetchPatientGroups" >fetchPatientGroups</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getAllGroups" >getAllGroups</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#groupArticlePackage" >groupArticlePackage</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#groupArticlePackageList" >groupArticlePackageList</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#groupNrt" >groupNrt</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#groupNrtList" >groupNrtList</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#isGroupByIdExists" >isGroupByIdExists</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#isGroupsByIdExist" >isGroupsByIdExist</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#resetPatientGroups" >resetPatientGroups</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(prismaService: <a href="../injectables/PrismaService.html" target="_self">PrismaService</a>, commonService: <a href="../injectables/CommonService.html" target="_self">CommonService</a>, patientService: <a href="../injectables/PatientService.html" target="_self">PatientService</a>, redisService: <a href="../injectables/RedisService.html" target="_self">RedisService</a>, environmentService: <a href="../injectables/EnvironmentService.html" target="_self">EnvironmentService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/modules/groups/groups.service.ts:26</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>prismaService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PrismaService.html" target="_self" >PrismaService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>commonService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CommonService.html" target="_self" >CommonService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>patientService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PatientService.html" target="_self" >PatientService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>redisService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/RedisService.html" target="_self" >RedisService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>environmentService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/EnvironmentService.html" target="_self" >EnvironmentService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addGroup"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>addGroup</b></span>
+                        <a href="#addGroup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addGroup(addGroupDto: <a href="../classes/AddGroupDto.html" target="_self">AddGroupDto</a>, user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="142"
+                                    class="link-to-prism">src/modules/groups/groups.service.ts:142</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>addGroupDto</td>
+                                            <td>
+                                                            <code><a href="../classes/AddGroupDto.html" target="_self" >AddGroupDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="assignAuthedPatientToGroups"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>assignAuthedPatientToGroups</b></span>
+                        <a href="#assignAuthedPatientToGroups"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>assignAuthedPatientToGroups(user: <a href="../classes/UserPlayloadResponse.html" target="_self">UserPlayloadResponse</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="375"
+                                    class="link-to-prism">src/modules/groups/groups.service.ts:375</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../classes/UserPlayloadResponse.html" target="_self" >UserPlayloadResponse</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="assignPatientToGroup"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>assignPatientToGroup</b></span>
+                        <a href="#assignPatientToGroup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>assignPatientToGroup(assignPatient: <a href="../classes/AssignPatientToGroupDto.html" target="_self">AssignPatientToGroupDto</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="349"
+                                    class="link-to-prism">src/modules/groups/groups.service.ts:349</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>assignPatient</td>
+                                            <td>
+                                                            <code><a href="../classes/AssignPatientToGroupDto.html" target="_self" >AssignPatientToGroupDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteGroup"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>deleteGroup</b></span>
+                        <a href="#deleteGroup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deleteGroup(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="262"
+                                    class="link-to-prism">src/modules/groups/groups.service.ts:262</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchGroupById"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>fetchGroupById</b></span>
+                        <a href="#fetchGroupById"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fetchGroupById(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="293"
+                                    class="link-to-prism">src/modules/groups/groups.service.ts:293</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;GroupResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchGroupsNamesOnly"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>fetchGroupsNamesOnly</b></span>
+                        <a href="#fetchGroupsNamesOnly"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fetchGroupsNamesOnly(paginationOptionalDto: <a href="../classes/PaginationOptionalDto.html" target="_self">PaginationOptionalDto</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="233"
+                                    class="link-to-prism">src/modules/groups/groups.service.ts:233</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>paginationOptionalDto</td>
+                                            <td>
+                                                            <code><a href="../classes/PaginationOptionalDto.html" target="_self" >PaginationOptionalDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;PaginationGroupNamesOnlyResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchPatientGroups"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>fetchPatientGroups</b></span>
+                        <a href="#fetchPatientGroups"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fetchPatientGroups(patientId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="308"
+                                    class="link-to-prism">src/modules/groups/groups.service.ts:308</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>patientId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;GroupNameOnlyResponse[]&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAllGroups"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getAllGroups</b></span>
+                        <a href="#getAllGroups"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getAllGroups(fetchGroupFilterDto: <a href="../classes/FetchGroupFilterDto.html" target="_self">FetchGroupFilterDto</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="35"
+                                    class="link-to-prism">src/modules/groups/groups.service.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>fetchGroupFilterDto</td>
+                                            <td>
+                                                            <code><a href="../classes/FetchGroupFilterDto.html" target="_self" >FetchGroupFilterDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/PaginationGroups.html" target="_self" >Promise&lt;PaginationGroups&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="groupArticlePackage"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>groupArticlePackage</b></span>
+                        <a href="#groupArticlePackage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>groupArticlePackage(groupId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="637"
+                                    class="link-to-prism">src/modules/groups/groups.service.ts:637</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>groupId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;ArticlePackageWithCountResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="groupArticlePackageList"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>groupArticlePackageList</b></span>
+                        <a href="#groupArticlePackageList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>groupArticlePackageList()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="199"
+                                    class="link-to-prism">src/modules/groups/groups.service.ts:199</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;GroupHasArticlePackageResponse[]&gt;</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="groupNrt"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>groupNrt</b></span>
+                        <a href="#groupNrt"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>groupNrt(language: LanguageEnum, groupId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, nrtId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="587"
+                                    class="link-to-prism">src/modules/groups/groups.service.ts:587</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>language</td>
+                                            <td>
+                                                        <code>LanguageEnum</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>groupId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>nrtId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;GroupNrtResponse&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="groupNrtList"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>groupNrtList</b></span>
+                        <a href="#groupNrtList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>groupNrtList()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="216"
+                                    class="link-to-prism">src/modules/groups/groups.service.ts:216</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Response.html" target="_self" >Promise&lt;GroupHasNrtResponse[]&gt;</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isGroupByIdExists"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>isGroupByIdExists</b></span>
+                        <a href="#isGroupByIdExists"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>isGroupByIdExists(groupId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="557"
+                                    class="link-to-prism">src/modules/groups/groups.service.ts:557</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>groupId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isGroupsByIdExist"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>isGroupsByIdExist</b></span>
+                        <a href="#isGroupsByIdExist"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>isGroupsByIdExist(ids: <a href="../classes/IdDto.html" target="_self">IdDto[]</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="332"
+                                    class="link-to-prism">src/modules/groups/groups.service.ts:332</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>ids</td>
+                                            <td>
+                                                            <code><a href="../classes/IdDto.html" target="_self" >IdDto[]</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resetPatientGroups"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>resetPatientGroups</b></span>
+                        <a href="#resetPatientGroups"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>resetPatientGroups(groupIds: <a href="../classes/IdDto.html" target="_self">IdDto[]</a>, patientId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="575"
+                                    class="link-to-prism">src/modules/groups/groups.service.ts:575</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>groupIds</td>
+                                            <td>
+                                                            <code><a href="../classes/IdDto.html" target="_self" >IdDto[]</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>patientId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Inject, Injectable, forwardRef } from &#x27;@nestjs/common&#x27;;
+import { GroupsTypeEnum, LanguageEnum, Prisma } from &#x27;@prisma/client&#x27;;
+import { LanguageErrorEnum } from &#x27;src/common/enums/language-error.enum&#x27;;
+import { MultiLanguageException } from &#x27;src/common/exception-filters/multi-language.exception&#x27;;
+import { PaginationGroupNamesOnlyResponse, PaginationGroups } from &#x27;src/common/responses/Paggination-data.response&#x27;;
+import { CommonService } from &#x27;src/common/services/common.service&#x27;;
+import { PrismaService } from &#x27;src/common/services/prisma.service&#x27;;
+import { UserPlayloadResponse } from &#x27;src/modules/patients/response/user-playload.response&#x27;;
+import { PatientService } from &#x27;./../patients/patient.service&#x27;;
+import { AddGroupDto } from &#x27;./dto/add-group.dto&#x27;;
+import { AssignPatientToGroupDto } from &#x27;./dto/assign-patient-group.dto&#x27;;
+import { FetchGroupFilterDto } from &#x27;./dto/fetch-group-filter.dto&#x27;;
+import { GroupResponse } from &#x27;./response/group.response&#x27;;
+import { PaginationOptionalDto } from &#x27;src/common/dto/pagination-optional.dto&#x27;;
+import { IdDto } from &#x27;src/common/dto/id.dto&#x27;;
+import { GroupNameOnlyResponse } from &#x27;src/modules/groups/response/group-name-only.response&#x27;;
+import { RedisService } from &#x27;src/common/services/redis.service&#x27;;
+import { EnvironmentService } from &#x27;src/common/services/environment.service&#x27;;
+import { ArticlePackageWithCountResponse } from &#x27;src/modules/article-packages/response/article-package.response&#x27;;
+import { GroupNrtResponse } from &#x27;src/modules/groups/response/group-nrt.response&#x27;;
+import { GroupHasNrtResponse } from &#x27;src/modules/groups/response/group-has-nrt.response&#x27;;
+import { GroupHasArticlePackageResponse } from &#x27;src/modules/groups/response/group-has-article-package.response&#x27;;
+import { groupRiskFactorSelect } from &#x27;src/common/consts/risk-factor.const&#x27;;
+
+@Injectable()
+export class GroupsService {
+  constructor(
+    private prismaService: PrismaService,
+    private commonService: CommonService,
+    @Inject(forwardRef(() &#x3D;&gt; PatientService)) private patientService: PatientService,
+    private redisService: RedisService,
+    private environmentService: EnvironmentService,
+  ) {}
+
+  async getAllGroups(fetchGroupFilterDto: FetchGroupFilterDto): Promise&lt;PaginationGroups&gt; {
+    const { name, currentPage, sizePerPage, addictionLevel, agesRange, cigarretesRange, gender, massBodies, relapsesRange } &#x3D; fetchGroupFilterDto;
+
+    const isRelapses &#x3D; relapsesRange?.length &gt; 0;
+    const isAges &#x3D; agesRange?.length &gt; 0;
+    const isCigarretes &#x3D; cigarretesRange?.length &gt; 0;
+
+    //we r reformating the agesRange to use it inside the prisma where
+    const agesRangeMapping &#x3D;
+      isAges &amp;&amp;
+      agesRange.map((ageRange) &#x3D;&gt; {
+        return {
+          ageMin: {
+            lte: ageRange.max,
+          },
+          ageMax: {
+            gte: ageRange.min,
+          },
+        };
+      });
+
+    //we r reformating the relapsesRange to use it inside the prisma where
+    const relapsesRangeMapping &#x3D;
+      isRelapses &amp;&amp;
+      relapsesRange.map((relapseRange) &#x3D;&gt; {
+        return {
+          relapsesMin: {
+            lte: relapseRange.max,
+          },
+          relapsesMax: {
+            gte: relapseRange.min,
+          },
+        };
+      });
+
+    //we r reformating the cigarretesRange to use it inside the prisma where
+    const cigarretesRangeMapping &#x3D;
+      isCigarretes &amp;&amp;
+      cigarretesRange.map((cigarreteRange) &#x3D;&gt; {
+        return {
+          cigarretesMin: {
+            lte: cigarreteRange.max,
+          },
+          cigarretesMax: {
+            gte: cigarreteRange.min,
+          },
+        };
+      });
+
+    const where: Prisma.GroupWhereInput &#x3D; {
+      name: {
+        startsWith: name,
+      },
+      condition: {
+        addictionLevel,
+        massBody: {
+          in: massBodies,
+        },
+        gender: gender,
+        AND: [
+          // filtring the age
+          {
+            OR: isAges ? agesRangeMapping : undefined,
+          },
+          //filtring the relapses
+          {
+            OR: isRelapses ? relapsesRangeMapping : undefined,
+          },
+
+          //filtring the cigarretes
+          { OR: isCigarretes ? cigarretesRangeMapping : undefined },
+        ],
+      },
+    };
+
+    const [groups, paginationData] &#x3D; await this.prismaService
+      .extendPagination()
+      .group.paginate({
+        where,
+        orderBy: {
+          id: &#x27;desc&#x27;,
+        },
+        select: {
+          id: true,
+          name: true,
+          condition: {
+            include: {
+              riskFactor: true,
+            },
+          },
+          _count: {
+            select: { patients: true },
+          },
+        },
+      })
+      .withPages({
+        includePageCount: true,
+        page: currentPage,
+        limit: sizePerPage,
+      });
+    const totalPatientCount &#x3D; groups.reduce((total, group) &#x3D;&gt; total + group._count.patients, 0);
+
+    // edit the response to add patients count
+
+    return { data: groups, totalItems: paginationData.totalCount, totalPatient: totalPatientCount };
+  }
+
+  async addGroup(addGroupDto: AddGroupDto, user: UserPlayloadResponse) {
+    const {
+      name,
+      condition: { addictionLevel, ageMax, ageMin, cigarretesMax, cigarretesMin, gender, massBody, relapsesMax, relapsesMin },
+    } &#x3D; addGroupDto;
+
+    //check if name exists in the current facility
+    const isGroupNameExists &#x3D; !!(await this.prismaService.group.findFirst({
+      where: {
+        name: addGroupDto.name,
+      },
+    }));
+
+    if (isGroupNameExists) throw new MultiLanguageException(LanguageErrorEnum.GROUP_NAME_EXISTS);
+
+    return await this.prismaService.group.create({
+      data: {
+        name,
+        condition: {
+          create: {
+            addictionLevel,
+            gender,
+            massBody,
+            ageMax,
+            ageMin,
+            relapsesMax,
+            relapsesMin,
+            cigarretesMax,
+            cigarretesMin,
+          },
+        },
+        creator: {
+          connect: {
+            id: user.adminId,
+          },
+        },
+      },
+      select: {
+        id: true,
+        name: true,
+        condition: {
+          select: {
+            addictionLevel: true,
+            ageMax: true,
+            ageMin: true,
+            cigarretesMax: true,
+            cigarretesMin: true,
+            gender: true,
+            massBody: true,
+            relapsesMax: true,
+            relapsesMin: true,
+          },
+        },
+      },
+    });
+  }
+
+  async groupArticlePackageList(): Promise&lt;GroupHasArticlePackageResponse[]&gt; {
+    return await this.prismaService.group.findMany({
+      select: {
+        id: true,
+        name: true,
+        articlePackages: {
+          select: {
+            id: true,
+          },
+        },
+      },
+      orderBy: {
+        createdAt: &#x27;desc&#x27;,
+      },
+    });
+  }
+
+  async groupNrtList(): Promise&lt;GroupHasNrtResponse[]&gt; {
+    return await this.prismaService.group.findMany({
+      select: {
+        id: true,
+        name: true,
+        nrts: {
+          select: {
+            id: true,
+          },
+        },
+      },
+      orderBy: {
+        createdAt: &#x27;desc&#x27;,
+      },
+    });
+  }
+
+  async fetchGroupsNamesOnly(paginationOptionalDto: PaginationOptionalDto): Promise&lt;PaginationGroupNamesOnlyResponse&gt; {
+    const { currentPage, sizePerPage } &#x3D; paginationOptionalDto;
+
+    const isPagination &#x3D; currentPage !&#x3D;&#x3D; undefined &amp;&amp; sizePerPage !&#x3D;&#x3D; undefined;
+    const take &#x3D; isPagination ? sizePerPage : undefined;
+    const skip &#x3D; isPagination ? (currentPage || 0) * sizePerPage : undefined;
+
+    const [groups, totalItems] &#x3D; await this.prismaService.$transaction(async (tx) &#x3D;&gt; {
+      const result &#x3D; await tx.group.findMany({
+        select: {
+          id: true,
+          name: true,
+        },
+        take,
+        skip,
+      });
+      let count &#x3D; null;
+      if (isPagination)
+        count &#x3D; await tx.group.aggregate({
+          _count: {
+            _all: true,
+          },
+        });
+      return [result, count];
+    });
+
+    return { data: groups, totalItems: totalItems?._count?._all };
+  }
+
+  async deleteGroup(id: number) {
+    const group &#x3D; await this.prismaService.group.findUnique({
+      where: { id },
+    });
+
+    if (!group) throw new MultiLanguageException(LanguageErrorEnum.GROUP_NOT_FOUND);
+
+    return await this.prismaService.group.delete({
+      where: {
+        id,
+      },
+      select: {
+        id: true,
+        name: true,
+        condition: {
+          select: {
+            addictionLevel: true,
+            ageMax: true,
+            ageMin: true,
+            cigarretesMax: true,
+            cigarretesMin: true,
+            gender: true,
+            massBody: true,
+            relapsesMax: true,
+            relapsesMin: true,
+          },
+        },
+      },
+    });
+  }
+
+  async fetchGroupById(id: number): Promise&lt;GroupResponse&gt; {
+    const group &#x3D; await this.prismaService.group.findFirst({
+      where: { id },
+      include: {
+        condition: {
+          include: {
+            riskFactor: true,
+          },
+        },
+      },
+    });
+    if (!group) throw new MultiLanguageException(LanguageErrorEnum.GROUP_NOT_FOUND);
+    return group;
+  }
+
+  async fetchPatientGroups(patientId: number): Promise&lt;GroupNameOnlyResponse[]&gt; {
+    const fetchPatientGroupsRedisKey &#x3D; &#x60;fetchPatientGroups/${patientId}&#x60;;
+    const cacheResults &#x3D; await this.redisService.getResponseKey(fetchPatientGroupsRedisKey);
+    if (cacheResults) return cacheResults;
+
+    const groups &#x3D; await this.prismaService.group.findMany({
+      where: {
+        patients: {
+          some: {
+            id: patientId,
+          },
+        },
+      },
+      select: {
+        id: true,
+        name: true,
+      },
+    });
+
+    this.redisService.setResponseKey(fetchPatientGroupsRedisKey, groups, this.environmentService.redisConfig.longerTimeToLive);
+
+    return groups;
+  }
+
+  async isGroupsByIdExist(ids: IdDto[]): Promise&lt;boolean&gt; {
+    const idFlated &#x3D; ids.map((idObject) &#x3D;&gt; idObject.id);
+    const groupFilterCount &#x3D; await this.prismaService.group.aggregate({
+      where: {
+        id: {
+          in: idFlated,
+        },
+      },
+      _count: {
+        _all: true,
+      },
+    });
+
+    if (groupFilterCount._count._all &lt; idFlated.length) throw new MultiLanguageException(LanguageErrorEnum.GROUP_NOT_FOUND);
+    return true;
+  }
+
+  async assignPatientToGroup(assignPatient: AssignPatientToGroupDto): Promise&lt;boolean&gt; {
+    //AssignGroupResponse
+    const { groupId, userId } &#x3D; assignPatient;
+    await this.patientService.isUserPatient(this.commonService.BigIntParser(userId));
+
+    await this.isGroupByIdExists(this.commonService.BigIntParser(groupId));
+
+    await this.prismaService.user.update({
+      where: {
+        id: userId,
+      },
+      data: {
+        patient: {
+          update: {
+            groups: {
+              connect: {
+                id: groupId,
+              },
+            },
+          },
+        },
+      },
+    });
+    return true;
+  }
+
+  async assignAuthedPatientToGroups(user: UserPlayloadResponse): Promise&lt;boolean&gt; {
+    let mapedRisks &#x3D; [];
+    const userMatchedGroups: IdDto[] &#x3D; [];
+    const authedUser &#x3D; await this.prismaService.patient.findUnique({
+      where: {
+        id: user.patientId,
+      },
+      select: {
+        user: {
+          select: {
+            patient: {
+              select: {
+                habitInformation: {
+                  select: {
+                    numberCigaretesPerDay: true,
+                  },
+                },
+                relapses: {
+                  select: { id: true },
+                },
+                addictionLevel: true,
+                riskFactor: {
+                  select: groupRiskFactorSelect,
+                },
+              },
+            },
+            personalInformation: {
+              select: {
+                dateOfBirth: true,
+                gender: true,
+                height: true,
+                weight: true,
+              },
+            },
+          },
+        },
+      },
+    });
+
+    const { height, weight, dateOfBirth } &#x3D; authedUser.user.personalInformation;
+
+    const patientAge &#x3D; this.commonService.dateOfBirthToAge(dateOfBirth);
+    const relapsesNumber &#x3D; authedUser.user.patient.relapses.length;
+
+    const cigarrestesNumber &#x3D; authedUser.user.patient.habitInformation.numberCigaretesPerDay;
+    const addictionLevel &#x3D; authedUser.user.patient.addictionLevel;
+
+    const massBody &#x3D; this.commonService.BMI(height, weight);
+
+    const patientRiskFactor &#x3D; authedUser.user.patient.riskFactor;
+
+    //mapping the riskFactors to use them in OR condition
+    if (patientRiskFactor) mapedRisks &#x3D; this.commonService.mapObject(patientRiskFactor);
+
+    //we r splittig the queries based on the grp type because not all the grp types have same filters
+    const [highRiskSCJourneys, customGroups, defaultGroups] &#x3D; await Promise.all([
+      this.prismaService.group.findMany({
+        where: {
+          type: GroupsTypeEnum.HIGH_RISK,
+          condition: {
+            riskFactor: {
+              OR: mapedRisks,
+            },
+          },
+        },
+      }),
+
+      //in this query we r using OR between the age and equals just because we cant filter number on null
+      this.prismaService.group.findMany({
+        select: {
+          id: true,
+        },
+        where: {
+          type: GroupsTypeEnum.CUSTOM,
+
+          condition: {
+            AND: [
+              {
+                OR: [
+                  {
+                    gender: authedUser.user.personalInformation.gender,
+                  },
+                  {
+                    gender: null,
+                  },
+                ],
+              },
+              {
+                OR: [
+                  {
+                    addictionLevel,
+                  },
+                  {
+                    addictionLevel: null,
+                  },
+                ],
+              },
+              {
+                OR: [
+                  {
+                    massBody,
+                  },
+                  {
+                    massBody: null,
+                  },
+                ],
+              },
+            ],
+
+            ageMax: {
+              gte: patientAge,
+            },
+            ageMin: {
+              lte: patientAge,
+            },
+
+            relapsesMax: {
+              gte: relapsesNumber,
+            },
+            relapsesMin: {
+              lte: relapsesNumber,
+            },
+
+            ...(cigarrestesNumber &amp;&amp; {
+              cigarretesMax: {
+                gte: cigarrestesNumber,
+              },
+              cigarretesMin: {
+                lte: cigarrestesNumber,
+              },
+            }),
+          },
+        },
+      }),
+
+      this.prismaService.group.findMany({
+        select: {
+          id: true,
+        },
+        where: {
+          type: GroupsTypeEnum.DEFAULT,
+
+          condition: {
+            gender: authedUser.user.personalInformation.gender,
+            addictionLevel,
+            ageMax: {
+              gte: patientAge,
+            },
+            ageMin: {
+              lte: patientAge,
+            },
+          },
+        },
+      }),
+    ]);
+
+    //transforming the type of the results to match IdDto
+    //so we can assign the ids easily to the pateint using prisma set operation
+    const transformedhighRiskGroupIds: IdDto[] &#x3D; highRiskSCJourneys.map((group) &#x3D;&gt; {
+      return { id: group.id };
+    });
+
+    const transformedCustomkGroupIds: IdDto[] &#x3D; customGroups.map((group) &#x3D;&gt; {
+      return { id: group.id };
+    });
+
+    const transformedDefaultGroupIds: IdDto[] &#x3D; defaultGroups.map((group) &#x3D;&gt; {
+      return { id: group.id };
+    });
+
+    //adding matched grps to the array so we can assign them all at the end
+    userMatchedGroups.push(...transformedhighRiskGroupIds);
+
+    userMatchedGroups.push(...transformedCustomkGroupIds);
+
+    userMatchedGroups.push(...transformedDefaultGroupIds);
+
+    this.resetPatientGroups(userMatchedGroups, user.patientId);
+
+    return true;
+  }
+
+  async isGroupByIdExists(groupId: number): Promise&lt;boolean&gt; {
+    const isGroupByIdExistsRedisKey &#x3D; &#x60;isGroupByIdExists/${groupId}&#x60;;
+    const cacheResults &#x3D; await this.redisService.getResponseKey(isGroupByIdExistsRedisKey);
+    if (cacheResults) return cacheResults;
+
+    const grp &#x3D; await this.prismaService.group.findFirst({
+      where: {
+        id: groupId,
+      },
+      select: { id: true },
+    });
+
+    if (!grp) throw new MultiLanguageException(LanguageErrorEnum.GROUP_NOT_FOUND);
+    this.redisService.setResponseKey(isGroupByIdExistsRedisKey, &#x27;true&#x27;, this.environmentService.redisConfig.TTL);
+
+    return true;
+  }
+
+  async resetPatientGroups(groupIds: IdDto[], patientId: number): Promise&lt;boolean&gt; {
+    await this.prismaService.patient.update({
+      where: { id: patientId },
+      data: {
+        groups: {
+          set: groupIds,
+        },
+      },
+    });
+    return true;
+  }
+
+  async groupNrt(language: LanguageEnum, groupId: number, nrtId: number): Promise&lt;GroupNrtResponse&gt; {
+    await this.isGroupByIdExists(Number(groupId));
+
+    const groupNrt &#x3D; await this.prismaService.group.findFirst({
+      where: {
+        id: groupId,
+        ...(nrtId &amp;&amp; {
+          nrts: {
+            id: { not: nrtId },
+          },
+        }),
+      },
+      select: {
+        id: true,
+        nrts: {
+          select: {
+            id: true,
+            nrtDetail: {
+              select: {
+                id: true,
+                nrtType: true,
+                nrtDetailsTranslation: {
+                  where: {
+                    language: {
+                      code: language,
+                    },
+                  },
+                  select: {
+                    gum: true,
+                    patch: true,
+                  },
+                },
+              },
+            },
+            priority: true,
+            isEditable: true,
+            targetGroup: {
+              select: {
+                id: true,
+                name: true,
+              },
+            },
+          },
+        },
+      },
+    });
+
+    return groupNrt;
+  }
+
+  async groupArticlePackage(groupId: number): Promise&lt;ArticlePackageWithCountResponse&gt; {
+    await this.isGroupByIdExists(Number(groupId));
+
+    const groupArticle &#x3D; await this.prismaService.group.findFirst({
+      where: {
+        id: groupId,
+      },
+
+      select: {
+        articlePackages: {
+          select: {
+            id: true,
+            isEditable: true,
+            targetGroup: {
+              select: {
+                id: true,
+                name: true,
+              },
+            },
+            _count: {
+              select: {
+                recommendedArticles: true,
+              },
+            },
+          },
+        },
+      },
+    });
+
+    return groupArticle.articlePackages;
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'GroupsService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
